@@ -13,21 +13,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Admin/layout');
-})->name('trang-chu');
+
+Route::get('/dang-nhap-Admin', 'AdminController@dangnhapAdmin')->name('dang-nhap-admin');
+Route::post('/dang-nhap-Admin', 'AdminController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
 
 
-Route::prefix('loai-san-pham')->group(function () {
-	Route::name('loai-san-pham.')->group(function () {
+Route::prefix('quan-tri')->group(function () {
+	Route::get('/', function () {
+    	return view('Admin/layout');
+	})->name('trang-chu-admin');
 
-		Route::get('/', function () {
-		    return view('Admin/ds-loai-san-pham');
-		})->name('danh-sach');
+	Route::prefix('loai-san-pham')->group(function () {
+		Route::name('loai-san-pham.')->group(function () {
 
-		Route::get('/them-moi', function () {
-		    return view('Admin/them-moi-loai-san-pham');
-		})->name('them-moi');
+			Route::get('/', function () {
+			    return view('Admin/ds-loai-san-pham');
+			})->name('danh-sach');
 
+			Route::get('/them-moi', function () {
+			    return view('Admin/them-moi-loai-san-pham');
+			})->name('them-moi');
+
+		});
 	});
 });
+
+
+
+
+
+Route::get('/', 'HomeController@index')->name('trang-chu');

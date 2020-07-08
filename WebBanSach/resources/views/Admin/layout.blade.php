@@ -58,7 +58,7 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{ route('trang-chu') }}"><i class="fa fa-bar-chart"></i>Trang Chủ</a>
+                  <li><a href="{{ route('trang-chu-admin') }}"><i class="fa fa-bar-chart"></i>Trang Chủ</a>
                   </li>
 
                   <li><a><i class="fa fa-unlock-alt"></i>Tài Khoản</a>
