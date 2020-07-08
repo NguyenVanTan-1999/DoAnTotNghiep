@@ -44,7 +44,7 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <a href="{{ route('loai-san-pham.them-moi') }}"><button type="button" class="btn btn-primary">Thêm Mới</button></a><br /><br />
+        <a href="{{ route('loai-san-pham.them-moi') }}"><button type="button" class="btn btn-round btn-primary">Thêm Mới</button></a><br /><br />
         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
           <thead>
             <tr>
@@ -62,7 +62,7 @@
 	              <td>Mã Loại Sản Phẩm {{ $i }}</td>
 	              <td>Tên Loại Sản Phẩm {{ $i }}</td>
 	              <td>
-                  <button type="button" class="btn btn-round btn-success">Sửa</button>|
+                  <button type="button" class="btn btn-round btn-success">Sửa</button>
                   <button type="button" class="btn btn-round btn-danger">Xóa</button>
                 </td>
 	            </tr>
