@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\QuanTriVien;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\DangNhapRequest;
 
 class QuanTriVienController extends Controller
 {
@@ -16,7 +17,7 @@ class QuanTriVienController extends Controller
         return view ('Admin.login');
     }
 
-    public function xulydangnhapAdmin(Request $request)
+    public function xulydangnhapAdmin(DangNhapRequest $request)
     {
         $ten_tai_khoan_admin = $request->ten_tai_khoan_admin;
         $mat_khau_admin      = $request->mat_khau_admin;
@@ -25,8 +26,7 @@ class QuanTriVienController extends Controller
         {
             return redirect()->route('trang-chu-admin');    
         }
-
-        return redirect()->route('dang-nhap-admin')->with('thongbao', 'dang nhap that bai');
+        return redirect()->route('dang-nhap-admin')->with('thongbao','Đăng Nhập Thất Bại');
     }
 
     public function laythongtinAdmin()

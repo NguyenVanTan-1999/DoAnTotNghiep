@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route Admin
 Route::get('/lay-thong-tin-Admin', 'QuanTriVienController@laythongtinAdmin');
-Route::get('/dang-nhap-Admin', 'QuanTriVienController@dangnhapAdmin')->name('dang-nhap-admin');
+Route::get('/dang-nhap-Admin', 'QuanTriVienController@dangnhapAdmin')->name('dang-nhap-admin')->middleware('guest');
 Route::post('/dang-nhap-Admin', 'QuanTriVienController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
 Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dang-xuat-admin');
 
@@ -38,4 +38,4 @@ Route::prefix('quan-tri')->group(function () {
 
 
 //Route Web
-Route::get('/', 'HomeController@index')->name('trang-chu');
+Route::get('/', 'HomeWebController@index')->name('trang-chu');

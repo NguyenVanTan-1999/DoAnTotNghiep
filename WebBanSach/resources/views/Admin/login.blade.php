@@ -33,13 +33,29 @@
           <section class="login_content">
 
             <form action="{{ route('xu-ly-dang-nhap-admin') }}" method="POST">
+
               @csrf
               <h1>Đăng Nhập Admin</h1>
+
+              @if($errors->any())
+              <div class="alert alert-danger alert-dismissible " role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+
+                <ul style="text-align: left;">
+                  @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+
+              </div>
+              @endif
+
               <div>
-                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" required="" />
+                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" />
               </div>
               <div>
-                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật khẩu" required="" />
+                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật khẩu" />
               </div>
               <div>
                 <button type="submit" class="btn btn-default submit">Đăng nhập</button>
@@ -47,11 +63,11 @@
               </div>
 
               @if(session('thongbao'))
-                  <div style="display: block;">
-                      @php
-                          echo "<p style='color: #ff3600; font-style: bold; margin-top: 1em; font-size: 20px;'>Đăng Nhập Thất Bại</p>";
-                      @endphp
-                  </div>
+                <div style="display: block;">
+                    @php
+                        echo "<p style='color: #ff3600; font-style: bold; margin-top: 1em; font-size: 20px;'>Tài Khoản Admin Không Đúng</p>";
+                    @endphp
+                </div>
               @endif
 
               <div class="clearfix"></div>
@@ -66,6 +82,7 @@
                   <h1><i class="fa fa-paw"></i> <span>DoAnTotNghiep</span></h1>
                 </div>
               </div>
+
             </form>
 
           </section>
