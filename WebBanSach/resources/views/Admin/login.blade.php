@@ -36,15 +36,23 @@
               @csrf
               <h1>Đăng Nhập Admin</h1>
               <div>
-                <input type="text" id="ten_dang_nhap" name="ten_dang_nhap" class="form-control" placeholder="Tên tài khoản" required="" />
+                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" required="" />
               </div>
               <div>
-                <input type="password" id="mat_khau" name="mat_khau" class="form-control" placeholder="Mật khẩu" required="" />
+                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật khẩu" required="" />
               </div>
               <div>
                 <button type="submit" class="btn btn-default submit">Đăng nhập</button>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>
               </div>
+
+              @if(session('thongbao'))
+                  <div style="display: block;">
+                      @php
+                          echo "<p style='color: #ff3600; font-style: bold; margin-top: 1em; font-size: 20px;'>Đăng Nhập Thất Bại</p>";
+                      @endphp
+                  </div>
+              @endif
 
               <div class="clearfix"></div>
 

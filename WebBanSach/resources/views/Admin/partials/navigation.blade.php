@@ -16,7 +16,7 @@
             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item"  href="">Account</a>
               <hr />
-              <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
+              <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
             </div>
           </li>
 

@@ -13,27 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/dang-nhap-Admin', 'AdminController@dangnhapAdmin')->name('dang-nhap-admin');
-Route::post('/dang-nhap-Admin', 'AdminController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
+//Route Admin
+Route::get('/lay-thong-tin-Admin', 'QuanTriVienController@laythongtinAdmin');
+Route::get('/dang-nhap-Admin', 'QuanTriVienController@dangnhapAdmin')->name('dang-nhap-admin');
+Route::post('/dang-nhap-Admin', 'QuanTriVienController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
+Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dang-xuat-admin');
 
 
 Route::prefix('quan-tri')->group(function () {
-	Route::get('/', function () {
-    	return view('Admin/layout');
-	})->name('trang-chu-admin');
+	Route::middleware('auth')->group(function () {
+		Route::get('/', 'HomeAdminController@index')->name('trang-chu-admin');
 
-	Route::prefix('loai-san-pham')->group(function () {
-		Route::name('loai-san-pham.')->group(function () {
-
-			Route::get('/', function () {
-			    return view('Admin/ds-loai-san-pham');
-			})->name('danh-sach');
-
-			Route::get('/them-moi', function () {
-			    return view('Admin/them-moi-loai-san-pham');
-			})->name('them-moi');
-
+		Route::prefix('loai-san-pham')->group(function () {
+			Route::name('loai-san-pham.')->group(function () {
+				Route::get('/', 'LoaiSanPhamController@index')->name('danh-sach');
+				Route::get('/them-moi', 'LoaiSanPhamController@create')->name('them-moi');
+			});
 		});
 	});
 });
@@ -42,4 +37,5 @@ Route::prefix('quan-tri')->group(function () {
 
 
 
+//Route Web
 Route::get('/', 'HomeController@index')->name('trang-chu');
