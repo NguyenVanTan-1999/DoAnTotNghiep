@@ -56,17 +56,19 @@
           </thead>
 
           <tbody>
-          	@for($i = 1; $i < 101; $i++)
+
+          	@foreach($dsLoaiSanPham as $loaisanpham)
 	            <tr>
-	              <td>{{ $i }}</td>
-	              <td>Mã Loại Sản Phẩm {{ $i }}</td>
-	              <td>Tên Loại Sản Phẩm {{ $i }}</td>
+	              <td>{{ $loaisanpham->id }}</td>
+	              <td>{{ $loaisanpham->ma_loai_san_pham }}</td>
+	              <td>{{ $loaisanpham->ten_loai_san_pham }}</td>
 	              <td>
                   <button type="button" class="btn btn-round btn-success">Sửa</button>
                   <button type="button" class="btn btn-round btn-danger">Xóa</button>
                 </td>
 	            </tr>
-        	@endfor
+        	  @endforeach
+
           </tbody>
         </table>
       </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuanTriViensTable extends Migration
+class CreateLoaiSanPhamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateQuanTriViensTable extends Migration
      */
     public function up()
     {
-        Schema::create('quan_tri_vien', function (Blueprint $table) {
+        Schema::create('loai_san_pham', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_tai_khoan_admin', 100)->unique();
-            $table->string('mat_khau_admin', 100);
-            $table->string('ho_ten_admin', 100);
+            $table->string('ma_loai_san_pham', 10)->unique();
+            $table->string('ten_loai_san_pham', 100);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateQuanTriViensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quan_tri_vien');
+        Schema::dropIfExists('loai_san_pham');
     }
 }

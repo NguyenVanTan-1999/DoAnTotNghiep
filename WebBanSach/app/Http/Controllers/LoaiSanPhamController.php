@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\LoaiSanPham;
 
 class LoaiSanPhamController extends Controller
 {
@@ -13,7 +15,11 @@ class LoaiSanPhamController extends Controller
      */
     public function index()
     {
-        return view('Admin.ds-loai-san-pham');
+        /*$loaisanPhams = DB::table('loai_san_pham')->get();
+        return view('Admin.ds-loai-san-pham', compact('loaisanPhams'));*/
+
+        $dsLoaiSanPham = LoaiSanPham::all();
+        return view('Admin.ds-loai-san-pham', compact('dsLoaiSanPham'));
     }
 
     /**
@@ -34,7 +40,12 @@ class LoaiSanPhamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $loaisanPhams = new LoaiSanPham;
+        $loaisanPhams->ma_loai_san_pham = $request->ma_loai_san_pham;
+        $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
+        $loaisanPhams->save();
+
+        return "Thêm Mới Loại Sản Phẩm Thành Công";
     }
 
     /**
