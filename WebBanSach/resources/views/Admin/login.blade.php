@@ -35,21 +35,10 @@
             <form action="{{ route('xu-ly-dang-nhap-admin') }}" method="POST">
 
               @csrf
+              
               <h1>Đăng Nhập Admin</h1>
 
-              @if($errors->any())
-              <div class="alert alert-danger alert-dismissible " role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                </button>
-
-                <ul style="text-align: left;">
-                  @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-
-              </div>
-              @endif
+              @include('Admin.blocks.error')
 
               <div>
                 <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" />

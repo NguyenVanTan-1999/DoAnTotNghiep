@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DangNhapRequest extends FormRequest
+class CapNhatLoaiSanPhamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,15 @@ class DangNhapRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_tai_khoan_admin' => 'required',
-            'mat_khau_admin'      => 'required|min:6'
+            'ten_loai_san_pham' => 'required|unique:loai_san_pham,ten_loai_san_pham'
         ];
     }
 
     public function messages()
     {
         return [
-            'ten_tai_khoan_admin.required' => 'Vui Lòng Nhập Tên Tài Khoản Admin',
-            'mat_khau_admin.required'      => 'Vui Lòng Nhập Mật Khẩu Admin',
-            'mat_khau_admin.min'           => 'Mật Khẩu Admin Phải Ít Nhất 6 Ký Tự'
+            'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm Mới',
+            'ten_loai_san_pham.unique'    => 'Tên Loại Sản Phẩm Mới Đã Bị Trùng'
         ];
     }
 }

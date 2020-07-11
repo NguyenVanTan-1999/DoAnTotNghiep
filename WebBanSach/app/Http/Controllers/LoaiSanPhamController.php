@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\LoaiSanPham;
+use App\Http\Requests\ThemMoiLoaiSanPhamRequest;
+use App\Http\Requests\CapNhatLoaiSanPhamRequest;
 
 class LoaiSanPhamController extends Controller
 {
@@ -15,11 +17,8 @@ class LoaiSanPhamController extends Controller
      */
     public function index()
     {
-        /*$loaisanPhams = DB::table('loai_san_pham')->get();
-        return view('Admin.ds-loai-san-pham', compact('loaisanPhams'));*/
-
         $dsLoaiSanPham = LoaiSanPham::all();
-        return view('Admin.ds-loai-san-pham', compact('dsLoaiSanPham'));
+        return view('Admin.loai-san-pham.ds-loai-san-pham', compact('dsLoaiSanPham'));
     }
 
     /**
@@ -29,7 +28,7 @@ class LoaiSanPhamController extends Controller
      */
     public function create()
     {
-        return view('Admin.them-moi-loai-san-pham');
+        return view('Admin.loai-san-pham.them-moi-loai-san-pham');
     }
 
     /**
@@ -38,14 +37,14 @@ class LoaiSanPhamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThemMoiLoaiSanPhamRequest $request)
     {
         $loaisanPhams = new LoaiSanPham;
-        $loaisanPhams->ma_loai_san_pham = $request->ma_loai_san_pham;
+        $loaisanPhams->ma_loai_san_pham  = $request->ma_loai_san_pham;
         $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
         $loaisanPhams->save();
 
-        return "Thêm Mới Loại Sản Phẩm Thành Công";
+        return redirect()->route('loai-san-pham.danh-sach');
     }
 
     /**
@@ -67,7 +66,9 @@ class LoaiSanPhamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loaisanPhams = LoaiSanPham::find($id);
+        $loaisanPhams->ten_loai_san_pham;
+        return view('Admin.loai-san-pham.cap-nhat-loai-san-pham', compact('loaisanPhams'));
     }
 
     /**
@@ -77,9 +78,13 @@ class LoaiSanPhamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CapNhatLoaiSanPhamRequest $request, $id)
     {
-        //
+        $loaisanPhams = LoaiSanPham::find($id);
+        $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
+        $loaisanPhams->save();
+
+        return redirect()->route('loai-san-pham.danh-sach');
     }
 
     /**
@@ -90,6 +95,22 @@ class LoaiSanPhamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $loaisanPhams = LoaiSanPham::find($id);
+        $loaisanPhams->delete();
+
+        return redirect()->route('loai-san-pham.danh-sach');
+    }
+
+    public function recycleBin()
+    {
+        $dsLoaiSanPham = LoaiSanPham::onlyTrashed()->get();
+        return view('Admin.loai-san-pham.khoi-phuc-loai-san-pham', compact('dsLoaiSanPham'));
+    }
+
+    public function restore($id)
+    {
+        LoaiSanPham::withTrashed()->where('id', $id)->restore();
+        
+        return redirect()->route('loai-san-pham.danh-sach');
     }
 }

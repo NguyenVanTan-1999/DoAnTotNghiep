@@ -28,11 +28,14 @@ Route::prefix('quan-tri')->group(function () {
 			Route::name('loai-san-pham.')->group(function () {
 				Route::get('/', 'LoaiSanPhamController@index')->name('danh-sach');
 				Route::get('/them-moi', 'LoaiSanPhamController@create')->name('them-moi');
+
 				//Dang Fix
 				Route::post('/them-moi', 'LoaiSanPhamController@store')->name('xu-ly-them-moi');
 				Route::get('/cap-nhat/{id}', 'LoaiSanPhamController@edit')->name('cap-nhat');
 				Route::post('/cap-nhat/{id}', 'LoaiSanPhamController@update')->name('xu-ly-cap-nhat');
 				Route::get('/xoa/{id}', 'LoaiSanPhamController@destroy')->name('xoa');
+				Route::get('/thung-rac', 'LoaiSanPhamController@recycleBin')->name('thung-rac');
+				Route::get('/khoi-phuc/{id}', 'LoaiSanPhamController@restore')->name('khoi-phuc');
 			});
 		});
 	});

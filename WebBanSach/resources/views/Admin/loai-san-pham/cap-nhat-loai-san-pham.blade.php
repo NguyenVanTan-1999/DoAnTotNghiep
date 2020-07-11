@@ -48,7 +48,7 @@
   <div class="col-md-12 col-sm-12 ">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Thêm mới loại sản phẩm</span></h2>
+        <h2><span style="font-size: 35px;">Cập Nhật Loại Sản Phẩm</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -56,21 +56,26 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <br />
+        <a href="{{ route('loai-san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
-        <form action="{{ route('loai-san-pham.xu-ly-them-moi') }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+        <form action="{{ route('loai-san-pham.xu-ly-cap-nhat', $loaisanPhams->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
           @csrf
+
+          @include('Admin.blocks.error')
+
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_loai_san_pham">Mã Loại Sản Phẩm <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align">Tên Loại Sản Phẩm Cũ <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="ma_loai_san_pham" name="ma_loai_san_pham" class="form-control">
+              <input type="text" readonly="readonly" value="{{ $loaisanPhams->ten_loai_san_pham }}" class="form-control">
             </div>
           </div>
 
+          <br /><br />
+
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm Mới <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 ">
               <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control">
@@ -83,7 +88,7 @@
             <div class="col-md-6 col-sm-6 offset-md-3">
               <a class="btn btn-app" href="{{ route('loai-san-pham.danh-sach') }}"><i class="fa fa-close"></i>Hủy</a>
               <button type="" class="btn btn-app"><i class="fa fa-repeat"></i>Hoàn Tác</button>
-              <button type="submit" class="btn btn-app"><i class="fa fa-plus"></i>Thêm</button>
+              <button type="submit" class="btn btn-app"><i class="fa fa-edit"></i>Sửa</button>
             </div>
           </div>
 

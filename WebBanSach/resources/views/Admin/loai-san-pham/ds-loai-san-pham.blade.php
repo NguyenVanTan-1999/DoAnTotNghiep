@@ -36,7 +36,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Danh sách loại sản phẩm</span></h2>
+        <h2><span style="font-size: 35px;">Danh Sách Loại Sản Phẩm</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -44,7 +44,11 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <a href="{{ route('loai-san-pham.them-moi') }}"><button type="button" class="btn btn-round btn-primary">Thêm Mới</button></a><br /><br />
+
+        <a href="{{ route('loai-san-pham.them-moi') }}"><button type="button" class="btn btn-round btn-primary">Thêm Mới</button></a>
+
+        <a href="{{ route('loai-san-pham.thung-rac') }}"><button type="button" class="btn btn-round btn-primary">Khôi Phục</button></a><br /><br />
+
         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
           <thead>
             <tr>
@@ -63,8 +67,11 @@
 	              <td>{{ $loaisanpham->ma_loai_san_pham }}</td>
 	              <td>{{ $loaisanpham->ten_loai_san_pham }}</td>
 	              <td>
-                  <button type="button" class="btn btn-round btn-success">Sửa</button>
-                  <button type="button" class="btn btn-round btn-danger">Xóa</button>
+
+                  <a href="{{ route('loai-san-pham.cap-nhat', $loaisanpham->id) }}"><button type="button" class="btn btn-round btn-success">Sửa</button></a>
+
+                  <a href="{{ route('loai-san-pham.xoa', $loaisanpham->id) }}" onclick="return confirm('Bạn Có Muốn Xóa Loại Sản Phẩm Này ?')"><button type="button" class="btn btn-round btn-danger">Xóa</button></a>
+
                 </td>
 	            </tr>
         	  @endforeach

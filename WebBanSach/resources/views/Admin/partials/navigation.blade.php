@@ -14,9 +14,9 @@
               <img src="{{ asset('assets/Admin/images/Cat.jpg') }}" alt="">Tony Tấn
             </a>
             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  href="">Account</a>
+              <a class="dropdown-item"  href="">Tài Khoản</a>
               <hr />
-              <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
+              <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Đăng Xuất</a>
             </div>
           </li>
 

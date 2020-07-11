@@ -10,4 +10,6 @@ class LoaiSanPham extends Model
 	use SoftDeletes;
 
     protected $table = 'loai_san_pham';
+
+	protected $dates = ['deleted_at'];
 }
