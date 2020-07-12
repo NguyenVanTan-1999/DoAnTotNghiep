@@ -48,7 +48,7 @@
   <div class="col-md-12 col-sm-12 ">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Cập Nhật Loại Sản Phẩm <small>({{ $loaisanPhams->ma_loai_san_pham }})</small></span></h2>
+        <h2><span style="font-size: 35px;">Cập Nhật Hình Thức Sản Phẩm <small>({{ $hinhthucsanPhams->loai_hinh_thuc_san_pham }})</small></span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -56,9 +56,9 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <a href="{{ route('loai-san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
+        <a href="{{ route('hinh-thuc-san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
-        <form action="{{ route('loai-san-pham.xu-ly-cap-nhat', $loaisanPhams->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+        <form action="{{ route('hinh-thuc-san-pham.xu-ly-cap-nhat', $hinhthucsanPhams->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
           @csrf
 
@@ -67,18 +67,18 @@
           @include('Admin.blocks.alert')
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_loai_san_pham">Mã Loại Sản Phẩm <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="loai_hinh_thuc_san_pham">Loại Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_loai_san_pham" name="ma_loai_san_pham" class="form-control" value="{{ $loaisanPhams->ma_loai_san_pham }}" readonly="readonly">
+              <input type="text" id="loai_hinh_thuc_san_pham" name="loai_hinh_thuc_san_pham" class="form-control" value="{{ $hinhthucsanPhams->loai_hinh_thuc_san_pham }}" readonly="readonly">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_hinh_thuc_san_pham">Tên Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control" value="{{ $loaisanPhams->ten_loai_san_pham }}">
+              <input type="text" id="ten_hinh_thuc_san_pham" name="ten_hinh_thuc_san_pham" class="form-control" value="{{ $hinhthucsanPhams->ten_hinh_thuc_san_pham }}">
             </div>
           </div>
 

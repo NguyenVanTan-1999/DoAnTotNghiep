@@ -49,6 +49,8 @@
 
         <a href="{{ route('loai-san-pham.thung-rac') }}"><button type="button" class="btn btn-round btn-primary">Khôi Phục</button></a><br /><br />
 
+        @include('Admin.blocks.alert')
+
         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
           <thead>
             <tr>

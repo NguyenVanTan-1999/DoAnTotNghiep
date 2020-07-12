@@ -67,7 +67,7 @@
                   <li><a><i class="fa fa-shopping-cart"></i>Sản Phẩm<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('loai-san-pham.danh-sach') }}">Loại Sản Phẩm</a></li>
-                      <li><a href="#">Loại Hình Thức Sản Phẩm</a></li>
+                      <li><a href="{{ route('hinh-thuc-san-pham.danh-sach') }}">Loại Hình Thức Sản Phẩm</a></li>
                     </ul>
                   </li>
 

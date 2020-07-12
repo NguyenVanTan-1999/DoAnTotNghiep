@@ -44,7 +44,7 @@ class LoaiSanPhamController extends Controller
         $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
         $loaisanPhams->save();
 
-        return redirect()->route('loai-san-pham.danh-sach');
+        return redirect()->route('loai-san-pham.them-moi')->with('thongbaothanhcong', 'THÊM MỚI LOẠI SẢN PHẨM THÀNH CÔNG');
     }
 
     /**
@@ -67,7 +67,6 @@ class LoaiSanPhamController extends Controller
     public function edit($id)
     {
         $loaisanPhams = LoaiSanPham::find($id);
-        $loaisanPhams->ten_loai_san_pham;
         return view('Admin.loai-san-pham.cap-nhat-loai-san-pham', compact('loaisanPhams'));
     }
 
@@ -84,7 +83,7 @@ class LoaiSanPhamController extends Controller
         $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
         $loaisanPhams->save();
 
-        return redirect()->route('loai-san-pham.danh-sach');
+        return redirect()->route('loai-san-pham.cap-nhat', $loaisanPhams->id)->with('thongbaothanhcong', 'CẬP NHẬT LOẠI SẢN PHẨM THÀNH CÔNG');
     }
 
     /**
@@ -98,7 +97,7 @@ class LoaiSanPhamController extends Controller
         $loaisanPhams = LoaiSanPham::find($id);
         $loaisanPhams->delete();
 
-        return redirect()->route('loai-san-pham.danh-sach');
+        return redirect()->route('loai-san-pham.danh-sach')->with('thongbaothanhcong', 'XÓA LOẠI SẢN PHẨM THÀNH CÔNG');
     }
 
     public function recycleBin()
@@ -111,6 +110,6 @@ class LoaiSanPhamController extends Controller
     {
         LoaiSanPham::withTrashed()->where('id', $id)->restore();
         
-        return redirect()->route('loai-san-pham.danh-sach');
+        return redirect()->route('loai-san-pham.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC LOẠI SẢN PHẨM THÀNH CÔNG');
     }
 }

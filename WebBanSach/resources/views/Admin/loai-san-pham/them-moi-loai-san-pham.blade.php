@@ -64,10 +64,12 @@
 
           @include('Admin.blocks.error')
 
+          @include('Admin.blocks.alert')
+
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_loai_san_pham">Mã Loại Sản Phẩm <span class="required">*</span>
             </label>
-            <div class="col-md-6 col-sm-6 ">
+            <div class="col-md-6 col-sm-6">
               <input type="text" id="ma_loai_san_pham" name="ma_loai_san_pham" class="form-control">
             </div>
           </div>
@@ -75,7 +77,7 @@
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm <span class="required">*</span>
             </label>
-            <div class="col-md-6 col-sm-6 ">
+            <div class="col-md-6 col-sm-6">
               <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control">
             </div>
           </div>
@@ -84,8 +86,6 @@
 
           <div class="item form-group">
             <div class="col-md-6 col-sm-6 offset-md-3">
-              <a class="btn btn-app" href="{{ route('loai-san-pham.danh-sach') }}"><i class="fa fa-close"></i>Hủy</a>
-              <button type="" class="btn btn-app"><i class="fa fa-repeat"></i>Hoàn Tác</button>
               <button type="submit" class="btn btn-app"><i class="fa fa-plus"></i>Thêm</button>
             </div>
           </div>

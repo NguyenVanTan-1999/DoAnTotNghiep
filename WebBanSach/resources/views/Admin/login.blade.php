@@ -38,7 +38,27 @@
               
               <h1>Đăng Nhập Admin</h1>
 
-              @include('Admin.blocks.error')
+              @if($errors->any())
+                <div class="alert alert-danger alert-dismissible" role="alert">
+
+                  <ul style="text-align: left;">
+                    @foreach($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+
+                </div>
+              @endif
+
+              @if(session('thongbaothatbai'))
+              <div class="alert alert-danger alert-dismissible" role="alert">
+
+                <ul style="text-align: left;">
+                  {{ session('thongbaothatbai') }}
+                </ul>
+
+              </div>
+              @endif
 
               <div>
                 <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" />
@@ -50,14 +70,6 @@
                 <button type="submit" class="btn btn-default submit">Đăng nhập</button>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>
               </div>
-
-              @if(session('thongbao'))
-                <div style="display: block;">
-                    @php
-                        echo "<p style='color: #ff3600; font-style: bold; margin-top: 1em; font-size: 20px;'>Tài Khoản Admin Không Đúng</p>";
-                    @endphp
-                </div>
-              @endif
 
               <div class="clearfix"></div>
 

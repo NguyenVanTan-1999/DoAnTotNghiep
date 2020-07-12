@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CapNhatLoaiSanPhamRequest extends FormRequest
+class CapNhatHinhThucSanPhamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,15 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_loai_san_pham' => 'required|unique:loai_san_pham,ten_loai_san_pham'
+            'ten_hinh_thuc_san_pham' => 'required|unique:hinh_thuc_san_pham,ten_hinh_thuc_san_pham'
         ];
     }
 
     public function messages()
     {
         return [
-            'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm',
-            'ten_loai_san_pham.unique'    => 'Tên Loại Sản Phẩm Đã Bị Trùng'
+            'ten_hinh_thuc_san_pham.required'  => 'Vui Lòng Nhập Tên Hình Thức Sản Phẩm',
+            'ten_hinh_thuc_san_pham.unique'    => 'Tên Hình Thức Sản Phẩm Đã Bị Trùng'
         ];
     }
 }

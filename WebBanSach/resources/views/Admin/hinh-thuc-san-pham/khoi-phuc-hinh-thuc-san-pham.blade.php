@@ -36,7 +36,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Khôi Phục Loại Sản Phẩm</span></h2>
+        <h2><span style="font-size: 35px;">Khôi Phục Hình Thức Sản Phẩm</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -45,7 +45,7 @@
       </div>
       <div class="x_content">
 
-        <a href="{{ route('loai-san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
+        <a href="{{ route('hinh-thuc-san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
         @include('Admin.blocks.alert')
 
@@ -53,22 +53,22 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Mã Loại Sản Phẩm</th>
-              <th>Tên Loại Sản Phẩm</th>
+              <th>Loại Hình Thức Sản Phẩm</th>
+              <th>Tên Hình Thức Sản Phẩm</th>
               <th>Thao Tác</th>
             </tr>
           </thead>
 
           <tbody>
 
-          	@foreach($dsLoaiSanPham ?? '' as $loaisanpham)
+          	@foreach($dsHinhThucSanPham ?? '' as $hinhthucsanpham)
 	            <tr>
-	              <td>{{ $loaisanpham->id }}</td>
-	              <td>{{ $loaisanpham->ma_loai_san_pham }}</td>
-	              <td>{{ $loaisanpham->ten_loai_san_pham }}</td>
+	              <td>{{ $hinhthucsanpham->id }}</td>
+	              <td>{{ $hinhthucsanpham->loai_hinh_thuc_san_pham }}</td>
+	              <td>{{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</td>
 	              <td>
 
-                  <a href="{{ route('loai-san-pham.khoi-phuc', $loaisanpham->id) }}" onclick="return confirm('Bạn Có Muốn Khôi Phục Loại Sản Phẩm Này ?')"><button type="button" class="btn btn-round btn-info">Khôi Phục</button></a>
+                  <a href="{{ route('hinh-thuc-san-pham.khoi-phuc', $hinhthucsanpham->id) }}" onclick="return confirm('Bạn Có Muốn Khôi Phục Hình Thức Sản Phẩm Này ?')"><button type="button" class="btn btn-round btn-info">Khôi Phục</button></a>
 
                 </td>
 	            </tr>

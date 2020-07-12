@@ -36,6 +36,19 @@ Route::prefix('quan-tri')->group(function () {
 				Route::get('/khoi-phuc/{id}', 'LoaiSanPhamController@restore')->name('khoi-phuc');
 			});
 		});
+
+		Route::prefix('hinh-thuc-san-pham')->group(function () {
+			Route::name('hinh-thuc-san-pham.')->group(function () {
+				Route::get('/', 'HinhThucSanPhamController@index')->name('danh-sach');
+				Route::get('/them-moi', 'HinhThucSanPhamController@create')->name('them-moi');
+				Route::post('/them-moi', 'HinhThucSanPhamController@store')->name('xu-ly-them-moi');
+				Route::get('/cap-nhat/{id}', 'HinhThucSanPhamController@edit')->name('cap-nhat');
+				Route::post('/cap-nhat/{id}', 'HinhThucSanPhamController@update')->name('xu-ly-cap-nhat');
+				Route::get('/xoa/{id}', 'HinhThucSanPhamController@destroy')->name('xoa');
+				Route::get('/thung-rac', 'HinhThucSanPhamController@recycleBin')->name('thung-rac');
+				Route::get('/khoi-phuc/{id}', 'HinhThucSanPhamController@restore')->name('khoi-phuc');
+			});
+		});
 	});
 });
 

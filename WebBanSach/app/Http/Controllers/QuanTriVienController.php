@@ -26,7 +26,7 @@ class QuanTriVienController extends Controller
         {
             return redirect()->route('trang-chu-admin');    
         }
-        return redirect()->route('dang-nhap-admin')->with('thongbao','Đăng Nhập Thất Bại');
+        return redirect()->route('dang-nhap-admin')->with('thongbaothatbai','TÀI KHOẢN ADMIN KHÔNG ĐÚNG');
     }
 
     public function laythongtinAdmin()
