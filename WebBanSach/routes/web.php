@@ -19,6 +19,10 @@ Route::get('/dang-nhap-Admin', 'QuanTriVienController@dangnhapAdmin')->name('dan
 Route::post('/dang-nhap-Admin', 'QuanTriVienController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
 Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dang-xuat-admin');
 
+//Dang Fix
+Route::get('/cap-nhat/{id}', 'QuanTriVienController@capnhatAdmin')->name('cap-nhat-admin');
+Route::post('/cap-nhat/{id}', 'QuanTriVienController@xulycapnhatAdmin')->name('xu-ly-cap-nhat-admin');
+
 
 Route::prefix('quan-tri')->group(function () {
 	Route::middleware('auth')->group(function () {
@@ -47,6 +51,19 @@ Route::prefix('quan-tri')->group(function () {
 				Route::get('/xoa/{id}', 'HinhThucSanPhamController@destroy')->name('xoa');
 				Route::get('/thung-rac', 'HinhThucSanPhamController@recycleBin')->name('thung-rac');
 				Route::get('/khoi-phuc/{id}', 'HinhThucSanPhamController@restore')->name('khoi-phuc');
+			});
+		});
+
+		Route::prefix('nha-xuat-ban')->group(function () {
+			Route::name('nha-xuat-ban.')->group(function () {
+				Route::get('/', 'NhaXuatBanController@index')->name('danh-sach');
+				Route::get('/them-moi', 'NhaXuatBanController@create')->name('them-moi');
+				Route::post('/them-moi', 'NhaXuatBanController@store')->name('xu-ly-them-moi');
+				Route::get('/cap-nhat/{id}', 'NhaXuatBanController@edit')->name('cap-nhat');
+				Route::post('/cap-nhat/{id}', 'NhaXuatBanController@update')->name('xu-ly-cap-nhat');
+				Route::get('/xoa/{id}', 'NhaXuatBanController@destroy')->name('xoa');
+				Route::get('/thung-rac', 'NhaXuatBanController@recycleBin')->name('thung-rac');
+				Route::get('/khoi-phuc/{id}', 'NhaXuatBanController@restore')->name('khoi-phuc');
 			});
 		});
 	});

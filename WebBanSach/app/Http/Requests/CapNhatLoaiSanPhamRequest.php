@@ -24,15 +24,14 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_loai_san_pham' => 'required|unique:loai_san_pham,ten_loai_san_pham'
+            'ten_loai_san_pham' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm',
-            'ten_loai_san_pham.unique'    => 'Tên Loại Sản Phẩm Đã Bị Trùng'
+            'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm'
         ];
     }
 }

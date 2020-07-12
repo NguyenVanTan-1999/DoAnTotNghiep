@@ -71,7 +71,7 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-home"></i>Nhà Xuất Bản</a>
+                  <li><a href="{{ route('nha-xuat-ban.danh-sach') }}"><i class="fa fa-home"></i>Nhà Xuất Bản</a>
                   </li>
                 </ul>
               </div>
@@ -101,7 +101,7 @@
         @include('Admin/partials/navigation')
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style="height: 800px;">
           <div class="">
             <div class="page-title">
               
