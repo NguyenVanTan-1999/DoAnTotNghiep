@@ -4,9 +4,7 @@
         <div class="nav toggle">
           <a id="menu_toggle"><i class="fa fa-bars"></i></a>
         </div>
-        <div style="float: left; margin: 0px 10px;">
-          <img src="{{ asset('assets/Admin/images/CKC-2.jpg') }}" height="60" width="180">
-        </div>
+
         <nav class="nav navbar-nav">
         <ul class=" navbar-right">
           <li class="nav-item dropdown open" style="padding-left: 15px;">
@@ -14,8 +12,6 @@
               <img src="{{ asset('assets/Admin/images/Cat.jpg') }}" alt="">Tony Tấn
             </a>
             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  href="">Tài Khoản</a>
-              <hr />
               <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Đăng Xuất</a>
             </div>
           </li>

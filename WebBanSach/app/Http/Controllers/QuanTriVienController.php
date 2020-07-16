@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\QuanTriVien;
-//use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\DangNhapRequest;
 
@@ -38,15 +37,5 @@ class QuanTriVienController extends Controller
     {
         Auth::logout();
         return redirect()->route('dang-nhap-admin');
-    }
-
-    public function capnhatAdmin()
-    {
-        //
-    }
-
-    public function xulycapnhatAdmin()
-    {
-        //
     }
 }

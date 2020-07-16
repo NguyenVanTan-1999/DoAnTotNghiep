@@ -55,8 +55,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Mã Loại Sản Phẩm</th>
-              <th>Tên Loại Sản Phẩm</th>
+              <th>Mã Loại SP</th>
+              <th>Tên Loại SP</th>
               <th>Thao Tác</th>
             </tr>
           </thead>

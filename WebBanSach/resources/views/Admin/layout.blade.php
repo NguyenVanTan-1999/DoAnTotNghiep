@@ -64,10 +64,11 @@
                   <li><a><i class="fa fa-unlock-alt"></i>Tài Khoản</a>
                   </li>
 
-                  <li><a><i class="fa fa-shopping-cart"></i>Sản Phẩm<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-shopping-cart"></i>Sản Phẩm Chung<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="{{ route('san-pham.danh-sach') }}">Sản Phẩm</a></li>
                       <li><a href="{{ route('loai-san-pham.danh-sach') }}">Loại Sản Phẩm</a></li>
-                      <li><a href="{{ route('hinh-thuc-san-pham.danh-sach') }}">Loại Hình Thức Sản Phẩm</a></li>
+                      <li><a href="{{ route('hinh-thuc-san-pham.danh-sach') }}">Hình Thức Sản Phẩm</a></li>
                     </ul>
                   </li>
 
@@ -101,23 +102,19 @@
         @include('Admin/partials/navigation')
 
         <!-- page content -->
-        <div class="right_col" role="main" style="height: 800px;">
-          <div class="">
-            <div class="page-title">
+        <div class="right_col" role="main">
               
 
               @yield('main-content')
 
 
-            </div>
-          </div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            Doantotnghiep - Follow Me by <a href="https://www.facebook.com/IT.Q9.Tony">Facebook</a>
           </div>
           <div class="clearfix"></div>
         </footer>

@@ -61,13 +61,13 @@
               @endif
 
               <div>
-                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên tài khoản" />
+                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản" />
               </div>
               <div>
-                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật khẩu" />
+                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu" />
               </div>
               <div>
-                <button type="submit" class="btn btn-default submit">Đăng nhập</button>
+                <button type="submit" class="btn btn-default submit">Đăng Nhập</button>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>
               </div>
 

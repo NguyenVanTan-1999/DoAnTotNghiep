@@ -16,11 +16,11 @@ class CreateNhaXuatBansTable extends Migration
         Schema::create('nha_xuat_ban', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ma_nha_xuat_ban', 10)->unique();
-            $table->string('ten_nha_xuat_ban', 100)->unique();
-            $table->string('dia_chi_nha_xuat_ban', 100)->unique();
-            $table->string('website_nha_xuat_ban', 100)->unique();
-            $table->string('email_nha_xuat_ban', 100)->unique();
-            $table->string('so_dien_thoai_nha_xuat_ban', 100)->unique();
+            $table->string('ten_nha_xuat_ban', 100);
+            $table->string('dia_chi_nha_xuat_ban', 100);
+            $table->string('website_nha_xuat_ban', 100);
+            $table->string('email_nha_xuat_ban', 100);
+            $table->string('so_dien_thoai_nha_xuat_ban', 11);
             $table->timestamps();
             $table->softDeletes();
         });

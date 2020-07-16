@@ -19,10 +19,6 @@ Route::get('/dang-nhap-Admin', 'QuanTriVienController@dangnhapAdmin')->name('dan
 Route::post('/dang-nhap-Admin', 'QuanTriVienController@xulydangnhapAdmin')->name('xu-ly-dang-nhap-admin');
 Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dang-xuat-admin');
 
-//Dang Fix
-Route::get('/cap-nhat/{id}', 'QuanTriVienController@capnhatAdmin')->name('cap-nhat-admin');
-Route::post('/cap-nhat/{id}', 'QuanTriVienController@xulycapnhatAdmin')->name('xu-ly-cap-nhat-admin');
-
 
 Route::prefix('quan-tri')->group(function () {
 	Route::middleware('auth')->group(function () {
@@ -64,6 +60,19 @@ Route::prefix('quan-tri')->group(function () {
 				Route::get('/xoa/{id}', 'NhaXuatBanController@destroy')->name('xoa');
 				Route::get('/thung-rac', 'NhaXuatBanController@recycleBin')->name('thung-rac');
 				Route::get('/khoi-phuc/{id}', 'NhaXuatBanController@restore')->name('khoi-phuc');
+			});
+		});
+
+		Route::prefix('san-pham')->group(function () {
+			Route::name('san-pham.')->group(function () {
+				Route::get('/', 'SanPhamController@index')->name('danh-sach');
+				Route::get('/them-moi', 'SanPhamController@create')->name('them-moi');
+				Route::post('/them-moi', 'SanPhamController@store')->name('xu-ly-them-moi');
+				Route::get('/cap-nhat/{id}', 'SanPhamController@edit')->name('cap-nhat');
+				Route::post('/cap-nhat/{id}', 'SanPhamController@update')->name('xu-ly-cap-nhat');
+				Route::get('/xoa/{id}', 'SanPhamController@destroy')->name('xoa');
+				Route::get('/thung-rac', 'SanPhamController@recycleBin')->name('thung-rac');
+				Route::get('/khoi-phuc/{id}', 'SanPhamController@restore')->name('khoi-phuc');
 			});
 		});
 	});

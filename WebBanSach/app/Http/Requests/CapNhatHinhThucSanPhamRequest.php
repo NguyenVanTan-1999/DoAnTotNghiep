@@ -24,14 +24,15 @@ class CapNhatHinhThucSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_hinh_thuc_san_pham' => 'required'
+            'ten_hinh_thuc_san_pham' => 'required|max:100'
         ];
     }
 
     public function messages()
     {
         return [
-            'ten_hinh_thuc_san_pham.required'  => 'Vui Lòng Nhập Tên Hình Thức Sản Phẩm'
+            'ten_hinh_thuc_san_pham.required'  => 'Vui Lòng Nhập Tên Hình Thức Sản Phẩm',
+            'ten_hinh_thuc_san_pham.max'       => 'Tên Hình Thức Sản Phẩm Chỉ Nhiều Nhất 100 Ký Tự'
         ];
     }
 }

@@ -16,7 +16,7 @@ class CreateLoaiSanPhamsTable extends Migration
         Schema::create('loai_san_pham', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ma_loai_san_pham', 10)->unique();
-            $table->string('ten_loai_san_pham', 100)->unique();
+            $table->string('ten_loai_san_pham', 100);
             $table->timestamps();
             $table->softDeletes();
         });

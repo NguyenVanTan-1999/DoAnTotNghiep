@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CapNhatLoaiSanPhamRequest extends FormRequest
+class CapNhatSanPhamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,15 +24,7 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_loai_san_pham' => 'required|max:100'
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm',
-            'ten_loai_san_pham.max'       => 'Tên Loại Sản Phẩm Chỉ Nhiều Nhất 100 Ký Tự'
+            //
         ];
     }
 }

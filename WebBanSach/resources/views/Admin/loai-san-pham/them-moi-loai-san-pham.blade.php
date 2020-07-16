@@ -86,6 +86,7 @@
 
           <div class="item form-group">
             <div class="col-md-6 col-sm-6 offset-md-3">
+              <button type="reset" class="btn btn-app"><i class="fa fa-edit"></i>Hoàn Tác</button>
               <button type="submit" class="btn btn-app"><i class="fa fa-plus"></i>Thêm</button>
             </div>
           </div>

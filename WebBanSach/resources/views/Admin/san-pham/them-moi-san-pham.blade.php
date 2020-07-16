@@ -48,7 +48,7 @@
   <div class="col-md-12 col-sm-12 ">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Thêm Mới Nhà Sản Xuất</span></h2>
+        <h2><span style="font-size: 35px;">Thêm Mới Sản Phẩm</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -56,9 +56,9 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <a href="{{ route('nha-xuat-ban.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
+        <a href="{{ route('san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
-        <form action="{{ route('nha-xuat-ban.xu-ly-them-moi') }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+        <form action="{{ route('san-pham.xu-ly-them-moi') }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
           @csrf
 
@@ -67,50 +67,95 @@
           @include('Admin.blocks.alert')
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_nha_xuat_ban">Mã Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_san_pham">Mã Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_nha_xuat_ban" name="ma_nha_xuat_ban" class="form-control">
+              <input type="text" id="ma_san_pham" name="ma_san_pham" class="form-control">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_nha_xuat_ban">Tên Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control">
+              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi_nha_xuat_ban">Địa Chỉ Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" class="form-control">
+              <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="website_nha_xuat_ban">Website Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="ngay_xuat_ban_san_pham">Ngày Xuất Bản Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="website_nha_xuat_ban" name="website_nha_xuat_ban" class="form-control">
+              <input type="date" id="ngay_xuat_ban_san_pham" name="ngay_xuat_ban_san_pham">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="email_nha_xuat_ban">Email Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="gia_tien_san_pham">Giá Tiền Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="email_nha_xuat_ban" name="email_nha_xuat_ban" class="form-control">
+              <input type="text" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control">
             </div>
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai_nha_xuat_ban">Số Điện Thoại Nhà Xuất Bản <span class="required">*</span>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" class="form-control">
+              <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham">
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="nha_xuat_ban_id">Nhà Xuất Bản <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+              <select id="nha_xuat_ban_id" name="nha_xuat_ban_id" class="form-control">
+                <option value="">Chọn...</option>
+
+                @foreach($dsNhaXuatBan as $nhaxuatban)
+                <option value="{{ $nhaxuatban->ma_nha_xuat_ban }}">{{ $nhaxuatban->ten_nha_xuat_ban }}</option>
+                @endforeach
+
+              </select>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="loai_san_pham_id">Loại Sản Phẩm <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+              <select id="loai_san_pham_id" name="loai_san_pham_id" class="form-control">
+                <option value="">Chọn...</option>
+
+                @foreach($dsLoaiSanPham as $loaisanpham)
+                <option value="{{ $loaisanpham->ma_loai_san_pham }}">{{ $loaisanpham->ten_loai_san_pham }}</option>
+                @endforeach
+
+              </select>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="hinh_thuc_san_pham_id">Hình Thức Sản Phẩm <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+              <select id="hinh_thuc_san_pham_id" name="hinh_thuc_san_pham_id" class="form-control">
+                <option value="">Chọn...</option>
+
+                @foreach($dsHinhThucSanPham as $hinhthucsanpham)
+                <option value="{{ $hinhthucsanpham->loai_hinh_thuc_san_pham }}">{{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</option>
+                @endforeach
+
+              </select>
             </div>
           </div>
 

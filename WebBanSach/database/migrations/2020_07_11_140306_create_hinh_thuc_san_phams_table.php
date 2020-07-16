@@ -16,7 +16,7 @@ class CreateHinhThucSanPhamsTable extends Migration
         Schema::create('hinh_thuc_san_pham', function (Blueprint $table) {
             $table->increments('id');
             $table->string('loai_hinh_thuc_san_pham', 10)->unique();
-            $table->string('ten_hinh_thuc_san_pham', 100)->unique();
+            $table->string('ten_hinh_thuc_san_pham', 100);
             $table->timestamps();
             $table->softDeletes();
         });
