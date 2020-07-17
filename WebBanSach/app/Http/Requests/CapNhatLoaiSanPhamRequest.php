@@ -24,7 +24,7 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_loai_san_pham' => 'required|max:100'
+            'ten_loai_san_pham' => 'required|max:100|unique:loai_san_pham,ten_loai_san_pham'
         ];
     }
 
@@ -32,7 +32,8 @@ class CapNhatLoaiSanPhamRequest extends FormRequest
     {
         return [
             'ten_loai_san_pham.required'  => 'Vui Lòng Nhập Tên Loại Sản Phẩm',
-            'ten_loai_san_pham.max'       => 'Tên Loại Sản Phẩm Chỉ Nhiều Nhất 100 Ký Tự'
+            'ten_loai_san_pham.max'       => 'Tên Loại Sản Phẩm Chỉ Nhiều Nhất 100 Ký Tự',
+            'ten_loai_san_pham.unique'    => 'Tên Loại Sản Phẩm Đã Bị Trùng'
         ];
     }
 }

@@ -36,7 +36,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Danh Sách Sản Phẩm</span></h2>
+        <h2><span style="font-size: 35px;">Khôi Phục Sản Phẩm</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -45,9 +45,7 @@
       </div>
       <div class="x_content">
 
-        <a href="{{ route('san-pham.them-moi') }}"><button type="button" class="btn btn-round btn-primary">Thêm Mới</button></a>
-
-        <a href="{{ route('san-pham.thung-rac') }}"><button type="button" class="btn btn-round btn-primary">Khôi Phục</button></a><br /><br />
+        <a href="{{ route('san-pham.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
         @include('Admin.blocks.alert')
 
@@ -70,11 +68,11 @@
 
           <tbody>
 
-          	@foreach($dsSanPham as $sanpham)
+          	@foreach($dsSanPham ?? '' as $sanpham)
 	            <tr>
 	              <td>{{ $sanpham->id }}</td>
-	              <td>{{ $sanpham->ma_san_pham }}</td>
-	              <td>{{ $sanpham->ten_san_pham }}</td>
+                <td>{{ $sanpham->ma_san_pham }}</td>
+                <td>{{ $sanpham->ten_san_pham }}</td>
                 <td>{{ $sanpham->thong_tin_san_pham }}</td>
                 <td>{{ $sanpham->ngay_xuat_ban_san_pham }}</td>
                 <td>{{ $sanpham->gia_tien_san_pham }}</td>
@@ -84,9 +82,7 @@
                 <td>{{ $sanpham->hinhthucsanPham->ten_hinh_thuc_san_pham }}</td>
 	              <td>
 
-                  <a href="{{ route('san-pham.cap-nhat', $sanpham->id) }}"><button type="button" class="btn btn-round btn-success">Sửa</button></a>
-
-                  <a href="{{ route('san-pham.xoa', $sanpham->id) }}" onclick="return confirm('Bạn Có Muốn Xóa Sản Phẩm Này ?')"><button type="button" class="btn btn-round btn-danger">Xóa</button></a>
+                  <a href="{{ route('san-pham.khoi-phuc', $sanpham->id) }}" onclick="return confirm('Bạn Có Muốn Khôi Phục Sản Phẩm Này ?')"><button type="button" class="btn btn-round btn-info">Khôi Phục</button></a>
 
                 </td>
 	            </tr>
