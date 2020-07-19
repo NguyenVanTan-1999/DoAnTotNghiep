@@ -51,16 +51,18 @@ class SanPhamController extends Controller
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;
         $sanPhams->gia_tien_san_pham = $request->gia_tien_san_pham;
-
-        $file = $request->anh_minh_hoa_san_pham;
-        $filename = $file->getClientOriginalName();
-        $file->move('images/product/', $filename);
+        
+        if($request->hasFile('anh_minh_hoa_san_pham'))
+        {
+            $file = $request->file('anh_minh_hoa_san_pham');
+            $filename = $file->store('');
+            $file->move('images/product/', $filename);
+        }
         $sanPhams->anh_minh_hoa_san_pham = $filename;
 
         $sanPhams->nha_xuat_ban_id = $request->nha_xuat_ban_id;
         $sanPhams->loai_san_pham_id = $request->loai_san_pham_id;
         $sanPhams->hinh_thuc_san_pham_id = $request->hinh_thuc_san_pham_id;
-
         $sanPhams->save();
 
         return redirect()->route('san-pham.them-moi')->with('thongbaothanhcong', 'THÊM MỚI SẢN PHẨM THÀNH CÔNG');
@@ -106,19 +108,42 @@ class SanPhamController extends Controller
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;
         $sanPhams->gia_tien_san_pham = $request->gia_tien_san_pham;
-
-        $file = $request->anh_minh_hoa_san_pham;
-        $filename = $file->getClientOriginalName();
-        $file->move('images/product/', $filename);
-        $sanPhams->anh_minh_hoa_san_pham = $filename;
-
         $sanPhams->nha_xuat_ban_id = $request->nha_xuat_ban_id;
         $sanPhams->loai_san_pham_id = $request->loai_san_pham_id;
         $sanPhams->hinh_thuc_san_pham_id = $request->hinh_thuc_san_pham_id;
-
         $sanPhams->save();
 
-        return redirect()->route('san-pham.cap-nhat', $sanPhams->id)->with('thongbaothanhcong', 'CẬP NHẬT SẢN PHẨM THÀNH CÔNG');
+        return redirect()->route('san-pham.cap-nhat', $sanPhams->id)->with('thongbaothanhcong', 'CẬP NHẬT THÔNG TIN SẢN PHẨM THÀNH CÔNG');
+    }
+    public function upload(Request $request, $id)
+    {
+        $sanPhams = SanPham::find($id);
+
+        $this->validate($request,
+        [
+            'anh_minh_hoa_san_pham' => 'required|max:255|image|mimes:jpeg,png,jpg'
+        ],
+
+        [
+            'required'    => 'Vui Lòng Chọn :attribute',
+            'max'         => ':attribute Chỉ Nhiều Nhất 255 Ký Tự',
+            'image'       => ':attribute Phải Là Định Dạng Hình Ảnh',
+            'mimes'       => ':attribute Phải Có Đuôi Mở Rộng Là JPEG, PNG Hoặc JPG'
+        ],
+
+        [
+            'anh_minh_hoa_san_pham' => 'Ảnh Minh Họa Sản Phẩm'
+        ]);
+        if($request->hasFile('anh_minh_hoa_san_pham'))
+        {
+            $file = $request->file('anh_minh_hoa_san_pham');
+            $filename = $file->store('');
+            $file->move('images/product/', $filename);
+        }
+        $sanPhams->anh_minh_hoa_san_pham = $filename;
+        $sanPhams->save();
+
+        return redirect()->route('san-pham.cap-nhat', $sanPhams->id)->with('thongbaothanhcong', 'CẬP NHẬT HÌNH ẢNH SẢN PHẨM THÀNH CÔNG');
     }
 
     /**

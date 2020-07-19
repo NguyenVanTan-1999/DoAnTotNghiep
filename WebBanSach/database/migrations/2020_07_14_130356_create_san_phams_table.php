@@ -17,7 +17,7 @@ class CreateSanPhamsTable extends Migration
             $table->increments('id');
             $table->string('ma_san_pham', 10)->unique();
             $table->string('ten_san_pham', 100);
-            $table->string('thong_tin_san_pham');
+            $table->string('thong_tin_san_pham', 1000);
             $table->date('ngay_xuat_ban_san_pham');
             $table->integer('gia_tien_san_pham');
             $table->string('anh_minh_hoa_san_pham');
