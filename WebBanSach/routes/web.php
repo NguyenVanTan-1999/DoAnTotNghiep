@@ -70,9 +70,23 @@ Route::prefix('quan-tri')->group(function () {
 				Route::post('/them-moi', 'SanPhamController@store')->name('xu-ly-them-moi');
 				Route::get('/cap-nhat/{id}', 'SanPhamController@edit')->name('cap-nhat');
 				Route::post('/cap-nhat/{id}', 'SanPhamController@update')->name('xu-ly-cap-nhat');
+				Route::post('/cap-nhat-hinh-anh/{id}', 'SanPhamController@upload')->name('cap-nhat-hinh-anh');
 				Route::get('/xoa/{id}', 'SanPhamController@destroy')->name('xoa');
 				Route::get('/thung-rac', 'SanPhamController@recycleBin')->name('thung-rac');
 				Route::get('/khoi-phuc/{id}', 'SanPhamController@restore')->name('khoi-phuc');
+			});
+		});
+
+		Route::prefix('tai-khoan')->group(function () {
+			Route::name('tai-khoan.')->group(function () {
+				Route::get('/', 'TaiKhoanController@index')->name('danh-sach');
+				Route::get('/them-moi', 'TaiKhoanController@create')->name('them-moi');
+				Route::post('/them-moi', 'TaiKhoanController@store')->name('xu-ly-them-moi');
+				Route::get('/cap-nhat/{id}', 'TaiKhoanController@edit')->name('cap-nhat');
+				Route::post('/cap-nhat/{id}', 'TaiKhoanController@update')->name('xu-ly-cap-nhat');
+				Route::get('/xoa/{id}', 'TaiKhoanController@destroy')->name('xoa');
+				Route::get('/thung-rac', 'TaiKhoanController@recycleBin')->name('thung-rac');
+				Route::get('/khoi-phuc/{id}', 'TaiKhoanController@restore')->name('khoi-phuc');
 			});
 		});
 	});
