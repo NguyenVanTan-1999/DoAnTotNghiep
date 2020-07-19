@@ -45,7 +45,7 @@
 
 @section('main-content')
 <div class="row">
-  <div class="col-md-12 col-sm-12 ">
+  <div class="col-md-12 col-sm-12">
     <div class="x_panel">
       <div class="x_title">
         <h2><span style="font-size: 35px;">Thêm Mới Sản Phẩm</span></h2>

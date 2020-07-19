@@ -1721,7 +1721,7 @@
                                 <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
                             </ul>
                         </div>
-                    </div>	
+                    </div>
                 </div>
                 <!-- single-product-end -->
             </div>
