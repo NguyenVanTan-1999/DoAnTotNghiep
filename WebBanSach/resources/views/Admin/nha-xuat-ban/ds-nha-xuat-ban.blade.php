@@ -60,7 +60,7 @@
               <th>Địa Chỉ NXB</th>
               <th>Website NXB</th>
               <th>Email NXB</th>
-              <th>SĐT NXB</th>
+              <th>Số Điện Thoại NXB</th>
               <th>Thao Tác</th>
             </tr>
           </thead>
