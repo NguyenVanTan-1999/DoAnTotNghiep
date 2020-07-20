@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="loai_hinh_thuc_san_pham">Loại Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="loai_hinh_thuc_san_pham" name="loai_hinh_thuc_san_pham" class="form-control">
+              <input type="text" id="loai_hinh_thuc_san_pham" name="loai_hinh_thuc_san_pham" class="form-control" maxlength="10">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_hinh_thuc_san_pham">Tên Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_hinh_thuc_san_pham" name="ten_hinh_thuc_san_pham" class="form-control">
+              <input type="text" id="ten_hinh_thuc_san_pham" name="ten_hinh_thuc_san_pham" class="form-control" maxlength="100">
             </div>
           </div>
 

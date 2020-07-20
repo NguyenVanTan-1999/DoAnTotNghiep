@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_nha_xuat_ban">Tên Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" value="{{ $nhaxuatBans->ten_nha_xuat_ban }}">
+              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" value="{{ $nhaxuatBans->ten_nha_xuat_ban }}" maxlength="100">
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi_nha_xuat_ban">Địa Chỉ Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" value="{{ $nhaxuatBans->dia_chi_nha_xuat_ban }}" class="form-control">
+              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" value="{{ $nhaxuatBans->dia_chi_nha_xuat_ban }}" class="form-control" maxlength="100">
             </div>
           </div>
 
@@ -94,7 +94,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="website_nha_xuat_ban">Website Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="website_nha_xuat_ban" name="website_nha_xuat_ban" value="{{ $nhaxuatBans->website_nha_xuat_ban }}" class="form-control">
+              <input type="url" id="website_nha_xuat_ban" name="website_nha_xuat_ban" value="{{ $nhaxuatBans->website_nha_xuat_ban }}" class="form-control" maxlength="100">
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="email_nha_xuat_ban">Email Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="email_nha_xuat_ban" name="email_nha_xuat_ban" value="{{ $nhaxuatBans->email_nha_xuat_ban }}" class="form-control">
+              <input type="email" id="email_nha_xuat_ban" name="email_nha_xuat_ban" value="{{ $nhaxuatBans->email_nha_xuat_ban }}" class="form-control" maxlength="100">
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai_nha_xuat_ban">Số Điện Thoại Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" value="{{ $nhaxuatBans->so_dien_thoai_nha_xuat_ban }}" class="form-control">
+              <input type="tel" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" value="{{ $nhaxuatBans->so_dien_thoai_nha_xuat_ban }}" class="form-control" pattern="[0-9]{8,11}">
             </div>
           </div>
 

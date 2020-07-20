@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_san_pham">Mã Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_san_pham" name="ma_san_pham" class="form-control">
+              <input type="text" id="ma_san_pham" name="ma_san_pham" class="form-control" maxlength="10">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control">
+              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" maxlength="100">
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control">
+              <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" maxlength="1000">
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="gia_tien_san_pham">Giá Tiền Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control">
+              <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" min="1000" max="999999">
             </div>
           </div>
 
