@@ -115,6 +115,7 @@ class SanPhamController extends Controller
 
         return redirect()->route('san-pham.cap-nhat', $sanPhams->id)->with('thongbaothanhcong', 'CẬP NHẬT THÔNG TIN SẢN PHẨM THÀNH CÔNG');
     }
+    
     public function upload(Request $request, $id)
     {
         $sanPhams = SanPham::find($id);
