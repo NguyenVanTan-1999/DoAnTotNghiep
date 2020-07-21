@@ -39,10 +39,8 @@ class HinhThucSanPhamController extends Controller
      */
     public function store(ThemMoiHinhThucSanPhamRequest $request)
     {
-        $loaihinhthucsp = "HTSP";
-
         $hinhthucsanPhams = new HinhThucSanPham;
-        $hinhthucsanPhams->loai_hinh_thuc_san_pham  = $loaihinhthucsp.$request->loai_hinh_thuc_san_pham;
+        $hinhthucsanPhams->loai_hinh_thuc_san_pham  = $request->loai_hinh_thuc_san_pham;
         $hinhthucsanPhams->ten_hinh_thuc_san_pham = $request->ten_hinh_thuc_san_pham;
         $hinhthucsanPhams->save();
 

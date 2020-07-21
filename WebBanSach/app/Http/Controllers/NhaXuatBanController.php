@@ -39,10 +39,8 @@ class NhaXuatBanController extends Controller
      */
     public function store(ThemMoiNhaXuatBanRequest $request)
     {
-        $manxb = "NXB";
-
         $nhaxuatBans = new NhaXuatBan;
-        $nhaxuatBans->ma_nha_xuat_ban  = $manxb.$request->ma_nha_xuat_ban;
+        $nhaxuatBans->ma_nha_xuat_ban  = $request->ma_nha_xuat_ban;
         $nhaxuatBans->ten_nha_xuat_ban = $request->ten_nha_xuat_ban;
         $nhaxuatBans->dia_chi_nha_xuat_ban = $request->dia_chi_nha_xuat_ban;
         $nhaxuatBans->website_nha_xuat_ban = $request->website_nha_xuat_ban;

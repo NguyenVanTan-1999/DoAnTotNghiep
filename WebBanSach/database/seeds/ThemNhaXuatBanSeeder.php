@@ -27,7 +27,9 @@ class ThemNhaXuatBanSeeder extends Seeder
         	['ma_nha_xuat_ban' => 'NXB005', 'ten_nha_xuat_ban' => 'Nhà Xuất Bản Thái Hà Books', 'dia_chi_nha_xuat_ban' => 'Lô B2, Khu Đấu Giá 3HA, Tổ Dân Phố Số 1, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội', 'website_nha_xuat_ban' => 'http://www.thaihabooks.com', 'email_nha_xuat_ban' => 'info@thaihabooks.com', 'so_dien_thoai_nha_xuat_ban' => '02437930480'],
 
 
-        	['ma_nha_xuat_ban' => 'NXB006', 'ten_nha_xuat_ban' => 'Nhà Xuất Bản Đông A Books', 'dia_chi_nha_xuat_ban' => '113 Đông Các, Phường Ô Chợ Dừa, Quận Đống Đa, Hà Nội', 'website_nha_xuat_ban' => 'http://www.dongabooks.vn', 'email_nha_xuat_ban' => 'tdtdonga@gmail.com', 'so_dien_thoai_nha_xuat_ban' => '0438569381']
+        	['ma_nha_xuat_ban' => 'NXB006', 'ten_nha_xuat_ban' => 'Nhà Xuất Bản Đông A Books', 'dia_chi_nha_xuat_ban' => '113 Đông Các, Phường Ô Chợ Dừa, Quận Đống Đa, Hà Nội', 'website_nha_xuat_ban' => 'http://www.dongabooks.vn', 'email_nha_xuat_ban' => 'tdtdonga@gmail.com', 'so_dien_thoai_nha_xuat_ban' => '0438569381'],
+
+            ['ma_nha_xuat_ban' => 'NXB007', 'ten_nha_xuat_ban' => 'Nhà Xuất Bản Phương Nam Books', 'dia_chi_nha_xuat_ban' => 'Lầu 1, Số 940 Đường 3/2, Phường 15, Quận 11, TP.HCM', 'website_nha_xuat_ban' => 'http://www.nhasachphuongnam.com', 'email_nha_xuat_ban' => 'xuatban@phuongnambook.com', 'so_dien_thoai_nha_xuat_ban' => '19006656']
         ]);
     }
 }
