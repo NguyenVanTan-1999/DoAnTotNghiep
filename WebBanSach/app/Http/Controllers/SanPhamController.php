@@ -45,8 +45,10 @@ class SanPhamController extends Controller
      */
     public function store(ThemMoiSanPhamRequest $request)
     {
+        $masp = "SP";
+
         $sanPhams = new SanPham;
-        $sanPhams->ma_san_pham  = $request->ma_san_pham;
+        $sanPhams->ma_san_pham  = $masp.$request->ma_san_pham;
         $sanPhams->ten_san_pham = $request->ten_san_pham;
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;

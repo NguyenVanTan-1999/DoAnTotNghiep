@@ -39,8 +39,10 @@ class LoaiSanPhamController extends Controller
      */
     public function store(ThemMoiLoaiSanPhamRequest $request)
     {
+        $maloaisp = "LSP";
+
         $loaisanPhams = new LoaiSanPham;
-        $loaisanPhams->ma_loai_san_pham  = $request->ma_loai_san_pham;
+        $loaisanPhams->ma_loai_san_pham  = $maloaisp.$request->ma_loai_san_pham;
         $loaisanPhams->ten_loai_san_pham = $request->ten_loai_san_pham;
         $loaisanPhams->save();
 
