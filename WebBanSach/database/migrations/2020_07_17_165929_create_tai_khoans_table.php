@@ -19,6 +19,7 @@ class CreateTaiKhoansTable extends Migration
             $table->string('mat_khau', 100);
             $table->string('ho_ten', 100);
             $table->integer('do_tuoi');
+            $table->string('gioi_tinh', 3);
             $table->string('dia_chi', 100);
             $table->string('quoc_gia', 100);
             $table->string('email', 100);

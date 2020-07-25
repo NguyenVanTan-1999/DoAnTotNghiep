@@ -61,7 +61,7 @@
                   <li><a href="{{ route('trang-chu-admin') }}"><i class="fa fa-bar-chart"></i>Trang Chủ</a>
                   </li>
 
-                  <li><a><i class="fa fa-unlock-alt"></i>Tài Khoản</a>
+                  <li><a href="{{ route('tai-khoan.danh-sach') }}"><i class="fa fa-unlock-alt"></i>Tài Khoản</a>
                   </li>
 
                   <li><a><i class="fa fa-shopping-cart"></i>Sản Phẩm Chung<span class="fa fa-chevron-down"></span></a>

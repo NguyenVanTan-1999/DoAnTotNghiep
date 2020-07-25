@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_loai_san_pham">Mã Loại Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_loai_san_pham" name="ma_loai_san_pham" class="form-control" maxlength="10">
+              <input type="text" id="ma_loai_san_pham" name="ma_loai_san_pham" class="form-control" placeholder="VD: LSP000" title="mã loại sản phẩm dài 6-10 ký tự, bao gồm chữ hoa và số" minlength="6" maxlength="10" pattern="^[A-Z]{3}[0-9]{3,}$">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control" maxlength="100">
+              <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control" title="tên loại sản phẩm không vượt quá 40 ký tự" maxlength="40">
             </div>
           </div>
 

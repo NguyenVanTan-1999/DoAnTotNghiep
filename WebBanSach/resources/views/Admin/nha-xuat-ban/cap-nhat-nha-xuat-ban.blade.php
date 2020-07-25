@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_nha_xuat_ban">Tên Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" value="{{ $nhaxuatBans->ten_nha_xuat_ban }}" maxlength="100">
+              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" title="tên nhà xuất bản không vượt quá 40 ký tự" maxlength="40" value="{{ $nhaxuatBans->ten_nha_xuat_ban }}">
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi_nha_xuat_ban">Địa Chỉ Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" value="{{ $nhaxuatBans->dia_chi_nha_xuat_ban }}" class="form-control" maxlength="100">
+              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" class="form-control" title="địa chỉ nhà xuất bản không vượt quá 100 ký tự" maxlength="100" value="{{ $nhaxuatBans->dia_chi_nha_xuat_ban }}">
             </div>
           </div>
 
@@ -94,7 +94,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="website_nha_xuat_ban">Website Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="url" id="website_nha_xuat_ban" name="website_nha_xuat_ban" value="{{ $nhaxuatBans->website_nha_xuat_ban }}" class="form-control" maxlength="100">
+              <input type="url" id="website_nha_xuat_ban" name="website_nha_xuat_ban" class="form-control" placeholder="http:// hoặc https://" title="website nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="https?://.+" value="{{ $nhaxuatBans->website_nha_xuat_ban }}">
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="email_nha_xuat_ban">Email Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="email" id="email_nha_xuat_ban" name="email_nha_xuat_ban" value="{{ $nhaxuatBans->email_nha_xuat_ban }}" class="form-control" maxlength="100">
+              <input type="email" id="email_nha_xuat_ban" name="email_nha_xuat_ban" class="form-control" title="email nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ $nhaxuatBans->email_nha_xuat_ban }}">
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai_nha_xuat_ban">Số Điện Thoại Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="tel" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" value="{{ $nhaxuatBans->so_dien_thoai_nha_xuat_ban }}" class="form-control" pattern="[0-9]{8,11}">
+              <input type="tel" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" class="form-control" title="số điện thoại nhà xuất bản khoảng 8-11 số" minlength="8" maxlength="11" pattern="[0-9]{8,11}" value="{{ $nhaxuatBans->so_dien_thoai_nha_xuat_ban }}">
             </div>
           </div>
 

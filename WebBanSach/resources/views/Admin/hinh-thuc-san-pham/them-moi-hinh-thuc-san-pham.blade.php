@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="loai_hinh_thuc_san_pham">Loại Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="loai_hinh_thuc_san_pham" name="loai_hinh_thuc_san_pham" class="form-control" maxlength="10">
+              <input type="text" id="loai_hinh_thuc_san_pham" name="loai_hinh_thuc_san_pham" class="form-control" placeholder="VD: HTSP000" title="loại hình thức sản phẩm dài 7-10 ký tự, bao gồm chữ hoa và số" minlength="7" maxlength="10" pattern="^[A-Z]{4}[0-9]{3,}$">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_hinh_thuc_san_pham">Tên Hình Thức Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_hinh_thuc_san_pham" name="ten_hinh_thuc_san_pham" class="form-control" maxlength="100">
+              <input type="text" id="ten_hinh_thuc_san_pham" name="ten_hinh_thuc_san_pham" class="form-control" title="tên hình thức sản phẩm không vượt quá 40 ký tự" maxlength="40">
             </div>
           </div>
 

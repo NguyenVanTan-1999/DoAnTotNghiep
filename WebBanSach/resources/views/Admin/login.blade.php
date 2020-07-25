@@ -61,10 +61,10 @@
               @endif
 
               <div>
-                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản Admin" minlength="5" maxlength="100" />
+                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản Admin" title="tên tài khoản admin dài 5-24 ký tự" minlength="5" maxlength="24" />
               </div>
               <div>
-                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu Admin" minlength="6" maxlength="100" />
+                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu Admin" title="mật khẩu admin dài 6-32 ký tự" minlength="6" maxlength="32" />
               </div>
               <div>
                 <button type="submit" class="btn btn-default submit">Đăng Nhập</button>

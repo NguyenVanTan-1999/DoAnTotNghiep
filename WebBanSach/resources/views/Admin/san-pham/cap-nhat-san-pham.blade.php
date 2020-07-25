@@ -108,7 +108,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" value="{{ $sanPhams->ten_san_pham }}" maxlength="100">
+                  <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 40 ký tự" maxlength="40" value="{{ $sanPhams->ten_san_pham }}">
                 </div>
               </div>
 
@@ -116,7 +116,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" value="{{ $sanPhams->thong_tin_san_pham }}" maxlength="1000">
+                  <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000" value="{{ $sanPhams->thong_tin_san_pham }}">
                 </div>
               </div>
 
@@ -132,7 +132,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="gia_tien_san_pham">Giá Tiền Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" value="{{ $sanPhams->gia_tien_san_pham }}" min="1000" max="999999">
+                  <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" title="giá tiền sản phẩm nằm trong khoảng 1.000 vnđ đến 999.999 vnđ" min="1000" max="999999" value="{{ $sanPhams->gia_tien_san_pham }}">
                 </div>
               </div>
 
@@ -142,7 +142,7 @@
                 <div class="col-md-6 col-sm-6">
                   <select id="nha_xuat_ban_id" name="nha_xuat_ban_id" class="form-control">
                     <option value="{{ $sanPhams->nhaxuatBan->ma_nha_xuat_ban }}">{{ $sanPhams->nhaxuatBan->ten_nha_xuat_ban }}</option>
-                    <option value="">--------------------------</option>
+                    <option value="">---</option>
 
                     @foreach($dsNhaXuatBan as $nhaxuatban)
                     <option value="{{ $nhaxuatban->ma_nha_xuat_ban }}">{{ $nhaxuatban->ten_nha_xuat_ban }}</option>
@@ -158,7 +158,7 @@
                 <div class="col-md-6 col-sm-6">
                   <select id="loai_san_pham_id" name="loai_san_pham_id" class="form-control">
                     <option value="{{ $sanPhams->loaisanPham->ma_loai_san_pham }}">{{ $sanPhams->loaisanPham->ten_loai_san_pham }}</option>
-                    <option value="">--------------------------</option>
+                    <option value="">---</option>
 
                     @foreach($dsLoaiSanPham as $loaisanpham)
                     <option value="{{ $loaisanpham->ma_loai_san_pham }}">{{ $loaisanpham->ten_loai_san_pham }}</option>
@@ -174,7 +174,7 @@
                 <div class="col-md-6 col-sm-6">
                   <select id="hinh_thuc_san_pham_id" name="hinh_thuc_san_pham_id" class="form-control">
                     <option value="{{ $sanPhams->hinhthucsanPham->loai_hinh_thuc_san_pham }}">{{ $sanPhams->hinhthucsanPham->ten_hinh_thuc_san_pham }}</option>
-                    <option value="">--------------------------</option>
+                    <option value="">---</option>
 
                     @foreach($dsHinhThucSanPham as $hinhthucsanpham)
                     <option value="{{ $hinhthucsanpham->loai_hinh_thuc_san_pham }}">{{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</option>
@@ -206,7 +206,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham">
+                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
                 </div>
               </div>
 

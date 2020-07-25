@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_san_pham">Mã Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_san_pham" name="ma_san_pham" class="form-control" maxlength="10">
+              <input type="text" id="ma_san_pham" name="ma_san_pham" class="form-control" placeholder="VD: SP000" title="mã sản phẩm dài 5-10 ký tự, bao gồm chữ hoa và số" minlength="5" maxlength="10" pattern="^[A-Z]{2}[0-9]{3,}$">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" maxlength="100">
+              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 40 ký tự" maxlength="40">
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" maxlength="1000">
+              <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000">
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="gia_tien_san_pham">Giá Tiền Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" min="1000" max="999999">
+              <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" title="giá tiền sản phẩm nằm trong khoảng 1.000 vnđ đến 999.999 vnđ" min="1000" max="999999">
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham">
+              <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
             </div>
           </div>
 
