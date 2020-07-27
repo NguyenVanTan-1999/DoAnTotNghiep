@@ -117,7 +117,7 @@ class NhaXuatBanController extends Controller
     public function restore($id)
     {
         NhaXuatBan::withTrashed()->where('id', $id)->restore();
-        
+
         return redirect()->route('nha-xuat-ban.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC NHÀ XUẤT BẢN THÀNH CÔNG');
     }
 }

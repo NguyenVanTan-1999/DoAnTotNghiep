@@ -28,7 +28,7 @@
     
     <script>
       isBool = true;
-      
+
       function showHidden1(){
         if(isBool){
           document.getElementById("mat_khau").setAttribute("type", "text");
@@ -147,7 +147,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-              
+
 
               @yield('main-content')
 

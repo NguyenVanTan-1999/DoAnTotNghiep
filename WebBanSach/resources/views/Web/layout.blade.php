@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/Web/img/CKC-1.ico') }}">
-		
+
 		<!-- all css here -->
 		<!-- bootstrap v3.3.6 css -->
         <link rel="stylesheet" href="{{ asset('assets/Web/css/bootstrap.min.css') }}">
@@ -570,8 +570,8 @@
             </div>
         </div>
         <!-- Modal end -->
-		
-		
+
+
 		<!-- all js here -->
 		<!-- jquery latest version -->
         <script src="{{ asset('assets/Web/js/vendor/jquery-1.12.0.min.js') }}"></script>

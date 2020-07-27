@@ -51,7 +51,7 @@ class SanPhamController extends Controller
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;
         $sanPhams->gia_tien_san_pham = $request->gia_tien_san_pham;
-        
+
         if($request->hasFile('anh_minh_hoa_san_pham'))
         {
             $file = $request->file('anh_minh_hoa_san_pham');
@@ -171,7 +171,7 @@ class SanPhamController extends Controller
     public function restore($id)
     {
         SanPham::withTrashed()->where('id', $id)->restore();
-        
+
         return redirect()->route('san-pham.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC SẢN PHẨM THÀNH CÔNG');
     }
 }

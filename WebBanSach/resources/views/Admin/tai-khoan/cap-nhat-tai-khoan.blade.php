@@ -95,7 +95,7 @@
         <div class="tab-content" id="myTabContent">
 
           <div class="tab-pane fade show active" id="thong-tin-tai-khoan" role="tabpanel" aria-labelledby="thong-tin-tai-khoan-tab">
-            
+
             <form action="{{ route('tai-khoan.xu-ly-cap-nhat', $taiKhoans->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
               @csrf
@@ -230,7 +230,7 @@
           </div>
 
           <div class="tab-pane fade" id="anh-dai-dien-tai-khoan" role="tabpanel" aria-labelledby="anh-dai-dien-tai-khoan-tab">
-            
+
             <form action="{{ route('tai-khoan.cap-nhat-hinh-anh', $taiKhoans->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
               @csrf

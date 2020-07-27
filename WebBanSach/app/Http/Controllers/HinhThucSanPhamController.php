@@ -109,7 +109,7 @@ class HinhThucSanPhamController extends Controller
     public function restore($id)
     {
         HinhThucSanPham::withTrashed()->where('id', $id)->restore();
-        
+
         return redirect()->route('hinh-thuc-san-pham.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC HÌNH THỨC SẢN PHẨM THÀNH CÔNG');
     }
 }

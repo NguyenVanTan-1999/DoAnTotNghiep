@@ -109,7 +109,7 @@ class LoaiSanPhamController extends Controller
     public function restore($id)
     {
         LoaiSanPham::withTrashed()->where('id', $id)->restore();
-        
+
         return redirect()->route('loai-san-pham.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC LOẠI SẢN PHẨM THÀNH CÔNG');
     }
 }

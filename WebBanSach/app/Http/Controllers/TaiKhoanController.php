@@ -50,7 +50,7 @@ class TaiKhoanController extends Controller
         $taiKhoans->quoc_gia = $request->quoc_gia;
         $taiKhoans->email = $request->email;
         $taiKhoans->so_dien_thoai = $request->so_dien_thoai;
-        
+
         if($request->hasFile('anh_dai_dien'))
         {
             $file = $request->file('anh_dai_dien');
@@ -212,7 +212,7 @@ class TaiKhoanController extends Controller
     public function restore($id)
     {
         TaiKhoan::withTrashed()->where('id', $id)->restore();
-        
+
         return redirect()->route('tai-khoan.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC TÀI KHOẢN THÀNH CÔNG');
     }
 }

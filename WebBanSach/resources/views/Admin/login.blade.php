@@ -21,10 +21,10 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/build/css/custom.min.css') }}" rel="stylesheet">
-    
+
     <script>
       isBool = true;
-      
+
       function showHidden(){
         if(isBool){
           document.getElementById("mat_khau_admin").setAttribute("type", "text");
@@ -49,7 +49,7 @@
             <form action="{{ route('xu-ly-dang-nhap-admin') }}" method="POST">
 
               @csrf
-              
+
               <h1>Đăng Nhập Admin</h1>
 
               @if($errors->any())
