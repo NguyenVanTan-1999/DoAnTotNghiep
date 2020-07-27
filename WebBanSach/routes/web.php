@@ -23,6 +23,9 @@ Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dan
 Route::prefix('quan-tri')->group(function () {
 	Route::middleware('auth')->group(function () {
 		Route::get('/', 'HomeAdminController@index')->name('trang-chu-admin');
+		Route::get('/cap-nhat-Admin/{id}', 'QuanTriVienController@capnhatAdmin')->name('cap-nhat-admin');
+		Route::post('/cap-nhat-Admin/{id}', 'QuanTriVienController@xulycapnhatAdmin')->name('xu-ly-cap-nhat-admin');
+		Route::post('/cap-nhat-hinh-anh-Admin/{id}', 'QuanTriVienController@xulydangtaiAdmin')->name('cap-nhat-hinh-anh-admin');
 
 		Route::prefix('loai-san-pham')->group(function () {
 			Route::name('loai-san-pham.')->group(function () {

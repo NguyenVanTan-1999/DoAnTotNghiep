@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\NhaXuatBan;
+use App\QuanTriVien;
 use App\Http\Requests\ThemMoiNhaXuatBanRequest;
 use App\Http\Requests\CapNhatNhaXuatBanRequest;
 
@@ -18,7 +19,8 @@ class NhaXuatBanController extends Controller
     public function index()
     {
         $dsNhaXuatBan = NhaXuatBan::all();
-        return view('Admin.nha-xuat-ban.ds-nha-xuat-ban', compact('dsNhaXuatBan'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.nha-xuat-ban.ds-nha-xuat-ban', compact('dsNhaXuatBan', 'dsQuanTriVien'));
     }
 
     /**
@@ -28,7 +30,8 @@ class NhaXuatBanController extends Controller
      */
     public function create()
     {
-        return view('Admin.nha-xuat-ban.them-moi-nha-xuat-ban');
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.nha-xuat-ban.them-moi-nha-xuat-ban', compact('dsQuanTriVien'));
     }
 
     /**
@@ -71,7 +74,8 @@ class NhaXuatBanController extends Controller
     public function edit($id)
     {
         $nhaxuatBans = NhaXuatBan::find($id);
-        return view('Admin.nha-xuat-ban.cap-nhat-nha-xuat-ban', compact('nhaxuatBans'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.nha-xuat-ban.cap-nhat-nha-xuat-ban', compact('nhaxuatBans', 'dsQuanTriVien'));
     }
 
     /**
@@ -111,7 +115,8 @@ class NhaXuatBanController extends Controller
     public function recycleBin()
     {
         $dsNhaXuatBan = NhaXuatBan::onlyTrashed()->get();
-        return view('Admin.nha-xuat-ban.khoi-phuc-nha-xuat-ban', compact('dsNhaXuatBan'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.nha-xuat-ban.khoi-phuc-nha-xuat-ban', compact('dsNhaXuatBan', 'dsQuanTriVien'));
     }
 
     public function restore($id)

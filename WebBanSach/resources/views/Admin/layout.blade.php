@@ -25,7 +25,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/build/css/custom.min.css') }}" rel="stylesheet">
-    
+
     <script>
       isBool = true;
 
@@ -83,15 +83,17 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="{{ asset('assets/Admin/images/Cat.jpg') }}" class="img-circle profile_img">
+            @foreach($dsQuanTriVien as $quantrivien)
+              <div class="profile clearfix">
+                <div class="profile_pic">
+                  <img src="{{ asset('images/admin/'.$quantrivien->anh_dai_dien_admin) }}" class="img-circle profile_img">
+                </div>
+                <div class="profile_info">
+                  <span>Welcome,</span>
+                  <h2>{{ $quantrivien->ho_ten_admin }}</h2>
+                </div>
               </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>Tony Tấn</h2>
-              </div>
-            </div>
+            @endforeach
             <!-- /menu profile quick info -->
 
             <br />

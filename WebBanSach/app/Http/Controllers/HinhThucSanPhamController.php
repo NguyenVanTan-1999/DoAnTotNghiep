@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\HinhThucSanPham;
+use App\QuanTriVien;
 use App\Http\Requests\ThemMoiHinhThucSanPhamRequest;
 use App\Http\Requests\CapNhatHinhThucSanPhamRequest;
 
@@ -18,7 +19,8 @@ class HinhThucSanPhamController extends Controller
     public function index()
     {
         $dsHinhThucSanPham = HinhThucSanPham::all();
-        return view('Admin.hinh-thuc-san-pham.ds-hinh-thuc-san-pham', compact('dsHinhThucSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hinh-thuc-san-pham.ds-hinh-thuc-san-pham', compact('dsHinhThucSanPham', 'dsQuanTriVien'));
     }
 
     /**
@@ -28,7 +30,8 @@ class HinhThucSanPhamController extends Controller
      */
     public function create()
     {
-        return view('Admin.hinh-thuc-san-pham.them-moi-hinh-thuc-san-pham');
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hinh-thuc-san-pham.them-moi-hinh-thuc-san-pham', compact('dsQuanTriVien'));
     }
 
     /**
@@ -67,7 +70,8 @@ class HinhThucSanPhamController extends Controller
     public function edit($id)
     {
         $hinhthucsanPhams = HinhThucSanPham::find($id);
-        return view('Admin.hinh-thuc-san-pham.cap-nhat-hinh-thuc-san-pham', compact('hinhthucsanPhams'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hinh-thuc-san-pham.cap-nhat-hinh-thuc-san-pham', compact('hinhthucsanPhams', 'dsQuanTriVien'));
     }
 
     /**
@@ -103,7 +107,8 @@ class HinhThucSanPhamController extends Controller
     public function recycleBin()
     {
         $dsHinhThucSanPham = HinhThucSanPham::onlyTrashed()->get();
-        return view('Admin.hinh-thuc-san-pham.khoi-phuc-hinh-thuc-san-pham', compact('dsHinhThucSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hinh-thuc-san-pham.khoi-phuc-hinh-thuc-san-pham', compact('dsHinhThucSanPham', 'dsQuanTriVien'));
     }
 
     public function restore($id)

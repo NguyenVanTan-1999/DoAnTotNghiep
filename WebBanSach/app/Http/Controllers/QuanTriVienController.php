@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\QuanTriVien;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\DangNhapRequest;
+use App\Http\Requests\CapNhatQuanTriVienRequest;
 
 class QuanTriVienController extends Controller
 {
@@ -37,5 +38,53 @@ class QuanTriVienController extends Controller
     {
         Auth::logout();
         return redirect()->route('dang-nhap-admin');
+    }
+
+    public function capnhatAdmin($id)
+    {
+        $quantriViens = QuanTriVien::find($id);
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.quan-tri-vien.cap-nhat-quan-tri-vien', compact('quantriViens', 'dsQuanTriVien'));
+    }
+
+    public function xulycapnhatAdmin(CapNhatQuanTriVienRequest $request, $id)
+    {
+        $quantriViens = QuanTriVien::find($id);
+        $quantriViens->ho_ten_admin = $request->ho_ten_admin;
+        $quantriViens->save();
+
+        return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothanhcong', 'CẬP NHẬT THÔNG TIN QUẢN TRỊ VIÊN THÀNH CÔNG');
+    }
+
+    public function xulydangtaiAdmin(Request $request, $id)
+    {
+        $quantriViens = QuanTriVien::find($id);
+
+        $this->validate($request,
+        [
+            'anh_dai_dien_admin' => 'required|max:255|image|mimes:jpeg,png,jpg'
+        ],
+
+        [
+            'required'    => 'Vui Lòng Chọn :attribute',
+            'max'         => ':attribute Chỉ Nhiều Nhất 255 Ký Tự',
+            'image'       => ':attribute Phải Là Định Dạng Hình Ảnh',
+            'mimes'       => ':attribute Phải Có Đuôi Mở Rộng Là JPEG, PNG Hoặc JPG'
+        ],
+
+        [
+            'anh_dai_dien_admin' => 'Ảnh Đại Diện Admin'
+        ]);
+
+        if($request->hasFile('anh_dai_dien_admin'))
+        {
+            $file = $request->file('anh_dai_dien_admin');
+            $filename = $file->store('');
+            $file->move('images/admin/', $filename);
+        }
+        $quantriViens->anh_dai_dien_admin = $filename;
+        $quantriViens->save();
+
+        return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothanhcong', 'CẬP NHẬT HÌNH ẢNH QUẢN TRỊ VIÊN THÀNH CÔNG');
     }
 }

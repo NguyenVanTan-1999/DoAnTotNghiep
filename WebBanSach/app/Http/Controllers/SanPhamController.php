@@ -8,6 +8,7 @@ use App\SanPham;
 use App\NhaXuatBan;
 use App\LoaiSanPham;
 use App\HinhThucSanPham;
+use App\QuanTriVien;
 use App\Http\Requests\ThemMoiSanPhamRequest;
 use App\Http\Requests\CapNhatSanPhamRequest;
 
@@ -21,7 +22,8 @@ class SanPhamController extends Controller
     public function index()
     {
         $dsSanPham = SanPham::all();
-        return view('Admin.san-pham.ds-san-pham', compact('dsSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.san-pham.ds-san-pham', compact('dsSanPham', 'dsQuanTriVien'));
     }
 
     /**
@@ -34,7 +36,8 @@ class SanPhamController extends Controller
         $dsNhaXuatBan = NhaXuatBan::all();
         $dsLoaiSanPham = LoaiSanPham::all();
         $dsHinhThucSanPham = HinhThucSanPham::all();
-        return view('Admin.san-pham.them-moi-san-pham', compact('dsNhaXuatBan', 'dsLoaiSanPham', 'dsHinhThucSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.san-pham.them-moi-san-pham', compact('dsNhaXuatBan', 'dsLoaiSanPham', 'dsHinhThucSanPham', 'dsQuanTriVien'));
     }
 
     /**
@@ -91,7 +94,8 @@ class SanPhamController extends Controller
         $dsLoaiSanPham = LoaiSanPham::all();
         $dsHinhThucSanPham = HinhThucSanPham::all();
         $sanPhams = SanPham::find($id);
-        return view('Admin.san-pham.cap-nhat-san-pham', compact('sanPhams', 'dsNhaXuatBan', 'dsLoaiSanPham', 'dsHinhThucSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.san-pham.cap-nhat-san-pham', compact('sanPhams', 'dsNhaXuatBan', 'dsLoaiSanPham', 'dsHinhThucSanPham', 'dsQuanTriVien'));
     }
 
     /**
@@ -165,7 +169,8 @@ class SanPhamController extends Controller
     public function recycleBin()
     {
         $dsSanPham = SanPham::onlyTrashed()->get();
-        return view('Admin.san-pham.khoi-phuc-san-pham', compact('dsSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.san-pham.khoi-phuc-san-pham', compact('dsSanPham', 'dsQuanTriVien'));
     }
 
     public function restore($id)

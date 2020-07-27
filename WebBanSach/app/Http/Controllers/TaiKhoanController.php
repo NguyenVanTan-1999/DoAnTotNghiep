@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\TaiKhoan;
+use App\QuanTriVien;
 use App\Http\Requests\ThemMoiTaiKhoanRequest;
 use App\Http\Requests\CapNhatTaiKhoanRequest;
 use Hash;
@@ -19,7 +20,8 @@ class TaiKhoanController extends Controller
     public function index()
     {
         $dsTaiKhoan = TaiKhoan::all();
-        return view('Admin.tai-khoan.ds-tai-khoan', compact('dsTaiKhoan'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.tai-khoan.ds-tai-khoan', compact('dsTaiKhoan', 'dsQuanTriVien'));
     }
 
     /**
@@ -29,7 +31,8 @@ class TaiKhoanController extends Controller
      */
     public function create()
     {
-        return view('Admin.tai-khoan.them-moi-tai-khoan');
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.tai-khoan.them-moi-tai-khoan', compact('dsQuanTriVien'));
     }
 
     /**
@@ -83,7 +86,8 @@ class TaiKhoanController extends Controller
     public function edit($id)
     {
         $taiKhoans = TaiKhoan::find($id);
-        return view('Admin.tai-khoan.cap-nhat-tai-khoan', compact('taiKhoans'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.tai-khoan.cap-nhat-tai-khoan', compact('taiKhoans', 'dsQuanTriVien'));
     }
 
     /**
@@ -206,7 +210,8 @@ class TaiKhoanController extends Controller
     public function recycleBin()
     {
         $dsTaiKhoan = TaiKhoan::onlyTrashed()->get();
-        return view('Admin.tai-khoan.khoi-phuc-tai-khoan', compact('dsTaiKhoan'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.tai-khoan.khoi-phuc-tai-khoan', compact('dsTaiKhoan', 'dsQuanTriVien'));
     }
 
     public function restore($id)

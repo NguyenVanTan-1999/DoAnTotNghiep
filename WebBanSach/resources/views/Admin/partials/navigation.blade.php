@@ -7,14 +7,18 @@
 
         <nav class="nav navbar-nav">
         <ul class=" navbar-right">
-          <li class="nav-item dropdown open" style="padding-left: 15px;">
-            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-              <img src="{{ asset('assets/Admin/images/Cat.jpg') }}" alt="">Tony Tấn
-            </a>
-            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Đăng Xuất</a>
-            </div>
-          </li>
+          @foreach($dsQuanTriVien as $quantrivien)
+            <li class="nav-item dropdown open" style="padding-left: 15px;">
+              <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                <img src="{{ asset('images/admin/'.$quantrivien->anh_dai_dien_admin) }}" alt="">{{ $quantrivien->ho_ten_admin }}
+              </a>
+              <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item"  href="{{ route('cap-nhat-admin', $quantrivien->id) }}">Cập Nhật Thông Tin</a>
+                <hr />
+                <a class="dropdown-item"  href="{{ route('dang-xuat-admin') }}"><i class="fa fa-sign-out pull-right"></i>Đăng Xuất</a>
+              </div>
+            </li>
+          @endforeach
 
           <li role="presentation" class="nav-item dropdown open">
             <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">

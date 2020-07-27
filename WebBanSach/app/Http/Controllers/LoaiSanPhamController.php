@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\LoaiSanPham;
+use App\QuanTriVien;
 use App\Http\Requests\ThemMoiLoaiSanPhamRequest;
 use App\Http\Requests\CapNhatLoaiSanPhamRequest;
 
@@ -18,7 +19,8 @@ class LoaiSanPhamController extends Controller
     public function index()
     {
         $dsLoaiSanPham = LoaiSanPham::all();
-        return view('Admin.loai-san-pham.ds-loai-san-pham', compact('dsLoaiSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.loai-san-pham.ds-loai-san-pham', compact('dsLoaiSanPham', 'dsQuanTriVien'));
     }
 
     /**
@@ -28,7 +30,8 @@ class LoaiSanPhamController extends Controller
      */
     public function create()
     {
-        return view('Admin.loai-san-pham.them-moi-loai-san-pham');
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.loai-san-pham.them-moi-loai-san-pham', compact('dsQuanTriVien'));
     }
 
     /**
@@ -67,7 +70,8 @@ class LoaiSanPhamController extends Controller
     public function edit($id)
     {
         $loaisanPhams = LoaiSanPham::find($id);
-        return view('Admin.loai-san-pham.cap-nhat-loai-san-pham', compact('loaisanPhams'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.loai-san-pham.cap-nhat-loai-san-pham', compact('loaisanPhams', 'dsQuanTriVien'));
     }
 
     /**
@@ -103,7 +107,8 @@ class LoaiSanPhamController extends Controller
     public function recycleBin()
     {
         $dsLoaiSanPham = LoaiSanPham::onlyTrashed()->get();
-        return view('Admin.loai-san-pham.khoi-phuc-loai-san-pham', compact('dsLoaiSanPham'));
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.loai-san-pham.khoi-phuc-loai-san-pham', compact('dsLoaiSanPham', 'dsQuanTriVien'));
     }
 
     public function restore($id)
