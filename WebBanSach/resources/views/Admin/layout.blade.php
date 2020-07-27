@@ -25,6 +25,50 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/build/css/custom.min.css') }}" rel="stylesheet">
+    
+    <script>
+      isBool = true;
+      
+      function showHidden1(){
+        if(isBool){
+          document.getElementById("mat_khau").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("mat_khau").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+
+      function showHidden2(){
+        if(isBool){
+          document.getElementById("nhap_lai_mat_khau").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("nhap_lai_mat_khau").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+
+      function showHidden3(){
+        if(isBool){
+          document.getElementById("mat_khau_cu").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("mat_khau_cu").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+
+      function showHidden4(){
+        if(isBool){
+          document.getElementById("nhap_lai_mat_khau_moi").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("nhap_lai_mat_khau_moi").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+    </script>
   </head>
 
   <body class="nav-md">

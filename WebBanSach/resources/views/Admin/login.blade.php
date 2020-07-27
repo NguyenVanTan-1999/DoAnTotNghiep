@@ -21,6 +21,20 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/build/css/custom.min.css') }}" rel="stylesheet">
+    
+    <script>
+      isBool = true;
+      
+      function showHidden(){
+        if(isBool){
+          document.getElementById("mat_khau_admin").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("mat_khau_admin").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+    </script>
   </head>
 
   <body class="login">
@@ -63,8 +77,9 @@
               <div>
                 <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản Admin" title="tên tài khoản admin dài 5-24 ký tự" minlength="5" maxlength="24" />
               </div>
-              <div>
+              <div style="position: relative;">
                 <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu Admin" title="mật khẩu admin dài 6-32 ký tự" minlength="6" maxlength="32" />
+                <a style="display: block; position: absolute; top: 0; right: 0; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden()"></i></a>
               </div>
               <div>
                 <button type="submit" class="btn btn-default submit">Đăng Nhập</button>

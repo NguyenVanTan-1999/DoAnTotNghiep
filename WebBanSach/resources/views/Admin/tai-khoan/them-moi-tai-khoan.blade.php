@@ -77,16 +77,18 @@
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau">Mật Khẩu <span class="required">*</span>
             </label>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6" style="position: relative;">
               <input type="password" id="mat_khau" name="mat_khau" class="form-control" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+              <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden1()"></i></a>
             </div>
           </div>
 
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="nhap_lai_mat_khau">Nhập Lại Mật Khẩu <span class="required">*</span>
             </label>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6" style="position: relative;">
               <input type="password" id="nhap_lai_mat_khau" name="nhap_lai_mat_khau" class="form-control" title="nhập lại mật khẩu phải trùng khớp với mật khẩu" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+              <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden2()"></i></a>
             </div>
           </div>
 

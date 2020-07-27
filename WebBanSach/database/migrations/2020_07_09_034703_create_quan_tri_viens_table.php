@@ -18,6 +18,7 @@ class CreateQuanTriViensTable extends Migration
             $table->string('ten_tai_khoan_admin', 100)->unique();
             $table->string('mat_khau_admin', 100);
             $table->string('ho_ten_admin', 100);
+            $table->string('anh_dai_dien_admin');
             $table->timestamps();
             $table->softDeletes();
         });
