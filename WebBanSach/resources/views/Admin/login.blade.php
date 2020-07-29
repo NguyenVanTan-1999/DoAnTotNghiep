@@ -75,12 +75,14 @@
               @endif
 
               <div>
-                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản Admin" title="tên tài khoản admin dài 5-24 ký tự" minlength="5" maxlength="24" />
+                <input type="text" id="ten_tai_khoan_admin" name="ten_tai_khoan_admin" class="form-control" placeholder="Tên Tài Khoản Admin" title="tên tài khoản admin dài 5-24 ký tự, bao gồm chữ thường, không chứa ký tự đặt biệt" minlength="5" maxlength="24" pattern="[a-z]{5,}" />
               </div>
+
               <div style="position: relative;">
-                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu Admin" title="mật khẩu admin dài 6-32 ký tự" minlength="6" maxlength="32" />
+                <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" placeholder="Mật Khẩu Admin" title="mật khẩu admin dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" />
                 <a style="display: block; position: absolute; top: 0; right: 0; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden()"></i></a>
               </div>
+
               <div>
                 <button type="submit" class="btn btn-default submit">Đăng Nhập</button>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>

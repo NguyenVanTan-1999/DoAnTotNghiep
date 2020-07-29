@@ -13,4 +13,9 @@ class QuanTriVien extends Authenticatable
     {
     	return $this->mat_khau_admin;
     }
+
+    public function doimatkhauAdmin($value)
+    {
+    	$this->attributes['mat_khau_admin'] = Hash::make($value);
+    }
 }

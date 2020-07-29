@@ -13,7 +13,7 @@ class ThemQuanTriVienSeeder extends Seeder
     {
         App\QuanTriVien::create([
         	'ten_tai_khoan_admin' => 'admin',
-        	'mat_khau_admin'      => Hash::make('161199'),
+        	'mat_khau_admin'      => Hash::make('Nguyenvantan1999'),
         	'ho_ten_admin'        => 'Nguyen Van Tan',
         ]);
     }

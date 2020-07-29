@@ -86,6 +86,10 @@
             <a class="nav-link" id="anh-dai-dien-admin-quan-tri-vien-tab" data-toggle="tab" href="#anh-dai-dien-admin-quan-tri-vien" role="tab" aria-controls="anh-dai-dien-admin-quan-tri-vien" aria-selected="false">Ảnh Đại Diện Admin Quản Trị Viên</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" id="mat-khau-admin-quan-tri-vien-tab" data-toggle="tab" href="#mat-khau-admin-quan-tri-vien" role="tab" aria-controls="mat-khau-admin-quan-tri-vien" aria-selected="false">Mật Khẩu Admin Quản Trị Viên</a>
+          </li>
+
         </ul>
 
         <div class="tab-content" id="myTabContent">
@@ -135,6 +139,51 @@
                 </label>
                 <div class="col-md-6 col-sm-6">
                   <input type="file" id="anh_dai_dien_admin" name="anh_dai_dien_admin" title="ảnh đại diện admin với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
+                </div>
+              </div>
+
+              <div class="ln_solid"></div>
+
+              <div class="item form-group">
+                <div class="col-md-6 col-sm-6 offset-md-3">
+                  <button type="submit" class="btn btn-app"><i class="fa fa-edit"></i>Sửa</button>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="tab-pane fade" id="mat-khau-admin-quan-tri-vien" role="tabpanel" aria-labelledby="mat-khau-admin-quan-tri-vien-tab">
+
+            <form action="{{ route('thay-doi-mat-khau-admin', $quantriViens->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+              @csrf
+
+              <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau_admin_cu">Mật Khẩu Admin Cũ <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6" style="position: relative;">
+                  <input type="password" id="mat_khau_admin_cu" name="mat_khau_admin_cu" class="form-control" title="mật khẩu admin cũ phải trùng khớp với mật khẩu admin hiện tại" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden5()"></i></a>
+                </div>
+              </div>
+
+              <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau_admin">Mật Khẩu Admin Mới <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6" style="position: relative;">
+                  <input type="password" id="mat_khau_admin" name="mat_khau_admin" class="form-control" title="mật khẩu admin mới dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden6()"></i></a>
+                </div>
+              </div>
+
+              <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="nhap_lai_mat_khau_admin_moi">Nhập Lại Mật Khẩu Admin Mới <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6" style="position: relative;">
+                  <input type="password" id="nhap_lai_mat_khau_admin_moi" name="nhap_lai_mat_khau_admin_moi" class="form-control" title="nhập lại mật khẩu admin mới phải trùng khớp với mật khẩu admin mới" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden7()"></i></a>
                 </div>
               </div>
 

@@ -68,6 +68,36 @@
           isBool = true;
         }
       }
+
+      function showHidden5(){
+        if(isBool){
+          document.getElementById("mat_khau_admin_cu").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("mat_khau_admin_cu").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+
+      function showHidden6(){
+        if(isBool){
+          document.getElementById("mat_khau_admin").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("mat_khau_admin").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
+
+      function showHidden7(){
+        if(isBool){
+          document.getElementById("nhap_lai_mat_khau_admin_moi").setAttribute("type", "text");
+          isBool = false;
+        }else{
+          document.getElementById("nhap_lai_mat_khau_admin_moi").setAttribute("type", "password");
+          isBool = true;
+        }
+      }
     </script>
   </head>
 

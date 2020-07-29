@@ -7,6 +7,7 @@ use App\QuanTriVien;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\DangNhapRequest;
 use App\Http\Requests\CapNhatQuanTriVienRequest;
+use Hash;
 
 class QuanTriVienController extends Controller
 {
@@ -24,8 +25,9 @@ class QuanTriVienController extends Controller
 
         if(Auth::attempt(['ten_tai_khoan_admin' => $ten_tai_khoan_admin, 'password' => $mat_khau_admin]))
         {
-            return redirect()->route('trang-chu-admin');    
+            return redirect()->route('trang-chu-admin');
         }
+
         return redirect()->route('dang-nhap-admin')->with('thongbaothatbai','TÀI KHOẢN ADMIN KHÔNG ĐÚNG');
     }
 
@@ -37,6 +39,7 @@ class QuanTriVienController extends Controller
     public function dangxuatAdmin()
     {
         Auth::logout();
+
         return redirect()->route('dang-nhap-admin');
     }
 
@@ -86,5 +89,48 @@ class QuanTriVienController extends Controller
         $quantriViens->save();
 
         return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothanhcong', 'CẬP NHẬT HÌNH ẢNH QUẢN TRỊ VIÊN THÀNH CÔNG');
+    }
+
+    public function xulydoimatkhauAdmin(Request $request, $id)
+    {
+        $this->validate($request,
+        [
+            'mat_khau_admin_cu'           => 'required|min:6|max:32',
+            'mat_khau_admin'              => 'required|min:6|max:32',
+            'nhap_lai_mat_khau_admin_moi' => 'required|min:6|max:32|same:mat_khau_admin'
+        ],
+
+        [
+            'required'    => 'Vui Lòng Nhập :attribute',
+            'min'         => ':attribute Phải Ít Nhất 6 Ký Tự',
+            'max'         => ':attribute Chỉ Nhiều Nhất 32 Ký Tự',
+            'same'        => ':attribute Không Khớp'
+        ],
+
+        [
+            'mat_khau_admin_cu'           => 'Mật Khẩu Admin Cũ',
+            'mat_khau_admin'              => 'Mật Khẩu Admin Mới',
+            'nhap_lai_mat_khau_admin_moi' => 'Nhập Lại Mật Khẩu Admin Mới'
+        ]);
+
+        $quantriViens = QuanTriVien::find($id);
+        if(!Hash::check($request->mat_khau_admin_cu, $quantriViens->mat_khau_admin))
+        {
+            return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothatbai', 'CẬP NHẬT MẬT KHẨU ADMIN QUẢN TRỊ VIÊN THẤT BẠI');
+        }
+        else
+        {
+            if(!Hash::check($request->mat_khau_admin, $quantriViens->mat_khau_admin))
+            {
+                $quantriViens->mat_khau_admin = Hash::make($request->mat_khau_admin);
+                $quantriViens->save();
+
+                return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothanhcong', 'CẬP NHẬT MẬT KHẨU ADMIN QUẢN TRỊ VIÊN THÀNH CÔNG');
+            }
+            else
+            {
+                return redirect()->route('cap-nhat-admin', $quantriViens->id)->with('thongbaothatbai', 'MẬT KHẨU ADMIN MỚI KHÔNG ĐƯỢC TRÙNG VỚI MẬT KHẨU ADMIN HIỆN TẠI');
+            }
+        }
     }
 }
