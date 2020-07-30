@@ -12,7 +12,7 @@ class ThemLoaiSanPhamSeeder extends Seeder
     public function run()
     {
         DB::table('loai_san_pham')->insert([
-        	['ma_loai_san_pham' => 'LSP001', 'ten_loai_san_pham' => 'Tiểu Thuyết'],
+        	['ma_loai_san_pham' => 'LSP001', 'ten_loai_san_pham' => 'Văn Học'],
         	['ma_loai_san_pham' => 'LSP002', 'ten_loai_san_pham' => 'Kinh Tế'],
         	['ma_loai_san_pham' => 'LSP003', 'ten_loai_san_pham' => 'Tâm Lý - Kĩ Năng Sống'],
         	['ma_loai_san_pham' => 'LSP004', 'ten_loai_san_pham' => 'Giáo Dục Con'],
@@ -24,7 +24,7 @@ class ThemLoaiSanPhamSeeder extends Seeder
             ['ma_loai_san_pham' => 'LSP010', 'ten_loai_san_pham' => 'Tin Học'],
             ['ma_loai_san_pham' => 'LSP011', 'ten_loai_san_pham' => 'Kiến Thức Bách Khoa'],
             ['ma_loai_san_pham' => 'LSP012', 'ten_loai_san_pham' => 'Truyện Ngắn - Tản Văn'],
-            ['ma_loai_san_pham' => 'LSP013', 'ten_loai_san_pham' => 'Văn Học']
+            ['ma_loai_san_pham' => 'LSP013', 'ten_loai_san_pham' => 'Tiểu Thuyết']
         ]);
     }
 }

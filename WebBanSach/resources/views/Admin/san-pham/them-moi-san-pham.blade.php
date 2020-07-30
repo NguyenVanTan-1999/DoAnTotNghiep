@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 40 ký tự" maxlength="40">
+              <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 60 ký tự" maxlength="60">
             </div>
           </div>
 
