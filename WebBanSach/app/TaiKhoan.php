@@ -13,7 +13,12 @@ class TaiKhoan extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function getPasswordAttribute($value)
+    public function getPasswordAttribute()
+    {
+    	return $this->mat_khau;
+    }
+
+    public function doimatkhaukhachHang($value)
     {
     	$this->attributes['mat_khau'] = Hash::make($value);
     }

@@ -1,6 +1,5 @@
 @extends('Web/layout')
 
-
 @section('main-content')
 <!-- banner-area-start -->
 <div class="banner-area banner-res-large ptb-35">

@@ -30,6 +30,30 @@
         <link rel="stylesheet" href="{{ asset('assets/Web/css/responsive.css') }}">
 		<!-- modernizr css -->
         <script src="{{ asset('assets/Web/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+        <script>
+        	isBool = true;
+
+        	function showHidden1(){
+		        if(isBool){
+		          document.getElementById("mat_khau").setAttribute("type", "text");
+		          isBool = false;
+		        }else{
+		          document.getElementById("mat_khau").setAttribute("type", "password");
+		          isBool = true;
+		        }
+	        }
+
+	        function showHidden2(){
+		        if(isBool){
+		          document.getElementById("nhap_lai_mat_khau").setAttribute("type", "text");
+		          isBool = false;
+		        }else{
+		          document.getElementById("nhap_lai_mat_khau").setAttribute("type", "password");
+		          isBool = true;
+		        }
+	        }
+        </script>
     </head>
     <body>
 		<!-- header-area-start -->
@@ -44,8 +68,8 @@
 							<div class="account-area text-right">
 								<ul>
 									<li><a href="checkout.html">Checkout</a></li>
-									<li><a href="login.html">Sign in</a></li>
-									<li><a href="register.html">Register</a></li>
+									<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Đăng Nhập</a></li>
+									<li><a href="{{ route('website-ban-sach.dang-ky') }}">Đăng Ký</a></li>
 								</ul>
 							</div>
 						</div>
@@ -126,17 +150,8 @@
 							<div class="menu-area">
 								<nav>
 									<ul>
-										<li class="active"><a href="index.html">Home<i class="fa fa-angle-down"></i></a>
-											<div class="sub-menu">
-												<ul>
-													<li><a href="index-2.html">Home-2</a></li>
-													<li><a href="index-3.html">Home-3</a></li>
-													<li><a href="index-4.html">Home-4</a></li>
-													<li><a href="index-5.html">Home-5</a></li>
-													<li><a href="index-6.html">Home-6</a></li>
-												</ul>
-											</div>
-										</li>
+										<li class="active"><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
+
 										<li><a href="product-details.html">Book<i class="fa fa-angle-down"></i></a>
 											<div class="mega-menu">
 												<span>
