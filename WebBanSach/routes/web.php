@@ -21,7 +21,7 @@ Route::get('/dang-xuat-Admin', 'QuanTriVienController@dangxuatAdmin')->name('dan
 
 
 Route::prefix('quan-tri')->group(function () {
-	Route::middleware('auth')->group(function () {
+	Route::middleware('auth:admin')->group(function () {
 		Route::get('/', 'HomeAdminController@index')->name('trang-chu-admin');
 		Route::get('/cap-nhat-Admin/{id}', 'QuanTriVienController@capnhatAdmin')->name('cap-nhat-admin');
 		Route::post('/cap-nhat-Admin/{id}', 'QuanTriVienController@xulycapnhatAdmin')->name('xu-ly-cap-nhat-admin');
@@ -106,11 +106,16 @@ Route::prefix('quan-tri')->group(function () {
 //Route Web
 Route::prefix('website-ban-sach')->group(function () {
 	Route::name('website-ban-sach.')->group(function () {
+		Route::get('/lay-thong-tin-User', 'HomeWebController@laythongtinUser');
+
 		Route::get('/', 'HomeWebController@index')->name('trang-chu');
 
 		Route::get('/dang-ky', 'HomeWebController@dangKy')->name('dang-ky');
 		Route::post('/dang-ky', 'HomeWebController@xulydangKy')->name('xu-ly-dang-ky');
 
 		Route::get('/dang-nhap', 'HomeWebController@dangNhap')->name('dang-nhap');
+		Route::post('/dang-nhap', 'HomeWebController@xulydangNhap')->name('xu-ly-dang-nhap');
+
+		Route::get('/dang-xuat', 'HomeWebController@dangXuat')->name('dang-xuat');
 	});
 });

@@ -23,7 +23,7 @@ class QuanTriVienController extends Controller
         $ten_tai_khoan_admin = $request->ten_tai_khoan_admin;
         $mat_khau_admin      = $request->mat_khau_admin;
 
-        if(Auth::attempt(['ten_tai_khoan_admin' => $ten_tai_khoan_admin, 'password' => $mat_khau_admin]))
+        if(Auth::guard('admin')->attempt(['ten_tai_khoan_admin' => $ten_tai_khoan_admin, 'password' => $mat_khau_admin]))
         {
             return redirect()->route('trang-chu-admin');
         }
@@ -33,12 +33,12 @@ class QuanTriVienController extends Controller
 
     public function laythongtinAdmin()
     {
-        return Auth::user();
+        return Auth::guard('admin')->user();
     }
 
     public function dangxuatAdmin()
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
 
         return redirect()->route('dang-nhap-admin');
     }

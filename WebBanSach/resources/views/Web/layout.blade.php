@@ -68,8 +68,16 @@
 							<div class="account-area text-right">
 								<ul>
 									<li><a href="checkout.html">Checkout</a></li>
-									<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Đăng Nhập</a></li>
-									<li><a href="{{ route('website-ban-sach.dang-ky') }}">Đăng Ký</a></li>
+
+									@if(Auth::guard('web')->check())
+										<li><a href="{{ route('website-ban-sach.dang-xuat') }}">Đăng Xuất</a></li>
+										<li><a href="#">Chào: {{ Auth::guard('web')->user()->ho_ten }}</a></li>
+									@else
+										<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Đăng Nhập</a></li>
+
+										<li><a href="{{ route('website-ban-sach.dang-ky') }}">Đăng Ký</a></li>
+									@endif
+
 								</ul>
 							</div>
 						</div>

@@ -189,7 +189,7 @@ class TaiKhoanController extends Controller
 
     public function laymatkhauUser()
     {
-        $mat_khau = TaiKhoan::all();
+        $mat_khau = TaiKhoan::select('mat_khau')->get();
         return $mat_khau;
     }
 

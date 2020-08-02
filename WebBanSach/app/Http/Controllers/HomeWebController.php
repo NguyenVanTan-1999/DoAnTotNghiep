@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\TaiKhoan;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\KhachHangDangKyRequest;
+use App\Http\Requests\KhachHangDangNhapRequest;
 use Hash;
 
 class HomeWebController extends Controller
@@ -57,5 +59,30 @@ class HomeWebController extends Controller
     public function dangNhap()
     {
         return view('Web.login');
+    }
+
+    public function xulydangNhap(KhachHangDangNhapRequest $request)
+    {
+        $ten_tai_khoan = $request->ten_tai_khoan;
+        $mat_khau      = $request->mat_khau;
+
+        if(Auth::guard('web')->attempt(['ten_tai_khoan' => $ten_tai_khoan, 'password' => $mat_khau]))
+        {
+            return redirect()->route('website-ban-sach.trang-chu');
+        }
+
+        return redirect()->route('website-ban-sach.dang-nhap')->with('thongbaothatbai','ĐĂNG NHẬP TÀI KHOẢN THẤT BẠI');
+    }
+
+    public function dangXuat()
+    {
+        Auth::guard('web')->logout();
+
+        return redirect()->route('website-ban-sach.trang-chu');
+    }
+
+    public function laythongtinUser()
+    {
+        return Auth::guard('web')->user();
     }
 }
