@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,6 +9,7 @@ use App\QuanTriVien;
 use App\Http\Requests\ThemMoiTaiKhoanRequest;
 use App\Http\Requests\CapNhatTaiKhoanRequest;
 use Hash;
+use App\Http\Controllers\Controller;
 
 class TaiKhoanController extends Controller
 {

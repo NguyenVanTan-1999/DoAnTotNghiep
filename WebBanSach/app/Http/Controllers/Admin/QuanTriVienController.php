@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\QuanTriVien;
@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\DangNhapRequest;
 use App\Http\Requests\CapNhatQuanTriVienRequest;
 use Hash;
+use App\Http\Controllers\Controller;
 
 class QuanTriVienController extends Controller
 {

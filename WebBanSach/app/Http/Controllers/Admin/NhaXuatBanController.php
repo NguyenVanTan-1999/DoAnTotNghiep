@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -8,6 +8,7 @@ use App\NhaXuatBan;
 use App\QuanTriVien;
 use App\Http\Requests\ThemMoiNhaXuatBanRequest;
 use App\Http\Requests\CapNhatNhaXuatBanRequest;
+use App\Http\Controllers\Controller;
 
 class NhaXuatBanController extends Controller
 {
