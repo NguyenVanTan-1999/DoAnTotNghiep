@@ -42,12 +42,12 @@
 
 						<div class="single-login">
 							<label for="ten_tai_khoan">Tên Tài Khoản <span>*</span></label>
-							<input type="text" id="ten_tai_khoan" name="ten_tai_khoan" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$" />
+							<input type="text" id="ten_tai_khoan" name="ten_tai_khoan" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$" required />
 						</div>
 
 						<div class="single-login" style="position: relative;">
 							<label for="mat_khau">Mật Khẩu <span>*</span></label>
-							<input type="password" id="mat_khau" name="mat_khau" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" />
+							<input type="password" id="mat_khau" name="mat_khau" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required />
 							<span style="display: block; position: absolute; top: 55%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden1()"></i></span>
 						</div>
 

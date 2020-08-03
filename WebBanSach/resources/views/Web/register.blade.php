@@ -44,35 +44,35 @@
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="ho">Họ <span>*</span></label>
-										<input type="text" id="ho" name="ho" title="họ không vượt quá 10 ký tự" maxlength="10" />
+										<input type="text" id="ho" name="ho" title="họ không vượt quá 10 ký tự" maxlength="10" required />
 									</div>
 								</div>
 
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="ten">Tên <span>*</span></label>
-										<input type="text" id="ten" name="ten" title="tên không vượt quá 30 ký tự" maxlength="30" />
+										<input type="text" id="ten" name="ten" title="tên không vượt quá 30 ký tự" maxlength="30" required />
 									</div>
 								</div>
 							</div>
 
 							<div class="single-register">
 								<label for="ten_tai_khoan">Tên Tài Khoản <span>*</span></label>
-								<input type="text" id="ten_tai_khoan" name="ten_tai_khoan" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$" />
+								<input type="text" id="ten_tai_khoan" name="ten_tai_khoan" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$" required />
 							</div>
 
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="email">Email <span>*</span></label>
-										<input type="email" id="email" name="email" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+										<input type="email" id="email" name="email" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
 									</div>
 								</div>
 
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="so_dien_thoai">Số Điện Thoại <span>*</span></label>
-										<input type="tel" id="so_dien_thoai" name="so_dien_thoai" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}" />
+										<input type="tel" id="so_dien_thoai" name="so_dien_thoai" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}" required />
 									</div>
 								</div>
 							</div>
@@ -81,14 +81,14 @@
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="do_tuoi">Độ Tuổi <span>*</span></label>
-										<input type="number" id="do_tuoi" name="do_tuoi" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100" />
+										<input type="number" id="do_tuoi" name="do_tuoi" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100" required />
 									</div>
 								</div>
 
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<div class="single-register">
 										<label for="gioi_tinh">Giới Tính <span>*</span></label>
-										<select class="chosen-select" tabindex="1" style="width:100%;" data-placeholder="Default Sorting" id="gioi_tinh" name="gioi_tinh">
+										<select class="chosen-select" tabindex="1" style="width:100%;" data-placeholder="Default Sorting" id="gioi_tinh" name="gioi_tinh" required>
 											<option value="">Chọn...</option>
 							                <option value="Nam">Nam</option>
 							                <option value="Nữ">Nữ</option>
@@ -99,12 +99,12 @@
 
 							<div class="single-register">
 								<label for="dia_chi">Địa Chỉ <span>*</span></label>
-								<input type="text" id="dia_chi" name="dia_chi" title="địa chỉ không vượt quá 100 ký tự" maxlength="100" />
+								<input type="text" id="dia_chi" name="dia_chi" title="địa chỉ không vượt quá 100 ký tự" maxlength="100" required />
 							</div>
 
 							<div class="single-register">
 								<label for="quoc_gia">Quốc Gia <span>*</span></label>
-								<select class="chosen-select" tabindex="1" style="width:100%;" data-placeholder="Default Sorting" id="quoc_gia" name="quoc_gia">
+								<select class="chosen-select" tabindex="1" style="width:100%;" data-placeholder="Default Sorting" id="quoc_gia" name="quoc_gia" required>
 									<option value="">Chọn...</option>
 					                <option value="Argentina">Argentina</option>
 					                <option value="Australia">Australia</option>
@@ -156,18 +156,18 @@
 
 							<div class="single-register">
 								<label for="anh_dai_dien">Ảnh Đại Diện <span>*</span></label>
-								<input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" />
+								<input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required />
 							</div>
 
 							<div class="single-register" style="position: relative;">
 								<label for="mat_khau">Mật Khẩu <span>*</span></label>
-								<input type="password" id="mat_khau" name="mat_khau" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" />
+								<input type="password" id="mat_khau" name="mat_khau" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required />
 								<span style="display: block; position: absolute; top: 60%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden1()"></i></span>
 							</div>
 
 							<div class="single-register" style="position: relative;">
 								<label for="nhap_lai_mat_khau">Nhập Lại Mật Khẩu <span>*</span></label>
-								<input type="password" id="nhap_lai_mat_khau" name="nhap_lai_mat_khau" title="nhập lại mật khẩu phải trùng khớp với mật khẩu" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" />
+								<input type="password" id="nhap_lai_mat_khau" name="nhap_lai_mat_khau" title="nhập lại mật khẩu phải trùng khớp với mật khẩu" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required />
 								<span style="display: block; position: absolute; top: 60%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden2()"></i></span>
 							</div>
 
