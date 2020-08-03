@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_loai_san_pham">Tên Loại Sản Phẩm <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control" title="tên loại sản phẩm không vượt quá 40 ký tự" maxlength="40" value="{{ $loaisanPhams->ten_loai_san_pham }}">
+              <input type="text" id="ten_loai_san_pham" name="ten_loai_san_pham" class="form-control" title="tên loại sản phẩm không vượt quá 40 ký tự" maxlength="40" value="{{ $loaisanPhams->ten_loai_san_pham }}" required>
             </div>
           </div>
 

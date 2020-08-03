@@ -108,7 +108,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_san_pham">Tên Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 60 ký tự" maxlength="60" value="{{ $sanPhams->ten_san_pham }}">
+                  <input type="text" id="ten_san_pham" name="ten_san_pham" class="form-control" title="tên sản phẩm không vượt quá 60 ký tự" maxlength="60" value="{{ $sanPhams->ten_san_pham }}" required>
                 </div>
               </div>
 
@@ -116,7 +116,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000" value="{{ $sanPhams->thong_tin_san_pham }}">
+                  <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000" value="{{ $sanPhams->thong_tin_san_pham }}" required>
                 </div>
               </div>
 
@@ -124,7 +124,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="ngay_xuat_ban_san_pham">Ngày Xuất Bản Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="date" id="ngay_xuat_ban_san_pham" name="ngay_xuat_ban_san_pham" value="{{ $sanPhams->ngay_xuat_ban_san_pham }}">
+                  <input type="date" id="ngay_xuat_ban_san_pham" name="ngay_xuat_ban_san_pham" value="{{ $sanPhams->ngay_xuat_ban_san_pham }}" required>
                 </div>
               </div>
 
@@ -132,7 +132,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="gia_tien_san_pham">Giá Tiền Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" title="giá tiền sản phẩm nằm trong khoảng 1.000 vnđ đến 999.999 vnđ" min="1000" max="999999" value="{{ $sanPhams->gia_tien_san_pham }}">
+                  <input type="number" id="gia_tien_san_pham" name="gia_tien_san_pham" class="form-control" title="giá tiền sản phẩm nằm trong khoảng 1.000 vnđ đến 999.999 vnđ" min="1000" max="999999" value="{{ $sanPhams->gia_tien_san_pham }}" required>
                 </div>
               </div>
 
@@ -140,7 +140,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="nha_xuat_ban_id">Nhà Xuất Bản <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <select id="nha_xuat_ban_id" name="nha_xuat_ban_id" class="form-control">
+                  <select id="nha_xuat_ban_id" name="nha_xuat_ban_id" class="form-control" required>
                     <option value="{{ $sanPhams->nhaxuatBan->ma_nha_xuat_ban }}">{{ $sanPhams->nhaxuatBan->ten_nha_xuat_ban }}</option>
                     <option value="">---</option>
 
@@ -156,7 +156,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="loai_san_pham_id">Loại Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <select id="loai_san_pham_id" name="loai_san_pham_id" class="form-control">
+                  <select id="loai_san_pham_id" name="loai_san_pham_id" class="form-control" required>
                     <option value="{{ $sanPhams->loaisanPham->ma_loai_san_pham }}">{{ $sanPhams->loaisanPham->ten_loai_san_pham }}</option>
                     <option value="">---</option>
 
@@ -172,7 +172,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="hinh_thuc_san_pham_id">Hình Thức Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <select id="hinh_thuc_san_pham_id" name="hinh_thuc_san_pham_id" class="form-control">
+                  <select id="hinh_thuc_san_pham_id" name="hinh_thuc_san_pham_id" class="form-control" required>
                     <option value="{{ $sanPhams->hinhthucsanPham->loai_hinh_thuc_san_pham }}">{{ $sanPhams->hinhthucsanPham->ten_hinh_thuc_san_pham }}</option>
                     <option value="">---</option>
 
@@ -206,7 +206,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
+                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
                 </div>
               </div>
 

@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ma_nha_xuat_ban">Mã Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ma_nha_xuat_ban" name="ma_nha_xuat_ban" class="form-control" placeholder="VD: NXB000" title="mã nhà xuất bản dài 6-10 ký tự, bao gồm chữ hoa và số" minlength="6" maxlength="10" pattern="^[A-Z]{3}[0-9]{3,}$">
+              <input type="text" id="ma_nha_xuat_ban" name="ma_nha_xuat_ban" class="form-control" placeholder="VD: NXB000" title="mã nhà xuất bản dài 6-10 ký tự, bao gồm chữ hoa và số" minlength="6" maxlength="10" pattern="^[A-Z]{3}[0-9]{3,}$" required>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_nha_xuat_ban">Tên Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" title="tên nhà xuất bản không vượt quá 40 ký tự" maxlength="40">
+              <input type="text" id="ten_nha_xuat_ban" name="ten_nha_xuat_ban" class="form-control" title="tên nhà xuất bản không vượt quá 40 ký tự" maxlength="40" required>
             </div>
           </div>
 
@@ -86,7 +86,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi_nha_xuat_ban">Địa Chỉ Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" class="form-control" title="địa chỉ nhà xuất bản không vượt quá 100 ký tự" maxlength="100">
+              <input type="text" id="dia_chi_nha_xuat_ban" name="dia_chi_nha_xuat_ban" class="form-control" title="địa chỉ nhà xuất bản không vượt quá 100 ký tự" maxlength="100" required>
             </div>
           </div>
 
@@ -94,7 +94,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="website_nha_xuat_ban">Website Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="url" id="website_nha_xuat_ban" name="website_nha_xuat_ban" class="form-control" placeholder="http:// hoặc https://" title="website nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="https?://.+">
+              <input type="url" id="website_nha_xuat_ban" name="website_nha_xuat_ban" class="form-control" placeholder="http:// hoặc https://" title="website nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="https?://.+" required>
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="email_nha_xuat_ban">Email Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="email" id="email_nha_xuat_ban" name="email_nha_xuat_ban" class="form-control" title="email nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              <input type="email" id="email_nha_xuat_ban" name="email_nha_xuat_ban" class="form-control" title="email nhà xuất bản không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai_nha_xuat_ban">Số Điện Thoại Nhà Xuất Bản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="tel" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" class="form-control" title="số điện thoại nhà xuất bản khoảng 8-11 số" minlength="8" maxlength="11" pattern="[0-9]{8,11}">
+              <input type="tel" id="so_dien_thoai_nha_xuat_ban" name="so_dien_thoai_nha_xuat_ban" class="form-control" title="số điện thoại nhà xuất bản khoảng 8-11 số" minlength="8" maxlength="11" pattern="[0-9]{8,11}" required>
             </div>
           </div>
 

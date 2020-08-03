@@ -70,7 +70,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ten_tai_khoan">Tên Tài Khoản <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ten_tai_khoan" name="ten_tai_khoan" class="form-control" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$">
+              <input type="text" id="ten_tai_khoan" name="ten_tai_khoan" class="form-control" title="tên tài khoản dài 6-24 ký tự, bao gồm chữ thường và số, không chứa ký tự đặt biệt" minlength="6" maxlength="24" pattern="^[a-z][a-z0-9]{5,}$" required>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau">Mật Khẩu <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6" style="position: relative;">
-              <input type="password" id="mat_khau" name="mat_khau" class="form-control" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+              <input type="password" id="mat_khau" name="mat_khau" class="form-control" title="mật khẩu dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required>
               <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden1()"></i></a>
             </div>
           </div>
@@ -87,7 +87,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="nhap_lai_mat_khau">Nhập Lại Mật Khẩu <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6" style="position: relative;">
-              <input type="password" id="nhap_lai_mat_khau" name="nhap_lai_mat_khau" class="form-control" title="nhập lại mật khẩu phải trùng khớp với mật khẩu" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+              <input type="password" id="nhap_lai_mat_khau" name="nhap_lai_mat_khau" class="form-control" title="nhập lại mật khẩu phải trùng khớp với mật khẩu" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required>
               <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden2()"></i></a>
             </div>
           </div>
@@ -96,7 +96,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="ho_ten">Họ Tên <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="ho_ten" name="ho_ten" class="form-control" title="họ tên không vượt quá 40 ký tự" maxlength="40">
+              <input type="text" id="ho_ten" name="ho_ten" class="form-control" title="họ tên không vượt quá 40 ký tự" maxlength="40" required>
             </div>
           </div>
 
@@ -104,7 +104,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="do_tuoi">Độ Tuổi <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="number" id="do_tuoi" name="do_tuoi" class="form-control" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100">
+              <input type="number" id="do_tuoi" name="do_tuoi" class="form-control" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100" required>
             </div>
           </div>
 
@@ -112,7 +112,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="gioi_tinh">Giới Tính <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <select id="gioi_tinh" name="gioi_tinh" class="form-control">
+              <select id="gioi_tinh" name="gioi_tinh" class="form-control" required>
                 <option value="">Chọn...</option>
                 <option value="Nam">Nam</option>
                 <option value="Nữ">Nữ</option>
@@ -124,7 +124,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi">Địa Chỉ <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="text" id="dia_chi" name="dia_chi" class="form-control" title="địa chỉ không vượt quá 100 ký tự" maxlength="100">
+              <input type="text" id="dia_chi" name="dia_chi" class="form-control" title="địa chỉ không vượt quá 100 ký tự" maxlength="100" required>
             </div>
           </div>
 
@@ -132,7 +132,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="quoc_gia">Quốc Gia <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <select id="quoc_gia" name="quoc_gia" class="form-control">
+              <select id="quoc_gia" name="quoc_gia" class="form-control" required>
                 <option value="">Chọn...</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Australia">Australia</option>
@@ -187,7 +187,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">Email <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="email" id="email" name="email" class="form-control" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              <input type="email" id="email" name="email" class="form-control" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             </div>
           </div>
 
@@ -195,7 +195,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai">Số Điện Thoại <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="tel" id="so_dien_thoai" name="so_dien_thoai" class="form-control" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}">
+              <input type="tel" id="so_dien_thoai" name="so_dien_thoai" class="form-control" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}" required>
             </div>
           </div>
 
@@ -203,7 +203,7 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien">Ảnh Đại Diện <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6">
-              <input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
+              <input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
             </div>
           </div>
 

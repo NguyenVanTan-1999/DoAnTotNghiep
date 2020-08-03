@@ -112,7 +112,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="ho_ten">Họ Tên <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="ho_ten" name="ho_ten" class="form-control" title="họ tên không vượt quá 40 ký tự" maxlength="40" value="{{ $taiKhoans->ho_ten }}">
+                  <input type="text" id="ho_ten" name="ho_ten" class="form-control" title="họ tên không vượt quá 40 ký tự" maxlength="40" value="{{ $taiKhoans->ho_ten }}" required>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="do_tuoi">Độ Tuổi <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="number" id="do_tuoi" name="do_tuoi" class="form-control" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100" value="{{ $taiKhoans->do_tuoi }}">
+                  <input type="number" id="do_tuoi" name="do_tuoi" class="form-control" title="độ tuổi nằm trong khoảng 10 tuổi đến 100 tuổi" min="10" max="100" value="{{ $taiKhoans->do_tuoi }}" required>
                 </div>
               </div>
 
@@ -128,7 +128,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="gioi_tinh">Giới Tính <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <select id="gioi_tinh" name="gioi_tinh" class="form-control">
+                  <select id="gioi_tinh" name="gioi_tinh" class="form-control" required>
                     <option value="{{ $taiKhoans->gioi_tinh }}">{{ $taiKhoans->gioi_tinh }}</option>
                     <option value="">---</option>
                     <option value="Nam">Nam</option>
@@ -141,7 +141,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="dia_chi">Địa Chỉ <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="dia_chi" name="dia_chi" class="form-control" title="địa chỉ không vượt quá 100 ký tự" maxlength="100" value="{{ $taiKhoans->dia_chi }}">
+                  <input type="text" id="dia_chi" name="dia_chi" class="form-control" title="địa chỉ không vượt quá 100 ký tự" maxlength="100" value="{{ $taiKhoans->dia_chi }}" required>
                 </div>
               </div>
 
@@ -149,7 +149,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="quoc_gia">Quốc Gia <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <select id="quoc_gia" name="quoc_gia" class="form-control">
+                  <select id="quoc_gia" name="quoc_gia" class="form-control" required>
                     <option value="{{ $taiKhoans->quoc_gia }}">{{ $taiKhoans->quoc_gia }}</option>
                     <option value="">---</option>
                     <option value="Argentina">Argentina</option>
@@ -205,7 +205,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">Email <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="email" id="email" name="email" class="form-control" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ $taiKhoans->email }}">
+                  <input type="email" id="email" name="email" class="form-control" title="email không vượt quá 40 ký tự" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ $taiKhoans->email }}" required>
                 </div>
               </div>
 
@@ -213,7 +213,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="so_dien_thoai">Số Điện Thoại <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="tel" id="so_dien_thoai" name="so_dien_thoai" class="form-control" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}" value="{{ $taiKhoans->so_dien_thoai }}">
+                  <input type="tel" id="so_dien_thoai" name="so_dien_thoai" class="form-control" title="số điện thoại phải điền đúng 10 số" maxlength="10" pattern="[0-9]{10}" value="{{ $taiKhoans->so_dien_thoai }}" required>
                 </div>
               </div>
 
@@ -239,7 +239,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien">Ảnh Đại Diện <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg">
+                  <input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
                 </div>
               </div>
 
@@ -265,7 +265,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau_cu">Mật Khẩu Cũ <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6" style="position: relative;">
-                  <input type="password" id="mat_khau_cu" name="mat_khau_cu" class="form-control" title="mật khẩu cũ phải trùng khớp với mật khẩu hiện tại" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <input type="password" id="mat_khau_cu" name="mat_khau_cu" class="form-control" title="mật khẩu cũ phải trùng khớp với mật khẩu hiện tại" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required>
                   <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden3()"></i></a>
                 </div>
               </div>
@@ -274,7 +274,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="mat_khau">Mật Khẩu Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6" style="position: relative;">
-                  <input type="password" id="mat_khau" name="mat_khau" class="form-control" title="mật khẩu mới dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <input type="password" id="mat_khau" name="mat_khau" class="form-control" title="mật khẩu mới dài 6-32 ký tự, bao gồm chữ hoa, chữ thường, số, dấu cách và ký tự đặt biệt" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required>
                   <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden1()"></i></a>
                 </div>
               </div>
@@ -283,7 +283,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="nhap_lai_mat_khau_moi">Nhập Lại Mật Khẩu Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6" style="position: relative;">
-                  <input type="password" id="nhap_lai_mat_khau_moi" name="nhap_lai_mat_khau_moi" class="form-control" title="nhập lại mật khẩu mới phải trùng khớp với mật khẩu mới" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}">
+                  <input type="password" id="nhap_lai_mat_khau_moi" name="nhap_lai_mat_khau_moi" class="form-control" title="nhập lại mật khẩu mới phải trùng khớp với mật khẩu mới" minlength="6" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,32}" required>
                   <a style="display: block; position: absolute; top: 25%; right: 25px; cursor: pointer;"><i class="fa fa-eye" onclick="showHidden4()"></i></a>
                 </div>
               </div>
