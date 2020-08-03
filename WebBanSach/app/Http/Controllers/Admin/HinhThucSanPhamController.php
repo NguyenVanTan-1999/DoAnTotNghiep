@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\HinhThucSanPham;
 use App\QuanTriVien;
-use App\Http\Requests\ThemMoiHinhThucSanPhamRequest;
-use App\Http\Requests\CapNhatHinhThucSanPhamRequest;
+use App\Http\Requests\Admin\HinhThucSanPham\ThemMoiHinhThucSanPhamRequest;
+use App\Http\Requests\Admin\HinhThucSanPham\CapNhatHinhThucSanPhamRequest;
 use App\Http\Controllers\Controller;
 
 class HinhThucSanPhamController extends Controller

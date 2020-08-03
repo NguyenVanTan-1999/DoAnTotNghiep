@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\TaiKhoan;
 use App\QuanTriVien;
-use App\Http\Requests\ThemMoiTaiKhoanRequest;
-use App\Http\Requests\CapNhatTaiKhoanRequest;
+use App\Http\Requests\Admin\TaiKhoan\ThemMoiTaiKhoanRequest;
+use App\Http\Requests\Admin\TaiKhoan\CapNhatTaiKhoanRequest;
 use Hash;
 use App\Http\Controllers\Controller;
 

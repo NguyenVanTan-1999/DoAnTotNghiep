@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\QuanTriVien;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\DangNhapRequest;
-use App\Http\Requests\CapNhatQuanTriVienRequest;
+use App\Http\Requests\Admin\DangNhapRequest;
+use App\Http\Requests\Admin\CapNhatQuanTriVienRequest;
 use Hash;
 use App\Http\Controllers\Controller;
 

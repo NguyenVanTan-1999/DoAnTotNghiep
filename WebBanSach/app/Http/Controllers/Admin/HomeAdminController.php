@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\QuanTriVien;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\DangNhapRequest;
+use App\Http\Requests\Admin\CapNhatQuanTriVienRequest;
 
 class HomeAdminController extends Controller
 {

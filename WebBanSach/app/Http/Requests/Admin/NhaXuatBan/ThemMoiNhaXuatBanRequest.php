@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin\NhaXuatBan;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CapNhatNhaXuatBanRequest extends FormRequest
+class ThemMoiNhaXuatBanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,23 @@ class CapNhatNhaXuatBanRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_nha_xuat_ban'           => 'required|max:40|unique:nha_xuat_ban,ten_nha_xuat_ban,'.$this->id,
-            'dia_chi_nha_xuat_ban'       => 'required|max:100|unique:nha_xuat_ban,dia_chi_nha_xuat_ban,'.$this->id,
-            'website_nha_xuat_ban'       => 'required|max:40|url|unique:nha_xuat_ban,website_nha_xuat_ban,'.$this->id,
-            'email_nha_xuat_ban'         => 'required|max:40|email|unique:nha_xuat_ban,email_nha_xuat_ban,'.$this->id,
-            'so_dien_thoai_nha_xuat_ban' => 'required|digits_between:8,11|numeric|unique:nha_xuat_ban,so_dien_thoai_nha_xuat_ban,'.$this->id
+            'ma_nha_xuat_ban'            => 'required|min:6|max:10|unique:nha_xuat_ban,ma_nha_xuat_ban',
+            'ten_nha_xuat_ban'           => 'required|max:40|unique:nha_xuat_ban,ten_nha_xuat_ban',
+            'dia_chi_nha_xuat_ban'       => 'required|max:100|unique:nha_xuat_ban,dia_chi_nha_xuat_ban',
+            'website_nha_xuat_ban'       => 'required|max:40|url|unique:nha_xuat_ban,website_nha_xuat_ban',
+            'email_nha_xuat_ban'         => 'required|max:40|email|unique:nha_xuat_ban,email_nha_xuat_ban',
+            'so_dien_thoai_nha_xuat_ban' => 'required|digits_between:8,11|numeric|unique:nha_xuat_ban,so_dien_thoai_nha_xuat_ban'
         ];
     }
 
     public function messages()
     {
         return [
+            'ma_nha_xuat_ban.required'                    => 'Vui Lòng Nhập Mã Nhà Xuất Bản',
+            'ma_nha_xuat_ban.min'                         => 'Mã Nhà Xuất Bản Phải Ít Nhất 6 Ký Tự',
+            'ma_nha_xuat_ban.max'                         => 'Mã Nhà Xuất Bản Chỉ Nhiều Nhất 10 Ký Tự',
+            'ma_nha_xuat_ban.unique'                      => 'Mã Nhà Xuất Bản Đã Bị Trùng',
+
             'ten_nha_xuat_ban.required'                   => 'Vui Lòng Nhập Tên Nhà Xuất Bản',
             'ten_nha_xuat_ban.max'                        => 'Tên Nhà Xuất Bản Chỉ Nhiều Nhất 40 Ký Tự',
             'ten_nha_xuat_ban.unique'                     => 'Tên Nhà Xuất Bản Đã Bị Trùng',

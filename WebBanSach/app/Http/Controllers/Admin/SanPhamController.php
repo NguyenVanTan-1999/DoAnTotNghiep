@@ -9,8 +9,8 @@ use App\NhaXuatBan;
 use App\LoaiSanPham;
 use App\HinhThucSanPham;
 use App\QuanTriVien;
-use App\Http\Requests\ThemMoiSanPhamRequest;
-use App\Http\Requests\CapNhatSanPhamRequest;
+use App\Http\Requests\Admin\SanPham\ThemMoiSanPhamRequest;
+use App\Http\Requests\Admin\SanPham\CapNhatSanPhamRequest;
 use App\Http\Controllers\Controller;
 
 class SanPhamController extends Controller
