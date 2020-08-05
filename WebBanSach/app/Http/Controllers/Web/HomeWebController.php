@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\TaiKhoan;
+use App\SanPham;
+use App\LoaiSanPham;
+use App\NhaXuatBan;
+use App\HinhThucSanPham;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Web\KhachHangDangKyRequest;
 use App\Http\Requests\Web\KhachHangDangNhapRequest;
@@ -20,7 +24,21 @@ class HomeWebController extends Controller
      */
     public function index()
     {
-        return view('Web.home');
+        $sanphamMoi            = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP001')->get();
+        $sanphambanChay        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP002')->get();
+        $sanphamgiamGia        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP004')->get();
+
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+
+        $nhaxuatbanTre         = SanPham::where('nha_xuat_ban_id', '=', 'NXB001')->get();
+        $nhaxuatbanKimDong     = SanPham::where('nha_xuat_ban_id', '=', 'NXB002')->get();
+
+        $vanHoc                = SanPham::where('loai_san_pham_id', '=', 'LSP001')->get();
+        $kienthucbachKhoa      = SanPham::where('loai_san_pham_id', '=', 'LSP011')->get();
+        $tieuThuyet            = SanPham::where('loai_san_pham_id', '=', 'LSP013')->get();
+        return view('Web.home', compact('sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'dsLoaiSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPham', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
     public function dangKy()
