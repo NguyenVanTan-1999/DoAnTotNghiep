@@ -60,6 +60,8 @@
               <th>Thông Tin SP</th>
               <th>Ngày Xuất Bản SP</th>
               <th>Giá Tiền SP</th>
+              <th>Giá Tiền GG</th>
+              <th>Phần Trăm GG</th>
               <th>Ảnh Minh Họa SP</th>
               <th>NXB</th>
               <th>Loại SP</th>
@@ -78,6 +80,8 @@
                 <td>{{ $sanpham->thong_tin_san_pham }}</td>
                 <td>{{ $sanpham->ngay_xuat_ban_san_pham }}</td>
                 <td>{{ $sanpham->gia_tien_san_pham }}</td>
+                <td>{{ $sanpham->gia_tien_giam_gia }}</td>
+                <td>{{ $sanpham->phan_tram_giam_gia }}</td>
                 <td><img src="{{ asset('images/product/'.$sanpham->anh_minh_hoa_san_pham) }}" width="120px" height="120px"></td>
                 <td>{{ $sanpham->nhaxuatBan->ten_nha_xuat_ban }}</td>
                 <td>{{ $sanpham->loaisanPham->ten_loai_san_pham }}</td>

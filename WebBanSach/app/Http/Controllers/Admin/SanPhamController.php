@@ -55,6 +55,8 @@ class SanPhamController extends Controller
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;
         $sanPhams->gia_tien_san_pham = $request->gia_tien_san_pham;
+        $sanPhams->gia_tien_giam_gia = $request->gia_tien_giam_gia;
+        $sanPhams->phan_tram_giam_gia = $request->phan_tram_giam_gia;
 
         if($request->hasFile('anh_minh_hoa_san_pham'))
         {
@@ -113,6 +115,8 @@ class SanPhamController extends Controller
         $sanPhams->thong_tin_san_pham = $request->thong_tin_san_pham;
         $sanPhams->ngay_xuat_ban_san_pham = $request->ngay_xuat_ban_san_pham;
         $sanPhams->gia_tien_san_pham = $request->gia_tien_san_pham;
+        $sanPhams->gia_tien_giam_gia = $request->gia_tien_giam_gia;
+        $sanPhams->phan_tram_giam_gia = $request->phan_tram_giam_gia;
         $sanPhams->nha_xuat_ban_id = $request->nha_xuat_ban_id;
         $sanPhams->loai_san_pham_id = $request->loai_san_pham_id;
         $sanPhams->hinh_thuc_san_pham_id = $request->hinh_thuc_san_pham_id;

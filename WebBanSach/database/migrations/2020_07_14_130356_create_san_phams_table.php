@@ -20,6 +20,8 @@ class CreateSanPhamsTable extends Migration
             $table->string('thong_tin_san_pham', 1000);
             $table->date('ngay_xuat_ban_san_pham');
             $table->integer('gia_tien_san_pham');
+            $table->integer('gia_tien_giam_gia');
+            $table->integer('phan_tram_giam_gia');
             $table->string('anh_minh_hoa_san_pham');
             $table->string('nha_xuat_ban_id', 10);
             $table->string('loai_san_pham_id', 10);
