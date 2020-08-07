@@ -41,9 +41,27 @@ class HomeWebController extends Controller
         return view('Web.home', compact('sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'dsLoaiSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPham', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
+    public function sanPham()
+    {
+        $dsLoaiSanPham     = LoaiSanPham::all();
+        $dsHinhThucSanPham = HinhThucSanPham::all();
+        $dsNhaXuatBan      = NhaXuatBan::all();
+
+        $tongSanPham       = SanPham::all();
+        $dsSanPhamGrid     = SanPham::paginate(12);
+        $dsSanPhamList     = SanPham::paginate(4);
+        $dsHinhThucSanPham = HinhThucSanPham::all();
+        $dsLoaiSanPham     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBan      = NhaXuatBan::paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList', 'dsHinhThucSanPham', 'dsLoaiSanPham', 'dsNhaXuatBan'));
+    }
+
     public function dangKy()
     {
-        return view('Web.register');
+        $dsLoaiSanPham     = LoaiSanPham::all();
+        $dsHinhThucSanPham = HinhThucSanPham::all();
+        $dsNhaXuatBan      = NhaXuatBan::all();
+        return view('Web.register', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan'));
     }
 
     public function xulydangKy(KhachHangDangKyRequest $request)
@@ -77,7 +95,10 @@ class HomeWebController extends Controller
 
     public function dangNhap()
     {
-        return view('Web.login');
+        $dsLoaiSanPham     = LoaiSanPham::all();
+        $dsHinhThucSanPham = HinhThucSanPham::all();
+        $dsNhaXuatBan      = NhaXuatBan::all();
+        return view('Web.login', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan'));
     }
 
     public function xulydangNhap(KhachHangDangNhapRequest $request)
@@ -90,7 +111,7 @@ class HomeWebController extends Controller
             return redirect()->route('website-ban-sach.trang-chu');
         }
 
-        return redirect()->route('website-ban-sach.dang-nhap')->with('thongbaothatbai','ĐĂNG NHẬP TÀI KHOẢN THẤT BẠI');
+        return redirect()->route('website-ban-sach.dang-nhap')->with('thongbaothatbai', 'ĐĂNG NHẬP TÀI KHOẢN THẤT BẠI');
     }
 
     public function dangXuat()

@@ -91,14 +91,7 @@
 			<div class="header-mid-area ptb-40">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
-							<div class="header-search">
-								<form action="#">
-									<input type="text" placeholder="Search entire store here..." />
-									<a href="#"><i class="fa fa-search"></i></a>
-								</form>
-							</div>
-						</div>
+						<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12"></div>
 						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
 							<div class="logo-area text-center logo-xs-mrg">
 								<img src="{{ asset('assets/Web/img/logo/CKC-2.jpg') }}" alt="logo" width="196" />
@@ -164,7 +157,7 @@
 
 										<li class="active"><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
 
-										<li><a href="#">SẢN PHẨM</a></li>
+										<li><a href="{{ route('website-ban-sach.san-pham') }}">SẢN PHẨM</a></li>
 
 										<li><a href="#">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
 											<div class="mega-menu">
