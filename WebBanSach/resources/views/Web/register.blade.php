@@ -9,7 +9,7 @@
 				<div class="breadcrumbs-menu">
 					<ul>
 						<li><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
-						<li><a href="{{ route('website-ban-sach.dang-ky') }}" class="active">Đăng Ký</a></li>
+						<li><a class="active">Đăng Ký</a></li>
 					</ul>
 				</div>
 			</div>

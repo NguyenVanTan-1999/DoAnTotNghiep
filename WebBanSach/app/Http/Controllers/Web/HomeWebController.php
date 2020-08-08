@@ -24,13 +24,13 @@ class HomeWebController extends Controller
      */
     public function index()
     {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
         $sanphamMoi            = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP001')->get();
         $sanphambanChay        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP002')->get();
         $sanphamgiamGia        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP004')->get();
-
-        $dsLoaiSanPham         = LoaiSanPham::all();
-        $dsNhaXuatBan          = NhaXuatBan::all();
-        $dsHinhThucSanPham     = HinhThucSanPham::all();
 
         $nhaxuatbanTre         = SanPham::where('nha_xuat_ban_id', '=', 'NXB001')->get();
         $nhaxuatbanKimDong     = SanPham::where('nha_xuat_ban_id', '=', 'NXB002')->get();
@@ -38,22 +38,33 @@ class HomeWebController extends Controller
         $vanHoc                = SanPham::where('loai_san_pham_id', '=', 'LSP001')->get();
         $kienthucbachKhoa      = SanPham::where('loai_san_pham_id', '=', 'LSP011')->get();
         $tieuThuyet            = SanPham::where('loai_san_pham_id', '=', 'LSP013')->get();
-        return view('Web.home', compact('sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'dsLoaiSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPham', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
+        return view('Web.home', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
-    public function sanPham()
+    public function sanPham($type)
     {
-        $dsLoaiSanPham     = LoaiSanPham::all();
-        $dsHinhThucSanPham = HinhThucSanPham::all();
-        $dsNhaXuatBan      = NhaXuatBan::all();
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
 
-        $tongSanPham       = SanPham::all();
-        $dsSanPhamGrid     = SanPham::paginate(12);
-        $dsSanPhamList     = SanPham::paginate(4);
-        $dsHinhThucSanPham = HinhThucSanPham::all();
-        $dsLoaiSanPham     = LoaiSanPham::paginate(4);
-        $dsNhaXuatBan      = NhaXuatBan::paginate(4);
-        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList', 'dsHinhThucSanPham', 'dsLoaiSanPham', 'dsNhaXuatBan'));
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham           = SanPham::where('loai_san_pham_id', $type)->get();
+        $dsSanPhamGrid         = SanPham::where('loai_san_pham_id', $type)->paginate(12);
+        $dsSanPhamList         = SanPham::where('loai_san_pham_id', $type)->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function chitietsanPham(Request $request)
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $sanPhams = SanPham::where('id', $request->id)->get();
+        return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPhams'));
     }
 
     public function dangKy()

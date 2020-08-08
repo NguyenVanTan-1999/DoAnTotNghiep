@@ -157,15 +157,13 @@
 
 										<li class="active"><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
 
-										<li><a href="{{ route('website-ban-sach.san-pham') }}">SẢN PHẨM</a></li>
-
 										<li><a href="#">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
 											<div class="mega-menu">
 												<span>
 													<a href="#" class="title">Loại Sản Phẩm</a>
 
 													@foreach($dsLoaiSanPham as $loaisanpham)
-														<a href="#">- {{ $loaisanpham->ten_loai_san_pham }}</a>
+														<a href="{{ route('website-ban-sach.san-pham', $loaisanpham->ma_loai_san_pham) }}">- {{ $loaisanpham->ten_loai_san_pham }}</a>
 													@endforeach
 												</span>
 
@@ -173,7 +171,7 @@
 													<a href="#" class="title">Hình Thức Sản Phẩm</a>
 
 													@foreach($dsHinhThucSanPham as $hinhthucsanpham)
-														<a href="#">- {{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</a>
+														<a href="{{ route('website-ban-sach.san-pham', $hinhthucsanpham->loai_hinh_thuc_san_pham) }}">- {{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</a>
 													@endforeach
 												</span>
 
@@ -181,7 +179,7 @@
 													<a href="#" class="title">Nhà Xuất Bản</a>
 
 													@foreach($dsNhaXuatBan as $nhaxuatban)
-														<a href="#">- {{ $nhaxuatban->ten_nha_xuat_ban }}</a>
+														<a href="{{ route('website-ban-sach.san-pham', $nhaxuatban->ma_nha_xuat_ban) }}">- {{ $nhaxuatban->ten_nha_xuat_ban }}</a>
 													@endforeach
 												</span>
 											</div>

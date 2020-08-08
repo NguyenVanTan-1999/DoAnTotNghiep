@@ -9,7 +9,7 @@
 				<div class="breadcrumbs-menu">
 					<ul>
 						<li><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
-						<li><a href="{{ route('website-ban-sach.san-pham') }}" class="active">Sản Phẩm</a></li>
+						<li><a class="active">Sản Phẩm</a></li>
 					</ul>
 				</div>
 			</div>
@@ -33,10 +33,13 @@
 					</div>
 					<div class="left-menu mb-30">
 						<ul>
-							@foreach($dsHinhThucSanPham as $hinhthucsanpham)
-								<li><a href="#">{{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</a></li>
+							@foreach($dsHinhThucSanPhamLink as $hinhthucsanphamlink)
+								<li><a href="{{ route('website-ban-sach.san-pham', $hinhthucsanphamlink->loai_hinh_thuc_san_pham) }}">{{ $hinhthucsanphamlink->ten_hinh_thuc_san_pham }}</a></li>
 							@endforeach
 						</ul>
+						<div class="row">
+							{{ $dsHinhThucSanPhamLink->links() }}
+						</div>
 					</div>
 
 					<div class="left-title mb-20">
@@ -44,12 +47,12 @@
 					</div>
 					<div class="left-menu mb-30">
 						<ul>
-							@foreach($dsLoaiSanPham as $loaisanpham)
-								<li><a href="#">{{ $loaisanpham->ten_loai_san_pham }}</a></li>
+							@foreach($dsLoaiSanPhamLink as $loaisanphamlink)
+								<li><a href="{{ route('website-ban-sach.san-pham', $loaisanphamlink->ma_loai_san_pham) }}">{{ $loaisanphamlink->ten_loai_san_pham }}</a></li>
 							@endforeach
 						</ul>
 						<div class="row">
-							{{ $dsLoaiSanPham->links() }}
+							{{ $dsLoaiSanPhamLink->links() }}
 						</div>
 					</div>
 
@@ -58,12 +61,12 @@
 					</div>
 					<div class="left-menu mb-30">
 						<ul>
-							@foreach($dsNhaXuatBan as $nhaxuatban)
-								<li><a href="#">{{ $nhaxuatban->ten_nha_xuat_ban }}</a></li>
+							@foreach($dsNhaXuatBanLink as $nhaxuatbanlink)
+								<li><a href="{{ route('website-ban-sach.san-pham', $nhaxuatbanlink->ma_nha_xuat_ban) }}">{{ $nhaxuatbanlink->ten_nha_xuat_ban }}</a></li>
 							@endforeach
 						</ul>
 						<div class="row">
-							{{ $dsNhaXuatBan->links() }}
+							{{ $dsNhaXuatBanLink->links() }}
 						</div>
 					</div>
 
@@ -168,7 +171,7 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="product-details text-center">
-	                                        <h4 style="height: 65px;"><a href="#">{{ $sanphamgrid->ten_san_pham }}</a></h4>
+	                                        <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}">{{ $sanphamgrid->ten_san_pham }}</a></h4>
 	                                        <div class="product-price">
 	                                            <ul>
 	                                                <li>{{ $sanphamgrid->gia_tien_giam_gia }}</li>
@@ -182,7 +185,7 @@
 	                                        </div>
 	                                        <div class="add-to-link">
 	                                            <ul>
-	                                                <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+	                                                <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>
@@ -204,7 +207,7 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 										<div class="product-wrapper-2">
 											<div class="product-img">
-												<a href="#">
+												<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}">
 													<img src="{{ asset('images/product/'.$sanphamlist->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
 												</a>
 											</div>
@@ -213,7 +216,7 @@
 									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 										<div class="product-wrapper-content">
 											<div class="product-details">
-												<h4><a href="#">{{ $sanphamlist->ten_san_pham }}</a></h4>
+												<h4><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}">{{ $sanphamlist->ten_san_pham }}</a></h4>
 												<div class="product-price">
 													<ul>
 														<li>{{ $sanphamlist->gia_tien_giam_gia }}</li>
@@ -228,7 +231,7 @@
 												</div>
 												<div class="add-to-link">
 	                                                <ul>
-	                                                    <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+	                                                    <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
 	                                                </ul>
 	                                            </div>
 											</div>

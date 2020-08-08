@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <h4 style="height: 65px;"><a href="#">{{ $sanphammoi->ten_san_pham }}</a></h4>
+                                <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphammoi->id) }}">{{ $sanphammoi->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>{{ $sanphammoi->gia_tien_giam_gia }}</li>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
-                                        <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+                                        <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphammoi->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>	
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <h4 style="height: 65px;"><a href="#">{{ $sanphambanchay->ten_san_pham }}</a></h4>
+                                <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphambanchay->id) }}">{{ $sanphambanchay->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>{{ $sanphambanchay->gia_tien_giam_gia }}</li>
@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
-                                        <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+                                        <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphambanchay->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>	
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <h4 style="height: 65px;"><a href="#">{{ $sanphamgiamgia->ten_san_pham }}</a></h4>
+                                <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgiamgia->id) }}">{{ $sanphamgiamgia->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>{{ $sanphamgiamgia->gia_tien_giam_gia }}</li>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
-                                        <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+                                        <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgiamgia->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>	
@@ -371,7 +371,7 @@
                             </div>
                         </div>
                         <div class="product-details text-center">
-                            <h4 style="height: 65px;"><a href="#">{{ $nhaxuatbantre->ten_san_pham }}</a></h4>
+                            <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbantre->id) }}">{{ $nhaxuatbantre->ten_san_pham }}</a></h4>
                             <div class="product-price">
                                 <ul>
                                     <li>{{ $nhaxuatbantre->gia_tien_giam_gia }}</li>
@@ -385,7 +385,7 @@
                             </div>
                             <div class="add-to-link">
                                 <ul>
-                                    <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+                                    <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbantre->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>	
@@ -428,7 +428,7 @@
                             </div>
                         </div>
                         <div class="product-details text-center">
-                            <h4 style="height: 65px;"><a href="#">{{ $nhaxuatbankimdong->ten_san_pham }}</a></h4>
+                            <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbankimdong->id) }}">{{ $nhaxuatbankimdong->ten_san_pham }}</a></h4>
                             <div class="product-price">
                                 <ul>
                                     <li>{{ $nhaxuatbankimdong->gia_tien_giam_gia }}</li>
@@ -442,7 +442,7 @@
                             </div>
                             <div class="add-to-link">
                                 <ul>
-                                    <li><a href="product-details.html" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+                                    <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbankimdong->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>  
@@ -472,10 +472,10 @@
     					<div class="product-total-2">                           
     						<div class="single-most-product bd mb-18">
     							<div class="most-product-img">
-    								<a href="#"><img src="{{ asset('images/product/'.$vanhoc->anh_minh_hoa_san_pham) }}" alt="book" /></a>
+    								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}"><img src="{{ asset('images/product/'.$vanhoc->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="#">{{ $vanhoc->ten_san_pham }}</a></h4>
+    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}">{{ $vanhoc->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $vanhoc->gia_tien_giam_gia }}</li>
@@ -498,10 +498,10 @@
     					<div class="product-total-2">
     						<div class="single-most-product bd mb-18">
     							<div class="most-product-img">
-    								<a href="#"><img src="{{ asset('images/product/'.$kienthucbachkhoa->anh_minh_hoa_san_pham) }}" alt="book" /></a>
+    								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}"><img src="{{ asset('images/product/'.$kienthucbachkhoa->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="#">{{ $kienthucbachkhoa->ten_san_pham }}</a></h4>
+    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}">{{ $kienthucbachkhoa->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $kienthucbachkhoa->gia_tien_giam_gia }}</li>
@@ -524,10 +524,10 @@
     					<div class="product-total-2">
     						<div class="single-most-product bd mb-18">
     							<div class="most-product-img">
-    								<a href="#"><img src="{{ asset('images/product/'.$tieuthuyet->anh_minh_hoa_san_pham) }}" alt="book" /></a>
+    								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}"><img src="{{ asset('images/product/'.$tieuthuyet->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="#">{{ $tieuthuyet->ten_san_pham }}</a></h4>
+    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}">{{ $tieuthuyet->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $tieuthuyet->gia_tien_giam_gia }}</li>
