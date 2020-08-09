@@ -171,7 +171,7 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="product-details text-center">
-	                                        <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}">{{ $sanphamgrid->ten_san_pham }}</a></h4>
+	                                        <h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}">{{ $sanphamgrid->ten_san_pham }}</a></h4>
 	                                        <div class="product-price">
 	                                            <ul>
 	                                                <li>{{ $sanphamgrid->gia_tien_giam_gia }}</li>

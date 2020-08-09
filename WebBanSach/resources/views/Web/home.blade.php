@@ -72,7 +72,7 @@
                                         <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphammoi->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>	
+                            </div>
                         </div>
                         <!-- single-product-end -->
                     @endforeach
@@ -118,13 +118,13 @@
                                         <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphambanchay->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>	
+                            </div>
                         </div>
                         <!-- single-product-end -->
                     @endforeach
                 </div>
 			</div>
-            
+
 			<div class="tab-pane fade" id="SanPhamGiamGia">
                 <div class="tab-active owl-carousel">
                     @foreach($sanphamgiamGia as $sanphamgiamgia)
@@ -164,7 +164,7 @@
                                         <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgiamgia->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>	
+                            </div>
                         </div>
                         <!-- single-product-end -->
                     @endforeach
@@ -344,7 +344,7 @@
             <!-- tab-menu-start -->
             <div class="tab-menu mb-40 text-center">
                 <ul>
-                    <li class="active"><a href="#" data-toggle="tab">Nhà Xuất Bản Trẻ</a></li>
+                    <li class="active"><a data-toggle="tab">Nhà Xuất Bản Trẻ</a></li>
                 </ul>
             </div>
             <!-- tab-menu-end -->
@@ -388,7 +388,7 @@
                                     <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbantre->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                 </ul>
                             </div>
-                        </div>	
+                        </div>
                     </div>
                     <!-- single-product-end -->
                 </div>
@@ -401,7 +401,7 @@
             <!-- tab-menu-start -->
             <div class="tab-menu mb-40 text-center">
                 <ul>
-                    <li class="active"><a href="#" data-toggle="tab">Nhà Xuất Bản Kim Đồng</a></li>
+                    <li class="active"><a data-toggle="tab">Nhà Xuất Bản Kim Đồng</a></li>
                 </ul>
             </div>
             <!-- tab-menu-end -->
@@ -445,7 +445,7 @@
                                     <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbankimdong->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
                                 </ul>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <!-- single-product-end -->
                 </div>
@@ -469,13 +469,13 @@
 				</div>
 				<div class="product-active-2 owl-carousel">
                     @foreach($vanHoc as $vanhoc)
-    					<div class="product-total-2">                           
+    					<div class="product-total-2">
     						<div class="single-most-product bd mb-18">
     							<div class="most-product-img">
     								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}"><img src="{{ asset('images/product/'.$vanhoc->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}">{{ $vanhoc->ten_san_pham }}</a></h4>
+    								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}">{{ $vanhoc->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $vanhoc->gia_tien_giam_gia }}</li>
@@ -483,7 +483,7 @@
     									</ul>
     								</div>
     							</div>
-    						</div>                            
+    						</div>
     					</div>
                     @endforeach
 				</div>
@@ -501,7 +501,7 @@
     								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}"><img src="{{ asset('images/product/'.$kienthucbachkhoa->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}">{{ $kienthucbachkhoa->ten_san_pham }}</a></h4>
+    								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}">{{ $kienthucbachkhoa->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $kienthucbachkhoa->gia_tien_giam_gia }}</li>
@@ -527,7 +527,7 @@
     								<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}"><img src="{{ asset('images/product/'.$tieuthuyet->anh_minh_hoa_san_pham) }}" alt="book" /></a>
     							</div>
     							<div class="most-product-content">
-    								<h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}">{{ $tieuthuyet->ten_san_pham }}</a></h4>
+    								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}">{{ $tieuthuyet->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
     										<li>{{ $tieuthuyet->gia_tien_giam_gia }}</li>

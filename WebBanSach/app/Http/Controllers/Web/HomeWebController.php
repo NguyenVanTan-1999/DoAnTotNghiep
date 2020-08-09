@@ -51,9 +51,26 @@ class HomeWebController extends Controller
         $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
         $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
 
-        $tongSanPham           = SanPham::where('loai_san_pham_id', $type)->get();
-        $dsSanPhamGrid         = SanPham::where('loai_san_pham_id', $type)->paginate(12);
-        $dsSanPhamList         = SanPham::where('loai_san_pham_id', $type)->paginate(4);
+        if(strpos($type, 'LSP') !== false)
+        {
+            $tongSanPham       = SanPham::where('loai_san_pham_id', $type)->get();
+            $dsSanPhamGrid     = SanPham::where('loai_san_pham_id', $type)->paginate(12);
+            $dsSanPhamList     = SanPham::where('loai_san_pham_id', $type)->paginate(4);
+        }
+
+        if(strpos($type, 'HTSP') !== false)
+        {
+            $tongSanPham       = SanPham::where('hinh_thuc_san_pham_id', $type)->get();
+            $dsSanPhamGrid     = SanPham::where('hinh_thuc_san_pham_id', $type)->paginate(12);
+            $dsSanPhamList     = SanPham::where('hinh_thuc_san_pham_id', $type)->paginate(4);
+        }
+
+        if(strpos($type, 'NXB') !== false)
+        {
+            $tongSanPham       = SanPham::where('nha_xuat_ban_id', $type)->get();
+            $dsSanPhamGrid     = SanPham::where('nha_xuat_ban_id', $type)->paginate(12);
+            $dsSanPhamList     = SanPham::where('nha_xuat_ban_id', $type)->paginate(4);
+        }
         return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
     }
 
@@ -63,7 +80,7 @@ class HomeWebController extends Controller
         $dsHinhThucSanPham     = HinhThucSanPham::all();
         $dsNhaXuatBan          = NhaXuatBan::all();
 
-        $sanPhams = SanPham::where('id', $request->id)->get();
+        $sanPhams              = SanPham::where('id', $request->id)->get();
         return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPhams'));
     }
 

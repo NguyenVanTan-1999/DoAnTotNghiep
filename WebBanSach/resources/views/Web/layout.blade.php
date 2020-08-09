@@ -68,7 +68,7 @@
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<div class="account-area text-right">
 								<ul>
-									<li><a href="checkout.html">Thanh Toán</a></li>
+									<li><a href="#">Thanh Toán</a></li>
 
 									@if(Auth::guard('web')->check())
 										<li><a href="{{ route('website-ban-sach.dang-xuat') }}">Đăng Xuất</a></li>
@@ -133,8 +133,8 @@
 												<h5>Tổng <span>£12.00</span></h5>
 											</div>
 											<div class="cart-bottom">
-												<a class="view-cart" href="cart.html">Xem Chi Tiết</a>
-												<a href="checkout.html">Thanh Toán</a>
+												<a class="view-cart" href="#">Xem Chi Tiết</a>
+												<a href="#">Thanh Toán</a>
 											</div>
 										</div>
 									</li>
@@ -157,10 +157,10 @@
 
 										<li class="active"><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
 
-										<li><a href="#">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
+										<li><a style="cursor: pointer;">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
 											<div class="mega-menu">
 												<span>
-													<a href="#" class="title">Loại Sản Phẩm</a>
+													<a style="cursor: pointer;" class="title">Loại Sản Phẩm</a>
 
 													@foreach($dsLoaiSanPham as $loaisanpham)
 														<a href="{{ route('website-ban-sach.san-pham', $loaisanpham->ma_loai_san_pham) }}">- {{ $loaisanpham->ten_loai_san_pham }}</a>
@@ -168,7 +168,7 @@
 												</span>
 
 												<span>
-													<a href="#" class="title">Hình Thức Sản Phẩm</a>
+													<a style="cursor: pointer;" class="title">Hình Thức Sản Phẩm</a>
 
 													@foreach($dsHinhThucSanPham as $hinhthucsanpham)
 														<a href="{{ route('website-ban-sach.san-pham', $hinhthucsanpham->loai_hinh_thuc_san_pham) }}">- {{ $hinhthucsanpham->ten_hinh_thuc_san_pham }}</a>
@@ -176,7 +176,7 @@
 												</span>
 
 												<span>
-													<a href="#" class="title">Nhà Xuất Bản</a>
+													<a style="cursor: pointer;" class="title">Nhà Xuất Bản</a>
 
 													@foreach($dsNhaXuatBan as $nhaxuatban)
 														<a href="{{ route('website-ban-sach.san-pham', $nhaxuatban->ma_nha_xuat_ban) }}">- {{ $nhaxuatban->ten_nha_xuat_ban }}</a>
@@ -185,7 +185,7 @@
 											</div>
 										</li>
 
-										<li><a href="#">BLOG<i class="fa fa-angle-down"></i></a>
+										<li><a style="cursor: pointer;">BLOG<i class="fa fa-angle-down"></i></a>
 											<div class="sub-menu sub-menu-2">
 												<ul>
 													<li><a href="#">Blog</a></li>
@@ -250,7 +250,7 @@
                                         </div>
                                         <div class="footer-mid-menu">
                                             <ul>
-                                                <li><a href="about.html">About us</a></li>
+                                                <li><a href="#">About us</a></li>
                                                 <li><a href="#">Prices drop </a></li>
                                                 <li><a href="#">New products</a></li>
                                                 <li><a href="#">Best sales</a></li>
@@ -265,10 +265,10 @@
                                         </div>
                                         <div class="footer-mid-menu">
                                             <ul>
-                                                <li><a href="contact.html">Contact us</a></li>
+                                                <li><a href="#">Contact us</a></li>
                                                 <li><a href="#">Sitemap</a></li>
                                                 <li><a href="#">Stores</a></li>
-                                                <li><a href="register.html">My account </a></li>
+                                                <li><a href="#">My account </a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -280,7 +280,7 @@
                                         </div>
                                         <div class="footer-mid-menu">
                                             <ul>
-                                                <li><a href="contact.html">Addresses</a></li>
+                                                <li><a href="#">Addresses</a></li>
                                                 <li><a href="#">Credit slips </a></li>
                                                 <li><a href="#"> Orders</a></li>
                                                 <li><a href="#">Personal info</a></li>
