@@ -159,7 +159,7 @@
 	                                            <img src="{{ asset('images/product/'.$sanphamgrid->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
 	                                        </a>
 	                                        <div class="quick-view">
-	                                            <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+	                                            <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}" title="Xem Chi Tiết">
 	                                                <i class="fa fa-search-plus"></i>
 	                                            </a>
 	                                        </div>

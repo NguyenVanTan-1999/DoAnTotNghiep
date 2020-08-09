@@ -225,7 +225,7 @@
 					<!-- product-info-area-end -->
 				@endforeach
 
-				
+
 					<!-- new-book-area-start -->
 					<div class="new-book-area mt-60">
 						<div class="section-title text-center mb-30">
@@ -282,7 +282,7 @@
 						</div>
 					</div>
 					<!-- new-book-area-end -->
-				
+
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 				<div class="shop-left">

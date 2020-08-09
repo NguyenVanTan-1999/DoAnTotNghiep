@@ -43,7 +43,7 @@
                                     <img src="{{ asset('images/product/'.$sanphammoi->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
-                                    <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+                                    <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphammoi->id) }}" title="Xem Chi Tiết">
                                         <i class="fa fa-search-plus"></i>
                                     </a>
                                 </div>
@@ -89,7 +89,7 @@
                                     <img src="{{ asset('images/product/'.$sanphambanchay->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
-                                    <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+                                    <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphambanchay->id) }}" title="Xem Chi Tiết">
                                         <i class="fa fa-search-plus"></i>
                                     </a>
                                 </div>
@@ -135,7 +135,7 @@
                                     <img src="{{ asset('images/product/'.$sanphamgiamgia->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
-                                    <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+                                    <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgiamgia->id) }}" title="Xem Chi Tiết">
                                         <i class="fa fa-search-plus"></i>
                                     </a>
                                 </div>
@@ -359,7 +359,7 @@
                                 <img src="{{ asset('images/product/'.$nhaxuatbantre->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
-                                <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+                                <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbantre->id) }}" title="Xem Chi Tiết">
                                     <i class="fa fa-search-plus"></i>
                                 </a>
                             </div>
@@ -416,7 +416,7 @@
                                 <img src="{{ asset('images/product/'.$nhaxuatbankimdong->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
-                                <a class="action-view" href="#" data-target="#" data-toggle="modal" title="Xem Nhanh">
+                                <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbankimdong->id) }}" title="Xem Chi Tiết">
                                     <i class="fa fa-search-plus"></i>
                                 </a>
                             </div>
