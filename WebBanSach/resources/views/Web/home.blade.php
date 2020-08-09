@@ -58,8 +58,8 @@
                                 <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphammoi->id) }}">{{ $sanphammoi->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
-                                        <li>{{ $sanphammoi->gia_tien_giam_gia }}</li>
-                                        <li class="old-price">{{ $sanphammoi->gia_tien_san_pham }}</li>
+                                        <li>{{ number_format($sanphammoi->gia_tien_giam_gia, 0, '', ',') }}</li>
+                                        <li class="old-price">{{ number_format($sanphammoi->gia_tien_san_pham, 0, '', ',') }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,8 +104,8 @@
                                 <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphambanchay->id) }}">{{ $sanphambanchay->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
-                                        <li>{{ $sanphambanchay->gia_tien_giam_gia }}</li>
-                                        <li class="old-price">{{ $sanphambanchay->gia_tien_san_pham }}</li>
+                                        <li>{{ number_format($sanphambanchay->gia_tien_giam_gia, 0, '', ',') }}</li>
+                                        <li class="old-price">{{ number_format($sanphambanchay->gia_tien_san_pham, 0, '', ',') }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -150,8 +150,8 @@
                                 <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgiamgia->id) }}">{{ $sanphamgiamgia->ten_san_pham }}</a></h4>
                                 <div class="product-price">
                                     <ul>
-                                        <li>{{ $sanphamgiamgia->gia_tien_giam_gia }}</li>
-                                        <li class="old-price">{{ $sanphamgiamgia->gia_tien_san_pham }}</li>
+                                        <li>{{ number_format($sanphamgiamgia->gia_tien_giam_gia, 0, '', ',') }}</li>
+                                        <li class="old-price">{{ number_format($sanphamgiamgia->gia_tien_san_pham, 0, '', ',') }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -374,8 +374,8 @@
                             <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbantre->id) }}">{{ $nhaxuatbantre->ten_san_pham }}</a></h4>
                             <div class="product-price">
                                 <ul>
-                                    <li>{{ $nhaxuatbantre->gia_tien_giam_gia }}</li>
-                                    <li class="old-price">{{ $nhaxuatbantre->gia_tien_san_pham }}</li>
+                                    <li>{{ number_format($nhaxuatbantre->gia_tien_giam_gia, 0, '', ',') }}</li>
+                                    <li class="old-price">{{ number_format($nhaxuatbantre->gia_tien_san_pham, 0, '', ',') }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -431,8 +431,8 @@
                             <h4 style="height: 65px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $nhaxuatbankimdong->id) }}">{{ $nhaxuatbankimdong->ten_san_pham }}</a></h4>
                             <div class="product-price">
                                 <ul>
-                                    <li>{{ $nhaxuatbankimdong->gia_tien_giam_gia }}</li>
-                                    <li class="old-price">{{ $nhaxuatbankimdong->gia_tien_san_pham }}</li>
+                                    <li>{{ number_format($nhaxuatbankimdong->gia_tien_giam_gia, 0, '', ',') }}</li>
+                                    <li class="old-price">{{ number_format($nhaxuatbankimdong->gia_tien_san_pham, 0, '', ',') }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -478,8 +478,8 @@
     								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $vanhoc->id) }}">{{ $vanhoc->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
-    										<li>{{ $vanhoc->gia_tien_giam_gia }}</li>
-    										<li class="old-price">{{ $vanhoc->gia_tien_san_pham }}</li>
+    										<li>{{ number_format($vanhoc->gia_tien_giam_gia, 0, '', ',') }}</li>
+    										<li class="old-price">{{ number_format($vanhoc->gia_tien_san_pham, 0, '', ',') }}</li>
     									</ul>
     								</div>
     							</div>
@@ -504,8 +504,8 @@
     								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $kienthucbachkhoa->id) }}">{{ $kienthucbachkhoa->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
-    										<li>{{ $kienthucbachkhoa->gia_tien_giam_gia }}</li>
-    										<li class="old-price">{{ $kienthucbachkhoa->gia_tien_san_pham }}</li>
+    										<li>{{ number_format($kienthucbachkhoa->gia_tien_giam_gia, 0, '', ',') }}</li>
+    										<li class="old-price">{{ number_format($kienthucbachkhoa->gia_tien_san_pham, 0, '', ',') }}</li>
     									</ul>
     								</div>
     							</div>
@@ -530,8 +530,8 @@
     								<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $tieuthuyet->id) }}">{{ $tieuthuyet->ten_san_pham }}</a></h4>
     								<div class="product-price">
     									<ul>
-    										<li>{{ $tieuthuyet->gia_tien_giam_gia }}</li>
-    										<li class="old-price">{{ $tieuthuyet->gia_tien_san_pham }}</li>
+    										<li>{{ number_format($tieuthuyet->gia_tien_giam_gia, 0, '', ',') }}</li>
+    										<li class="old-price">{{ number_format($tieuthuyet->gia_tien_san_pham, 0, '', ',') }}</li>
     									</ul>
     								</div>
     							</div>

@@ -55,8 +55,8 @@
 								<div class="product-info-price">
 									<div class="price-final">
 										<span class="discount-percentage">(-{{ $sanPham->phan_tram_giam_gia }}%)</span><br />
-										<span>{{ $sanPham->gia_tien_giam_gia }}</span>
-										<span class="old-price">{{ $sanPham->gia_tien_san_pham }}</span>
+										<span>{{ number_format($sanPham->gia_tien_giam_gia, 0, '', ',') }}</span>
+										<span class="old-price">{{ number_format($sanPham->gia_tien_san_pham, 0, '', ',') }}</span>
 									</div>
 								</div>
 								<div class="product-add-form">
@@ -252,8 +252,8 @@
 									<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}">{{ $sanphamtuongtu->ten_san_pham }}</a></h4>
 									<div class="product-price">
 										<ul>
-											<li>{{ $sanphamtuongtu->gia_tien_giam_gia }}</li>
-											<li class="old-price">{{ $sanphamtuongtu->gia_tien_san_pham }}</li>
+											<li>{{ number_format($sanphamtuongtu->gia_tien_giam_gia, 0, '', ',') }}</li>
+											<li class="old-price">{{ number_format($sanphamtuongtu->gia_tien_san_pham, 0, '', ',') }}</li>
 										</ul>
 									</div>
 								</div>

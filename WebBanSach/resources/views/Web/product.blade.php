@@ -174,8 +174,8 @@
 	                                        <h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}">{{ $sanphamgrid->ten_san_pham }}</a></h4>
 	                                        <div class="product-price">
 	                                            <ul>
-	                                                <li>{{ $sanphamgrid->gia_tien_giam_gia }}</li>
-	                                                <li class="old-price">{{ $sanphamgrid->gia_tien_san_pham }}</li>
+	                                                <li>{{ number_format($sanphamgrid->gia_tien_giam_gia, 0, '', ',') }}</li>
+	                                                <li class="old-price">{{ number_format($sanphamgrid->gia_tien_san_pham, 0, '', ',') }}</li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>
@@ -219,8 +219,8 @@
 												<h4><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}">{{ $sanphamlist->ten_san_pham }}</a></h4>
 												<div class="product-price">
 													<ul>
-														<li>{{ $sanphamlist->gia_tien_giam_gia }}</li>
-														<li class="old-price">{{ $sanphamlist->gia_tien_san_pham }}</li>
+														<li>{{ number_format($sanphamlist->gia_tien_giam_gia, 0, '', ',') }}</li>
+														<li class="old-price">{{ number_format($sanphamlist->gia_tien_san_pham, 0, '', ',') }}</li>
 													</ul>
 												</div>
 												<p>{{ $sanphamlist->thong_tin_san_pham }}</p>
