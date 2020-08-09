@@ -155,7 +155,7 @@
 						            <!-- single-product-start -->
 	                                <div class="product-wrapper mb-40">
 	                                    <div class="product-img">
-	                                        <a href="#">
+	                                        <a>
 	                                            <img src="{{ asset('images/product/'.$sanphamgrid->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
 	                                        </a>
 	                                        <div class="quick-view">

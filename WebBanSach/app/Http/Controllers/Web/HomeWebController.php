@@ -80,8 +80,9 @@ class HomeWebController extends Controller
         $dsHinhThucSanPham     = HinhThucSanPham::all();
         $dsNhaXuatBan          = NhaXuatBan::all();
 
-        $sanPhams              = SanPham::where('id', $request->id)->get();
-        return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPhams'));
+        $sanPham               = SanPham::where('id', $request->id)->first();
+        $sanphamtuongTu        = SanPham::where('loai_san_pham_id', $sanPham->loai_san_pham_id)->get();
+        return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPham', 'sanphamtuongTu'));
     }
 
     public function dangKy()

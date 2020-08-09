@@ -39,7 +39,7 @@
                         <!-- single-product-start -->
                         <div class="product-wrapper">
                             <div class="product-img">
-                                <a href="#">
+                                <a>
                                     <img src="{{ asset('images/product/'.$sanphammoi->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
@@ -85,7 +85,7 @@
                         <!-- single-product-start -->
                         <div class="product-wrapper">
                             <div class="product-img">
-                                <a href="#">
+                                <a>
                                     <img src="{{ asset('images/product/'.$sanphambanchay->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
@@ -131,7 +131,7 @@
                         <!-- single-product-start -->
                         <div class="product-wrapper">
                             <div class="product-img">
-                                <a href="#">
+                                <a>
                                     <img src="{{ asset('images/product/'.$sanphamgiamgia->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                                 </a>
                                 <div class="quick-view">
@@ -355,7 +355,7 @@
                     <!-- single-product-start -->
                     <div class="product-wrapper mb-40">
                         <div class="product-img">
-                            <a href="#">
+                            <a>
                                 <img src="{{ asset('images/product/'.$nhaxuatbantre->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
@@ -412,7 +412,7 @@
                     <!-- single-product-start -->
                     <div class="product-wrapper mb-40">
                         <div class="product-img">
-                            <a href="#">
+                            <a>
                                 <img src="{{ asset('images/product/'.$nhaxuatbankimdong->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
