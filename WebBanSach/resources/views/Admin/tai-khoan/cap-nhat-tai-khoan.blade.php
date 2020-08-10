@@ -231,12 +231,22 @@
 
           <div class="tab-pane fade" id="anh-dai-dien-tai-khoan" role="tabpanel" aria-labelledby="anh-dai-dien-tai-khoan-tab">
 
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien_hien_tai">Ảnh Đại Diện Hiện Tại <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6">
+                <img src="{{ asset('images/user/'.$taiKhoans->anh_dai_dien) }}" width="200px" height="200px">
+              </div>
+            </div>
+
+            <br />
+
             <form action="{{ route('tai-khoan.cap-nhat-hinh-anh', $taiKhoans->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
               @csrf
 
               <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien">Ảnh Đại Diện <span class="required">*</span>
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien">Ảnh Đại Diện Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
                   <input type="file" id="anh_dai_dien" name="anh_dai_dien" title="ảnh đại diện với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>

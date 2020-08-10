@@ -214,12 +214,22 @@
 
           <div class="tab-pane fade" id="anh-minh-hoa-san-pham" role="tabpanel" aria-labelledby="anh-minh-hoa-san-pham-tab">
 
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham_hien_tai">Ảnh Minh Họa Sản Phẩm Hiện Tại <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6">
+                <img src="{{ asset('images/product/'.$sanPhams->anh_minh_hoa_san_pham) }}" width="200px" height="180px">
+              </div>
+            </div>
+
+            <br />
+
             <form action="{{ route('san-pham.cap-nhat-hinh-anh', $sanPhams->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
               @csrf
 
               <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm <span class="required">*</span>
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
                   <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>

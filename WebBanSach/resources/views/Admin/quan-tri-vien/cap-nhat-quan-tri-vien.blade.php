@@ -130,12 +130,22 @@
 
           <div class="tab-pane fade" id="anh-dai-dien-admin-quan-tri-vien" role="tabpanel" aria-labelledby="anh-dai-dien-admin-quan-tri-vien-tab">
 
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien_admin_hien_tai">Ảnh Đại Diện Admin Hiện Tại <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6">
+                <img src="{{ asset('images/admin/'.$quantriViens->anh_dai_dien_admin) }}" width="200px" height="200px">
+              </div>
+            </div>
+
+            <br />
+
             <form action="{{ route('cap-nhat-hinh-anh-admin', $quantriViens->id) }}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
               @csrf
 
               <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien_admin">Ảnh Đại Diện Admin <span class="required">*</span>
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien_admin">Ảnh Đại Diện Admin Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
                   <input type="file" id="anh_dai_dien_admin" name="anh_dai_dien_admin" title="ảnh đại diện admin với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
