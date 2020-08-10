@@ -50,7 +50,7 @@
                                 <div class="product-flag">
                                     <ul>
                                         <li><span class="sale">{{ $sanphammoi->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-                                        <li><span class="discount-percentage">-{{ $sanphammoi->phan_tram_giam_gia }}%</span></li>
+                                        <li><span class="discount-percentage">-{{ (($sanphammoi->gia_tien_san_pham - $sanphammoi->gia_tien_giam_gia) * 100 / ($sanphammoi->gia_tien_san_pham)) }}%</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                 <div class="product-flag">
                                     <ul>
                                         <li><span class="sale">{{ $sanphambanchay->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-                                        <li><span class="discount-percentage">-{{ $sanphambanchay->phan_tram_giam_gia }}%</span></li>
+                                        <li><span class="discount-percentage">-{{ (($sanphambanchay->gia_tien_san_pham - $sanphambanchay->gia_tien_giam_gia) * 100 / ($sanphambanchay->gia_tien_san_pham)) }}%</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 <div class="product-flag">
                                     <ul>
                                         <li><span class="sale">{{ $sanphamgiamgia->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-                                        <li><span class="discount-percentage">-{{ $sanphamgiamgia->phan_tram_giam_gia }}%</span></li>
+                                        <li><span class="discount-percentage">-{{ (($sanphamgiamgia->gia_tien_san_pham - $sanphamgiamgia->gia_tien_giam_gia) * 100 / ($sanphamgiamgia->gia_tien_san_pham)) }}%</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -366,7 +366,7 @@
                             <div class="product-flag">
                                 <ul>
                                     <li><span class="sale">{{ $nhaxuatbantre->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-                                    <li><span class="discount-percentage">-{{ $nhaxuatbantre->phan_tram_giam_gia }}%</span></li>
+                                    <li><span class="discount-percentage">-{{ (($nhaxuatbantre->gia_tien_san_pham - $nhaxuatbantre->gia_tien_giam_gia) * 100 / ($nhaxuatbantre->gia_tien_san_pham)) }}%</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -423,7 +423,7 @@
                             <div class="product-flag">
                                 <ul>
                                     <li><span class="sale">{{ $nhaxuatbankimdong->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-                                    <li><span class="discount-percentage">-{{ $nhaxuatbankimdong->phan_tram_giam_gia }}%</span></li>
+                                    <li><span class="discount-percentage">-{{ (($nhaxuatbankimdong->gia_tien_san_pham - $nhaxuatbankimdong->gia_tien_giam_gia) * 100 / ($nhaxuatbankimdong->gia_tien_san_pham)) }}%</span></li>
                                 </ul>
                             </div>
                         </div>

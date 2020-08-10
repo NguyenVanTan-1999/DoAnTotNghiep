@@ -160,7 +160,7 @@
 	                                        <div class="product-flag">
 	                                            <ul>
 	                                                <li><span class="sale">{{ $sanphamgrid->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-	                                                <li><span class="discount-percentage">-{{ $sanphamgrid->phan_tram_giam_gia }}%</span></li>
+	                                                <li><span class="discount-percentage">-{{ (($sanphamgrid->gia_tien_san_pham - $sanphamgrid->gia_tien_giam_gia) * 100 / ($sanphamgrid->gia_tien_san_pham)) }}%</span></li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>

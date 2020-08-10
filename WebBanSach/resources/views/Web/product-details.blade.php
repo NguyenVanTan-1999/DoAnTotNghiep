@@ -54,7 +54,7 @@
 								</div>
 								<div class="product-info-price">
 									<div class="price-final">
-										<span class="discount-percentage">(-{{ $sanPham->phan_tram_giam_gia }}%)</span><br />
+										<span class="discount-percentage">(-{{ (($sanPham->gia_tien_san_pham - $sanPham->gia_tien_giam_gia) * 100 / ($sanPham->gia_tien_san_pham)) }}%)</span><br />
 										<span>{{ number_format($sanPham->gia_tien_giam_gia, 0, '', ',') }}</span>
 										<span class="old-price">{{ number_format($sanPham->gia_tien_san_pham, 0, '', ',') }}</span>
 									</div>
@@ -244,7 +244,7 @@
 	                                <div class="product-flag">
 	                                    <ul>
 	                                        <li><span class="sale">{{ $sanphamtuongtu->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-	                                        <li><span class="discount-percentage">-{{ $sanphamtuongtu->phan_tram_giam_gia }}%</span></li>
+	                                        <li><span class="discount-percentage">-{{ (($sanphamtuongtu->gia_tien_san_pham - $sanphamtuongtu->gia_tien_giam_gia) * 100 / ($sanphamtuongtu->gia_tien_san_pham)) }}%</span></li>
 	                                    </ul>
 	                                </div>
 								</div>
