@@ -224,7 +224,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_minh_hoa_san_pham">Ảnh Minh Họa Sản Phẩm Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
+                  <input type="file" id="anh_minh_hoa_san_pham" name="anh_minh_hoa_san_pham" title="ảnh minh họa sản phẩm mới với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
                 </div>
               </div>
 

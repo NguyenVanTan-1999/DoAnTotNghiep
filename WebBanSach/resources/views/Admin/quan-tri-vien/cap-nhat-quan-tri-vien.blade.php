@@ -148,7 +148,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="anh_dai_dien_admin">Ảnh Đại Diện Admin Mới <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="file" id="anh_dai_dien_admin" name="anh_dai_dien_admin" title="ảnh đại diện admin với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
+                  <input type="file" id="anh_dai_dien_admin" name="anh_dai_dien_admin" title="ảnh đại diện admin mới với tên không vượt quá 255 ký tự, bao gồm đuôi mở rộng là jpeg, png, jpg" required>
                 </div>
               </div>
 
