@@ -77,7 +77,7 @@ class QuanTriVienController extends Controller
         ],
 
         [
-            'anh_dai_dien_admin' => 'Ảnh Đại Diện Admin'
+            'anh_dai_dien_admin' => 'Ảnh Đại Diện Admin Mới'
         ]);
 
         if($request->hasFile('anh_dai_dien_admin'))

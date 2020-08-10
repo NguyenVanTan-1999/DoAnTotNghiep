@@ -140,7 +140,7 @@ class SanPhamController extends Controller
         ],
 
         [
-            'anh_minh_hoa_san_pham' => 'Ảnh Minh Họa Sản Phẩm'
+            'anh_minh_hoa_san_pham' => 'Ảnh Minh Họa Sản Phẩm Mới'
         ]);
 
         if($request->hasFile('anh_minh_hoa_san_pham'))

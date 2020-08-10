@@ -130,7 +130,7 @@ class TaiKhoanController extends Controller
         ],
 
         [
-            'anh_dai_dien' => 'Ảnh Đại Diện'
+            'anh_dai_dien' => 'Ảnh Đại Diện Mới'
         ]);
 
         if($request->hasFile('anh_dai_dien'))
