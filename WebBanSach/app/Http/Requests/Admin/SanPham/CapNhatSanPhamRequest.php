@@ -29,7 +29,6 @@ class CapNhatSanPhamRequest extends FormRequest
             'ngay_xuat_ban_san_pham' => 'required',
             'gia_tien_san_pham'      => 'required|digits_between:4,6|numeric',
             'gia_tien_giam_gia'      => 'required|lt:gia_tien_san_pham|digits_between:1,6|numeric',
-            'phan_tram_giam_gia'     => 'required|digits_between:1,3|numeric',
             'nha_xuat_ban_id'        => 'required',
             'loai_san_pham_id'       => 'required',
             'hinh_thuc_san_pham_id'  => 'required'
@@ -56,10 +55,6 @@ class CapNhatSanPhamRequest extends FormRequest
             'gia_tien_giam_gia.lt'              => 'Giá Tiền Giảm Giá Phải Nhỏ Hơn Giá Tiền Sản Phẩm',
             'gia_tien_giam_gia.digits_between'  => 'Giá Tiền Giảm Giá Nằm Trong Khoảng 0 VNĐ Đến 999.999 VNĐ',
             'gia_tien_giam_gia.numeric'         => 'Giá Tiền Giảm Giá Phải Là Số Nguyên',
-
-            'phan_tram_giam_gia.required'       => 'Vui Lòng Nhập Phần Trăm Giảm Giá',
-            'phan_tram_giam_gia.digits_between' => 'Phần Trăm Giảm Giá Nằm Trong Khoảng 0 % Đến 100 %',
-            'phan_tram_giam_gia.numeric'        => 'Phần Trăm Giảm Giá Phải Là Số Nguyên',
 
             'nha_xuat_ban_id.required'          => 'Vui Lòng Chọn Nhà Xuất Bản',
 

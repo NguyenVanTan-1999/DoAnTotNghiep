@@ -145,14 +145,6 @@
               </div>
 
               <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="phan_tram_giam_gia">Phần Trăm Giảm Giá <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6">
-                  <input type="number" id="phan_tram_giam_gia" name="phan_tram_giam_gia" class="form-control" title="phần trăm giảm giá nằm trong khoảng 0 % đến 100 %" min="0" max="100" value="{{ $sanPhams->phan_tram_giam_gia }}" required>
-                </div>
-              </div>
-
-              <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="nha_xuat_ban_id">Nhà Xuất Bản <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
