@@ -116,7 +116,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="thong_tin_san_pham">Thông Tin Sản Phẩm <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6">
-                  <input type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000" value="{{ $sanPhams->thong_tin_san_pham }}" required>
+                  <textarea type="text" id="thong_tin_san_pham" name="thong_tin_san_pham" class="form-control" title="thông tin sản phẩm không vượt quá 1000 ký tự" maxlength="1000" required>{{ $sanPhams->thong_tin_san_pham }}</textarea>
                 </div>
               </div>
 
