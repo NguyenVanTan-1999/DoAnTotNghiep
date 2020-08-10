@@ -9,7 +9,7 @@
 				<div class="breadcrumbs-menu">
 					<ul>
 						<li><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
-						<li><a class="active">Sản Phẩm</a></li>
+						<li><a class="active">Tìm Kiếm</a></li>
 					</ul>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
 							</ul>
 						</div>
 						<div class="list-page">
-							<p>Tổng Cộng: <span style="font-weight: bold;">{{ count($tongSanPham) }}</span> Sản Phẩm</p>
+							<p>Tổng Cộng: <span style="font-weight: bold;">{{ count($tongsanphamtimKiem) }}</span> Sản Phẩm</p>
 						</div>
 					</div>
 					<div class="field-limiter">
@@ -144,32 +144,32 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="th">
 					    <div class="row">
-					    	@foreach($dsSanPhamGrid as $sanphamgrid)
+					    	@foreach($dssanphamtimkiemGrid as $sanphamtimkiemgrid)
 						        <div class="col-lg-3 col-md-4 col-sm-6">
 						            <!-- single-product-start -->
 	                                <div class="product-wrapper mb-40">
 	                                    <div class="product-img">
 	                                        <a>
-	                                            <img src="{{ asset('images/product/'.$sanphamgrid->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
+	                                            <img src="{{ asset('images/product/'.$sanphamtimkiemgrid->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
 	                                        </a>
 	                                        <div class="quick-view">
-	                                            <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}" title="Xem Chi Tiết">
+	                                            <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemgrid->id) }}" title="Xem Chi Tiết">
 	                                                <i class="fa fa-search-plus"></i>
 	                                            </a>
 	                                        </div>
 	                                        <div class="product-flag">
 	                                            <ul>
-	                                                <li><span class="sale">{{ $sanphamgrid->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-	                                                <li><span class="discount-percentage">-{{ $sanphamgrid->phan_tram_giam_gia }}%</span></li>
+	                                                <li><span class="sale">{{ $sanphamtimkiemgrid->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
+	                                                <li><span class="discount-percentage">-{{ $sanphamtimkiemgrid->phan_tram_giam_gia }}%</span></li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>
 	                                    <div class="product-details text-center">
-	                                        <h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}">{{ $sanphamgrid->ten_san_pham }}</a></h4>
+	                                        <h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemgrid->id) }}">{{ $sanphamtimkiemgrid->ten_san_pham }}</a></h4>
 	                                        <div class="product-price">
 	                                            <ul>
-	                                                <li>{{ number_format($sanphamgrid->gia_tien_giam_gia, 0, '', ',') }}</li>
-	                                                <li class="old-price">{{ number_format($sanphamgrid->gia_tien_san_pham, 0, '', ',') }}</li>
+	                                                <li>{{ number_format($sanphamtimkiemgrid->gia_tien_giam_gia, 0, '', ',') }}</li>
+	                                                <li class="old-price">{{ number_format($sanphamtimkiemgrid->gia_tien_san_pham, 0, '', ',') }}</li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>
@@ -179,7 +179,7 @@
 	                                        </div>
 	                                        <div class="add-to-link">
 	                                            <ul>
-	                                                <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamgrid->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+	                                                <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemgrid->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
 	                                            </ul>
 	                                        </div>
 	                                    </div>
@@ -189,20 +189,20 @@
 					        @endforeach
 					    </div>
 					    <div class="row">
-							{{ $dsSanPhamGrid->links() }}
+							{{ $dssanphamtimkiemGrid->links() }}
 						</div>
 					</div>
 
 					<div class="tab-pane fade" id="list">
-						@foreach($dsSanPhamList as $sanphamlist)
+						@foreach($dssanphamtimkiemList as $sanphamtimkiemlist)
 							<!-- single-shop-start -->
 							<div class="single-shop mb-30">
 								<div class="row">
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 										<div class="product-wrapper-2">
 											<div class="product-img">
-												<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}">
-													<img src="{{ asset('images/product/'.$sanphamlist->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
+												<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemlist->id) }}">
+													<img src="{{ asset('images/product/'.$sanphamtimkiemlist->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
 												</a>
 											</div>
 										</div>
@@ -210,14 +210,14 @@
 									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 										<div class="product-wrapper-content">
 											<div class="product-details">
-												<h4><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}">{{ $sanphamlist->ten_san_pham }}</a></h4>
+												<h4><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemlist->id) }}">{{ $sanphamtimkiemlist->ten_san_pham }}</a></h4>
 												<div class="product-price">
 													<ul>
-														<li>{{ number_format($sanphamlist->gia_tien_giam_gia, 0, '', ',') }}</li>
-														<li class="old-price">{{ number_format($sanphamlist->gia_tien_san_pham, 0, '', ',') }}</li>
+														<li>{{ number_format($sanphamtimkiemlist->gia_tien_giam_gia, 0, '', ',') }}</li>
+														<li class="old-price">{{ number_format($sanphamtimkiemlist->gia_tien_san_pham, 0, '', ',') }}</li>
 													</ul>
 												</div>
-												<p>{{ $sanphamlist->thong_tin_san_pham }}</p>
+												<p>{{ $sanphamtimkiemlist->thong_tin_san_pham }}</p>
 											</div>
 											<div class="product-link">
 												<div class="product-button">
@@ -225,7 +225,7 @@
 												</div>
 												<div class="add-to-link">
 	                                                <ul>
-	                                                    <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamlist->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+	                                                    <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtimkiemlist->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
 	                                                </ul>
 	                                            </div>
 											</div>
@@ -236,7 +236,7 @@
 							<!-- single-shop-end -->
 						@endforeach
 						<div class="row">
-							{{ $dsSanPhamList->links() }}
+							{{ $dssanphamtimkiemList->links() }}
 						</div>
 					</div>
 				</div>
@@ -244,7 +244,7 @@
 				<!-- pagination-area-start -->
 				<div class="pagination-area mt-50">
 					<div class="list-page-2">
-						<p>Tổng Cộng: <span style="font-weight: bold;">{{ count($tongSanPham) }}</span> Sản Phẩm</p>
+						<p>Tổng Cộng: <span style="font-weight: bold;">{{ count($tongsanphamtimKiem) }}</span> Sản Phẩm</p>
 					</div>
 				</div>
 				<!-- pagination-area-end -->

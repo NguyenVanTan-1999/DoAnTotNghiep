@@ -74,6 +74,22 @@ class HomeWebController extends Controller
         return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
     }
 
+    public function timKiem(Request $request)
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongsanphamtimKiem   = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->get();
+        $dssanphamtimkiemGrid = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->paginate(12);
+        $dssanphamtimkiemList = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->paginate(4);
+        return view('Web.search', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongsanphamtimKiem', 'dssanphamtimkiemGrid', 'dssanphamtimkiemList'));
+    }
+
     public function chitietsanPham(Request $request)
     {
         $dsLoaiSanPham         = LoaiSanPham::all();
@@ -143,15 +159,15 @@ class HomeWebController extends Controller
         return redirect()->route('website-ban-sach.dang-nhap')->with('thongbaothatbai', 'ĐĂNG NHẬP TÀI KHOẢN THẤT BẠI');
     }
 
+    public function laythongtinUser()
+    {
+        return Auth::guard('web')->user();
+    }
+
     public function dangXuat()
     {
         Auth::guard('web')->logout();
 
         return redirect()->route('website-ban-sach.trang-chu');
-    }
-
-    public function laythongtinUser()
-    {
-        return Auth::guard('web')->user();
     }
 }

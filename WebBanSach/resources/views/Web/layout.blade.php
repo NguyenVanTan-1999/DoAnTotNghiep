@@ -72,7 +72,7 @@
 
 									@if(Auth::guard('web')->check())
 										<li><a href="{{ route('website-ban-sach.dang-xuat') }}">Đăng Xuất</a></li>
-										<li><a href="#">Chào: {{ Auth::guard('web')->user()->ho_ten }}</a></li>
+										<li><a style="cursor: pointer;">Chào: {{ Auth::guard('web')->user()->ho_ten }}</a></li>
 									@else
 										<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Đăng Nhập</a></li>
 
@@ -91,7 +91,14 @@
 			<div class="header-mid-area ptb-40">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12"></div>
+						<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
+							<div class="header-search">
+								<form action="{{ route('website-ban-sach.tim-kiem') }}" method="GET">
+									<input type="text" id="tu_khoa" name="tu_khoa" placeholder="Nhập Tên Sản Phẩm ..." title="tên sản phẩm không vượt quá 60 ký tự" maxlength="60" required />
+									<button type="submit" class="fa fa-search" style="width: 42px; height: 42px; position: absolute; background: #f07c29; color: #fff; display: inline-block; font-size: 18px; right: 0; text-align: center; top: 0; border: 1px solid #f07c29; border-radius: 0 5px 5px 0px;"></button>
+								</form>
+							</div>
+						</div>
 						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
 							<div class="logo-area text-center logo-xs-mrg">
 								<img src="{{ asset('assets/Web/img/logo/CKC-2.jpg') }}" alt="logo" width="196" />
