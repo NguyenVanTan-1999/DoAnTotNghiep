@@ -31,44 +31,44 @@
 					<div class="left-title mb-20">
 						<h4>HÌNH THỨC SẢN PHẨM</h4>
 					</div>
-					<div class="left-menu mb-30">
+					<div class="left-menu mb-30" style="margin-bottom: 0px;">
 						<ul>
 							@foreach($dsHinhThucSanPhamLink as $hinhthucsanphamlink)
 								<li><a href="{{ route('website-ban-sach.san-pham', $hinhthucsanphamlink->loai_hinh_thuc_san_pham) }}">{{ $hinhthucsanphamlink->ten_hinh_thuc_san_pham }}</a></li>
 							@endforeach
 						</ul>
-						<div class="row">
-							{{ $dsHinhThucSanPhamLink->links() }}
-						</div>
 					</div>
+					<div class="row">
+						{{ $dsHinhThucSanPhamLink->links() }}
+					</div><br />
 
 					<div class="left-title mb-20">
 						<h4>LOẠI SẢN PHẨM</h4>
 					</div>
-					<div class="left-menu mb-30">
+					<div class="left-menu mb-30" style="margin-bottom: 0px;">
 						<ul>
 							@foreach($dsLoaiSanPhamLink as $loaisanphamlink)
 								<li><a href="{{ route('website-ban-sach.san-pham', $loaisanphamlink->ma_loai_san_pham) }}">{{ $loaisanphamlink->ten_loai_san_pham }}</a></li>
 							@endforeach
 						</ul>
-						<div class="row">
-							{{ $dsLoaiSanPhamLink->links() }}
-						</div>
 					</div>
+					<div class="row">
+						{{ $dsLoaiSanPhamLink->links() }}
+					</div><br />
 
 					<div class="left-title mb-20">
 						<h4>NHÀ XUẤT BẢN</h4>
 					</div>
-					<div class="left-menu mb-30">
+					<div class="left-menu mb-30" style="margin-bottom: 0px;">
 						<ul>
 							@foreach($dsNhaXuatBanLink as $nhaxuatbanlink)
 								<li><a href="{{ route('website-ban-sach.san-pham', $nhaxuatbanlink->ma_nha_xuat_ban) }}">{{ $nhaxuatbanlink->ten_nha_xuat_ban }}</a></li>
 							@endforeach
 						</ul>
-						<div class="row">
-							{{ $dsNhaXuatBanLink->links() }}
-						</div>
 					</div>
+					<div class="row">
+						{{ $dsNhaXuatBanLink->links() }}
+					</div><br />
 
 					<div class="left-title mb-20">
 						<h4>GIÁ</h4>
