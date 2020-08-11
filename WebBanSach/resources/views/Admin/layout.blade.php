@@ -143,6 +143,7 @@
                   <li><a><i class="fa fa-image"></i>Hình Ảnh<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('slider.danh-sach') }}">Slider</a></li>
+                      <li><a href="{{ route('banner.danh-sach') }}">Banner</a></li>
                     </ul>
                   </li>
 
