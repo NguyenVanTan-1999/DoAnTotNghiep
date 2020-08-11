@@ -34,47 +34,51 @@
 									</li>
 								</ul>
 							</div>
+							<div class="product-add-form">
+								<form action="#">
+									<a href="#">Thêm Vào Giỏ</a>
+									<a href="#" style="margin-left: 10px;">Mua Ngay</a>
+								</form>
+							</div>
 						</div>
 						<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
 							<div class="product-info-main">
 								<div class="page-title">
 									<h1>{{ $sanPham->ten_san_pham }}</h1>
-								</div>
+								</div><br />
 								<div class="product-info-stock-sku">
-									<span>Mã SP |</span>
+									<span>Loại Sản Phẩm :</span>
 									<div class="product-attribute">
-										<span class="value">{{ $sanPham->ma_san_pham }}</span>
+										<span class="value" style="color: #f07c29;">{{ $sanPham->loaisanPham->ten_loai_san_pham }}</span>
 									</div>
-								</div>
-								<div class="product-reviews-summary">
-									<div class="reviews-actions">
-										<a>Ngày Xuất Bản</a>
-										<a class="view">{{ $sanPham->ngay_xuat_ban_san_pham }}</a>
+
+									<span>Nhà Xuất Bản :</span>
+									<div class="product-attribute">
+										<span class="value" style="color: #f07c29;">{{ $sanPham->nhaxuatBan->ten_nha_xuat_ban }}</span>
 									</div>
 								</div>
 								<div class="product-info-price">
 									<div class="price-final">
-										<span class="discount-percentage">(-{{ (($sanPham->gia_tien_san_pham - $sanPham->gia_tien_giam_gia) * 100 / ($sanPham->gia_tien_san_pham)) }}%)</span><br />
 										<span>{{ number_format($sanPham->gia_tien_giam_gia, 0, '', ',') }}</span>
-										<span class="old-price">{{ number_format($sanPham->gia_tien_san_pham, 0, '', ',') }}</span>
+
+										<span class="old-price" style="margin-left: 10px;">{{ number_format($sanPham->gia_tien_san_pham, 0, '', ',') }}</span>
+
+										<span class="discount-percentage" style="margin-left: 15px;">-{{ (($sanPham->gia_tien_san_pham - $sanPham->gia_tien_giam_gia) * 100 / ($sanPham->gia_tien_san_pham)) }}%</span>
 									</div>
 								</div>
 								<div class="product-add-form">
 									<form action="#">
 										<div class="quality-button">
-											<input class="qty" type="number" value="1">
+											<span style="font-weight: bold; color: #333; font-size: 18px;">Số Lượng :</span>
+											<input class="qty" type="number" value="1" style="margin-left: 10px;">
 										</div>
-										<a href="#">Thêm Vào Giỏ</a>
 									</form>
-								</div>
+								</div><br />
 								<div class="product-social-links">
 									<div class="product-addto-links">
 										<a href="#"><i class="fa fa-heart"></i></a>
 										<a href="#"><i class="fa fa-pie-chart"></i></a>
 										<a href="#"><i class="fa fa-envelope-o"></i></a>
-									</div>
-									<div class="product-addto-links-text">
-										<p>{{ $sanPham->thong_tin_san_pham }}</p>
 									</div>
 								</div>
 							</div>
@@ -94,11 +98,22 @@
 					<div class="tab-content">
                         <div class="tab-pane active" id="ChiTiet">
                             <div class="valu">
-                              <ul>
-                                <li><i class="fa fa-circle"></i>Hình Thức SP | {{ $sanPham->hinhthucsanPham->ten_hinh_thuc_san_pham }}</li><br />
-                                <li><i class="fa fa-circle"></i>Loại SP | {{ $sanPham->loaisanPham->ten_loai_san_pham }}</li><br />
-                                <li><i class="fa fa-circle"></i>NXB | {{ $sanPham->nhaxuatBan->ten_nha_xuat_ban }}</li>
-                              </ul>
+                                <ul>
+                              	    <li>Hình Thức Sản Phẩm:<span style="margin-left: 20px; color: #f07c29;">{{ $sanPham->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li><br />
+
+                              	    <li>Loại Sản Phẩm:<span style="margin-left: 20px; color: #f07c29;">{{ $sanPham->loaisanPham->ten_loai_san_pham }}</span></li><br />
+
+                                    <li>Mã Sản Phẩm:<span style="margin-left: 20px;">{{ $sanPham->ma_san_pham }}</span></li><br />
+
+                                    <li>Nhà Xuất Bản:<span style="margin-left: 20px; color: #f07c29;">{{ $sanPham->nhaxuatBan->ten_nha_xuat_ban }}</span></li><br />
+
+                                    <li>Ngày Xuất Bản Sản Phẩm:<span style="margin-left: 20px;">{{ $sanPham->ngay_xuat_ban_san_pham }}</span></li>
+                                </ul>
+	                            <div class="product-reviews-summary">
+									<div class="reviews-actions">
+										<span>{{ $sanPham->thong_tin_san_pham }}</span>
+									</div>
+								</div>
                             </div>
                         </div>
 
