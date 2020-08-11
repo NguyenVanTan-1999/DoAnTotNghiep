@@ -140,6 +140,12 @@
                   <li><a href="{{ route('tai-khoan.danh-sach') }}"><i class="fa fa-unlock-alt"></i>Tài Khoản</a>
                   </li>
 
+                  <li><a><i class="fa fa-image"></i>Hình Ảnh<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('slider.danh-sach') }}">Slider</a></li>
+                    </ul>
+                  </li>
+
                   <li><a><i class="fa fa-shopping-cart"></i>Sản Phẩm Chung<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('san-pham.danh-sach') }}">Sản Phẩm</a></li>

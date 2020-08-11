@@ -130,5 +130,23 @@ Route::prefix('quan-tri')->group(function () {
 				Route::get('/khoi-phuc/{id}', 'TaiKhoanController@restore')->name('khoi-phuc');
 			});
 		});
+
+		Route::prefix('slider')->group(function () {
+			Route::name('slider.')->group(function () {
+				Route::get('/', 'SliderController@index')->name('danh-sach');
+
+				Route::get('/them-moi', 'SliderController@create')->name('them-moi');
+				Route::post('/them-moi', 'SliderController@store')->name('xu-ly-them-moi');
+
+				Route::get('/cap-nhat/{id}', 'SliderController@edit')->name('cap-nhat');
+				Route::post('/cap-nhat/{id}', 'SliderController@update')->name('xu-ly-cap-nhat');
+
+				Route::get('/xoa/{id}', 'SliderController@destroy')->name('xoa');
+
+				Route::get('/thung-rac', 'SliderController@recycleBin')->name('thung-rac');
+
+				Route::get('/khoi-phuc/{id}', 'SliderController@restore')->name('khoi-phuc');
+			});
+		});
 	});
 });
