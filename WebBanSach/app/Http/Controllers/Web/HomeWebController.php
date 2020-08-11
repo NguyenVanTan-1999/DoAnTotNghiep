@@ -9,6 +9,8 @@ use App\SanPham;
 use App\LoaiSanPham;
 use App\NhaXuatBan;
 use App\HinhThucSanPham;
+use App\Slider;
+use App\Banner;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Web\KhachHangDangKyRequest;
 use App\Http\Requests\Web\KhachHangDangNhapRequest;
@@ -28,6 +30,11 @@ class HomeWebController extends Controller
         $dsHinhThucSanPham     = HinhThucSanPham::all();
         $dsNhaXuatBan          = NhaXuatBan::all();
 
+        $Slider                = Slider::all();
+
+        $Banner1               = Banner::where('id', '=', 1)->first();
+        $Banner2               = Banner::where('id', '=', 2)->first();
+
         $sanphamMoi            = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP001')->get();
         $sanphambanChay        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP002')->get();
         $sanphamgiamGia        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP004')->get();
@@ -38,7 +45,7 @@ class HomeWebController extends Controller
         $vanHoc                = SanPham::where('loai_san_pham_id', '=', 'LSP001')->get();
         $kienthucbachKhoa      = SanPham::where('loai_san_pham_id', '=', 'LSP011')->get();
         $tieuThuyet            = SanPham::where('loai_san_pham_id', '=', 'LSP013')->get();
-        return view('Web.home', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
+        return view('Web.home', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'Slider', 'Banner1', 'Banner2', 'sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
     public function sanPham($type)
