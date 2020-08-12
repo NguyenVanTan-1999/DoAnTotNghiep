@@ -105,12 +105,12 @@
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-							@if(Session::has('cart'))
 							<div class="my-cart">
 								<ul>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
 										<span>@if(Session::has('cart')){{ Session('cart')->totalQty }}@else 0 @endif</span>
 										<div class="mini-cart-sub">
+											@if(Session::has('cart'))
 											<div class="cart-product">
 												@foreach($product_cart as $product)
 													<div class="single-cart">
@@ -122,23 +122,23 @@
 															<p>{{$product['qty']}} x {{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</p>
 														</div>
 														<div class="cart-icon">
-														    <a href="#"><i class="fa fa-remove"></i></a>
+														    <a href="{{ route('website-ban-sach.xoa-gio-hang', $product['item']['id']) }}"><i class="fa fa-remove"></i></a>
 														</div>
 													</div>
 												@endforeach
 											</div>
 											<div class="cart-totals">
-												<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }}</span></h5>
+												<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }} VNĐ</span></h5>
 											</div>
 											<div class="cart-bottom">
 												<a class="view-cart" href="#">Xem Chi Tiết</a>
 												<a href="#">Thanh Toán</a>
 											</div>
+											@endif
 										</div>
 									</li>
 								</ul>
 							</div>
-							@endif
 						</div>
 					</div>
 				</div>

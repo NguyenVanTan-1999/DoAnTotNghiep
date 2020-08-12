@@ -121,6 +121,23 @@ class HomeWebController extends Controller
         return redirect()->route('website-ban-sach.trang-chu');
     }
 
+    public function xoagioHang($id)
+    {
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart    = new GioHang($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items) > 0)
+        {
+            Session::put('cart', $cart);
+        }
+        else
+        {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('website-ban-sach.trang-chu');
+    }
+
     public function dangKy()
     {
         $dsLoaiSanPham     = LoaiSanPham::all();
