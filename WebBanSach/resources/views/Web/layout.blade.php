@@ -105,39 +105,30 @@
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+							@if(Session::has('cart'))
 							<div class="my-cart">
 								<ul>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
-										<span>2</span>
+										<span>@if(Session::has('cart')){{ Session('cart')->totalQty }}@else 0 @endif</span>
 										<div class="mini-cart-sub">
 											<div class="cart-product">
-												<div class="single-cart">
-													<div class="cart-img">
-														<a href="#"><img src="{{ asset('assets/Web/img/product/1.jpg') }}" alt="book" /></a>
+												@foreach($product_cart as $product)
+													<div class="single-cart">
+														<div class="cart-img">
+															<a href="#"><img src="{{ asset('images/product/'.$product['item']['anh_minh_hoa_san_pham']) }}" alt="book" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">{{ $product['item']['ten_san_pham'] }}</a></h5>
+															<p>{{$product['qty']}} x {{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</p>
+														</div>
+														<div class="cart-icon">
+														    <a href="#"><i class="fa fa-remove"></i></a>
+														</div>
 													</div>
-													<div class="cart-info">
-														<h5><a href="#">Joust Duffle Bag</a></h5>
-														<p>1 x £60.00</p>
-													</div>
-													<div class="cart-icon">
-													    <a href="#"><i class="fa fa-remove"></i></a>
-													</div>
-												</div>
-												<div class="single-cart">
-													<div class="cart-img">
-														<a href="#"><img src="{{ asset('assets/Web/img/product/3.jpg') }}" alt="book" /></a>
-													</div>
-													<div class="cart-info">
-														<h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
-														<p>1 x £52.00</p>
-													</div>
-													<div class="cart-icon">
-                                                        <a href="#"><i class="fa fa-remove"></i></a>
-                                                    </div>
-												</div>
+												@endforeach
 											</div>
 											<div class="cart-totals">
-												<h5>Tổng <span>£12.00</span></h5>
+												<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }}</span></h5>
 											</div>
 											<div class="cart-bottom">
 												<a class="view-cart" href="#">Xem Chi Tiết</a>
@@ -147,6 +138,7 @@
 									</li>
 								</ul>
 							</div>
+							@endif
 						</div>
 					</div>
 				</div>

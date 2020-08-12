@@ -11,10 +11,12 @@ use App\NhaXuatBan;
 use App\HinhThucSanPham;
 use App\Slider;
 use App\Banner;
+use App\GioHang;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Web\KhachHangDangKyRequest;
 use App\Http\Requests\Web\KhachHangDangNhapRequest;
 use Hash;
+use Session;
 use App\Http\Controllers\Controller;
 
 class HomeWebController extends Controller
@@ -106,6 +108,17 @@ class HomeWebController extends Controller
         $sanPham               = SanPham::where('id', $request->id)->first();
         $sanphamtuongTu        = SanPham::where('loai_san_pham_id', $sanPham->loai_san_pham_id)->get();
         return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPham', 'sanphamtuongTu'));
+    }
+
+    public function themvaoGio(Request $request, $id)
+    {
+        $product = SanPham::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart    = new GioHang($oldCart);
+        $cart->add($product, $id);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->route('website-ban-sach.trang-chu');
     }
 
     public function dangKy()

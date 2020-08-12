@@ -24,6 +24,8 @@ Route::prefix('website-ban-sach')->group(function () {
 
 		Route::get('/tim-kiem', 'HomeWebController@timKiem')->name('tim-kiem');
 
+		Route::get('/them-vao-gio/{id}', 'HomeWebController@themvaoGio')->name('them-vao-gio');
+
 		Route::get('/dang-ky', 'HomeWebController@dangKy')->name('dang-ky');
 		Route::post('/dang-ky', 'HomeWebController@xulydangKy')->name('xu-ly-dang-ky');
 
