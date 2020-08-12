@@ -175,7 +175,7 @@
 	                                    </div>
 	                                    <div class="product-link">
 	                                        <div class="product-button">
-	                                            <a href="#" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+	                                            <a href="{{ route('website-ban-sach.them-vao-gio', $sanphamgrid->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
 	                                        </div>
 	                                        <div class="add-to-link">
 	                                            <ul>
@@ -221,7 +221,7 @@
 											</div>
 											<div class="product-link">
 												<div class="product-button">
-													<a href="#" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+													<a href="{{ route('website-ban-sach.them-vao-gio', $sanphamlist->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
 												</div>
 												<div class="add-to-link">
 	                                                <ul>

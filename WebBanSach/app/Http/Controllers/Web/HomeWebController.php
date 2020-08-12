@@ -118,7 +118,7 @@ class HomeWebController extends Controller
         $cart->add($product, $id);
         $request->session()->put('cart', $cart);
 
-        return redirect()->route('website-ban-sach.trang-chu');
+        return redirect()->back();
     }
 
     public function xoagioHang($id)
@@ -135,7 +135,7 @@ class HomeWebController extends Controller
             Session::forget('cart');
         }
 
-        return redirect()->route('website-ban-sach.trang-chu');
+        return redirect()->back();
     }
 
     public function dangKy()
