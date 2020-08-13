@@ -131,7 +131,7 @@
 												<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }} VNĐ</span></h5>
 											</div>
 											<div class="cart-bottom">
-												<a class="view-cart" href="#">Xem Chi Tiết</a>
+												<a class="view-cart" href="{{ route('website-ban-sach.danh-sach-gio-hang') }}">Xem Chi Tiết</a>
 												<a href="#">Thanh Toán</a>
 											</div>
 											@endif

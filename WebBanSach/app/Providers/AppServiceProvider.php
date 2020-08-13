@@ -34,5 +34,15 @@ class AppServiceProvider extends ServiceProvider
                 $view->with(['cart'=>Session::get('cart'), 'product_cart'=>$cart->items, 'totalPrice'=>$cart->totalPrice, 'totalQty'=>$cart->totalQty]);
             }
         });
+
+        view()->composer('Web.list-cart', function($view) {
+            if(Session('cart'))
+            {
+                $oldCart = Session::get('cart');
+                $cart = new GioHang($oldCart);
+
+                $view->with(['cart'=>Session::get('cart'), 'product_cart'=>$cart->items, 'totalPrice'=>$cart->totalPrice, 'totalQty'=>$cart->totalQty]);
+            }
+        });
     }
 }

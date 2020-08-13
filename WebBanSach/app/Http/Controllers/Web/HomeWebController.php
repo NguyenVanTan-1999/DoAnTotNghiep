@@ -138,6 +138,14 @@ class HomeWebController extends Controller
         return redirect()->back();
     }
 
+    public function danhsachgioHang()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+        return view('Web.list-cart', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan'));
+    }
+
     public function dangKy()
     {
         $dsLoaiSanPham     = LoaiSanPham::all();
