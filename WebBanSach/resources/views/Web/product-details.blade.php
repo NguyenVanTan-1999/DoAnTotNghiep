@@ -238,56 +238,60 @@
 				</div>
 				<!-- product-info-area-end -->
 
-				<!-- new-book-area-start -->
-				<div class="new-book-area mt-60">
-					<div class="section-title text-center mb-30">
-						<h3>SẢN PHẨM TƯƠNG TỰ</h3>
-					</div>
-					<div class="tab-active-2 owl-carousel">
-						@foreach($sanphamtuongTu as $sanphamtuongtu)
-							<!-- single-product-start -->
-							<div class="product-wrapper">
-								<div class="product-img">
-									<a>
-										<img src="{{ asset('images/product/'.$sanphamtuongtu->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
-									</a>
-									<div class="quick-view">
-	                                    <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}" title="Xem Chi Tiết">
-	                                        <i class="fa fa-search-plus"></i>
-	                                    </a>
-	                                </div>
-	                                <div class="product-flag">
-	                                    <ul>
-	                                        <li><span class="sale">{{ $sanphamtuongtu->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
-	                                        <li><span class="discount-percentage">-{{ (($sanphamtuongtu->gia_tien_san_pham - $sanphamtuongtu->gia_tien_giam_gia) * 100 / ($sanphamtuongtu->gia_tien_san_pham)) }}%</span></li>
-	                                    </ul>
-	                                </div>
-								</div>
-								<div class="product-details text-center">
-									<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}">{{ $sanphamtuongtu->ten_san_pham }}</a></h4>
-									<div class="product-price">
-										<ul>
-											<li>{{ number_format($sanphamtuongtu->gia_tien_giam_gia, 0, '', ',') }}</li>
-											<li class="old-price">{{ number_format($sanphamtuongtu->gia_tien_san_pham, 0, '', ',') }}</li>
-										</ul>
+				@if(count($sanphamtuongTu) >= 4)
+					<!-- new-book-area-start -->
+					<div class="new-book-area mt-60">
+						<div class="section-title text-center mb-30">
+							<h3>SẢN PHẨM TƯƠNG TỰ</h3>
+						</div>
+						<div class="tab-active-2 owl-carousel">
+							@foreach($sanphamtuongTu as $sanphamtuongtu)
+								<!-- single-product-start -->
+								<div class="product-wrapper">
+									<div class="product-img">
+										<a>
+											<img src="{{ asset('images/product/'.$sanphamtuongtu->anh_minh_hoa_san_pham) }}" alt="book" class="primary" />
+										</a>
+										<div class="quick-view">
+		                                    <a class="action-view" href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}" title="Xem Chi Tiết">
+		                                        <i class="fa fa-search-plus"></i>
+		                                    </a>
+		                                </div>
+		                                <div class="product-flag">
+		                                    <ul>
+		                                        <li><span class="sale">{{ $sanphamtuongtu->hinhthucsanPham->ten_hinh_thuc_san_pham }}</span></li>
+		                                        <li><span class="discount-percentage">-{{ (($sanphamtuongtu->gia_tien_san_pham - $sanphamtuongtu->gia_tien_giam_gia) * 100 / ($sanphamtuongtu->gia_tien_san_pham)) }}%</span></li>
+		                                    </ul>
+		                                </div>
+									</div>
+									<div class="product-details text-center">
+										<h4 style="height: 85px;"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}">{{ $sanphamtuongtu->ten_san_pham }}</a></h4>
+										<div class="product-price">
+											<ul>
+												<li>{{ number_format($sanphamtuongtu->gia_tien_giam_gia, 0, '', ',') }}</li>
+												<li class="old-price">{{ number_format($sanphamtuongtu->gia_tien_san_pham, 0, '', ',') }}</li>
+											</ul>
+										</div>
+									</div>
+									<div class="product-link">
+										<div class="product-button">
+											<a href="{{ route('website-ban-sach.them-vao-gio', $sanphamtuongtu->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+										</div>
+										<div class="add-to-link">
+		                                    <ul>
+		                                        <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
+		                                    </ul>
+		                                </div>
 									</div>
 								</div>
-								<div class="product-link">
-									<div class="product-button">
-										<a href="{{ route('website-ban-sach.them-vao-gio', $sanphamtuongtu->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
-									</div>
-									<div class="add-to-link">
-	                                    <ul>
-	                                        <li><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $sanphamtuongtu->id) }}" title="Chi Tiết"><i class="fa fa-external-link"></i></a></li>
-	                                    </ul>
-	                                </div>
-								</div>
-							</div>
-							<!-- single-product-end -->
-						@endforeach
+								<!-- single-product-end -->
+							@endforeach
+						</div>
 					</div>
-				</div>
-				<!-- new-book-area-end -->
+					<!-- new-book-area-end -->
+				@else
+
+				@endif
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 				<div class="shop-left">
