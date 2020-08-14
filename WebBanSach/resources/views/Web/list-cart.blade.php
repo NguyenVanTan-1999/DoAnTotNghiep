@@ -38,7 +38,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<form action="#">
-					<div class="table-content table-responsive">
+					<div class="table-content table-responsive" id="list-cart">
 						<table>
 							<thead>
 								<tr>
@@ -67,7 +67,7 @@
 
                                         <td class="product-remove"><a href="#"><i class="fa fa-save"></i></a></td>
 
-    									<td class="product-remove"><a href="{{ route('website-ban-sach.xoa-gio-hang', $product['item']['id']) }}"><i class="fa fa-times"></i></a></td>
+    									<td class="product-remove"><i class="fa fa-times" onclick="DeleteListItemCart({{ $product['item']['id'] }})"></i></td>
     								</tr>
                                 @endforeach
 								@endif
@@ -113,4 +113,23 @@
 	</div>
 </div>
 <!-- cart-main-area-end -->
+@endsection
+
+@section('ajax')
+<script>
+	function DeleteListItemCart(id){
+		$.ajax({
+            url: 'xoa-ds-gio-hang/'+id,
+            type: 'GET',
+        }).done(function(response) {
+            RenderListCart(response);
+            alertify.success('Đã Thêm Vào Giỏ');
+        });
+	}
+
+	function RenderListCart(response){
+        $("#list-cart").empty();
+        $("#list-cart").html(response);
+    }
+</script>
 @endsection

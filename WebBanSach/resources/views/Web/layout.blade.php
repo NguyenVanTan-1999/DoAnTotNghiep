@@ -107,7 +107,7 @@
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 							<div class="my-cart">
 								<ul>
-									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
+									<li><a style="cursor: pointer;"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
 
 										@if(Session::has('cart'))
 											<span id="total-quanty-show">{{ Session('cart')->totalQty }}</span>
@@ -379,32 +379,7 @@
 		<!-- Bootstrap theme -->
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-		<script>
-			function AddCart(id){
-	        	$.ajax({
-	        		url: 'website-ban-sach/them-vao-gio/'+id,
-	        		type: 'GET',
-	        	}).done(function(response) {
-	        		RenderCart(response);
-	        		alertify.success('Đã Thêm Vào Giỏ');
-	        	});
-	        }
+		@yield('ajax')
 
-	        $("#change-item-cart").on("click", ".cart-icon i", function(){
-	        	$.ajax({
-	        		url: 'website-ban-sach/xoa-gio-hang/'+$(this).data("id"),
-	        		type: 'GET',
-	        	}).done(function(response) {
-	        		RenderCart(response);
-	        		alertify.error('Đã Xóa Sản Phẩm');
-	        	});
-	        });
-
-	        function RenderCart(response){
-	        	$("#change-item-cart").empty();
-	        	$("#change-item-cart").html(response);
-	        	$("#total-quanty-show").text($("#total-quanty-cart").val());
-	        }
-		</script>
     </body>
 </html>
