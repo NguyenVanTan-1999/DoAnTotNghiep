@@ -108,27 +108,35 @@
 							<div class="my-cart">
 								<ul>
 									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
-										<span>@if(Session::has('cart')){{ Session('cart')->totalQty }}@else 0 @endif</span>
+
+										@if(Session::has('cart'))
+											<span id="total-quanty-show">{{ Session('cart')->totalQty }}</span>
+										@else
+											<span id="total-quanty-show">0</span>
+										@endif
+
 										<div class="mini-cart-sub">
 											@if(Session::has('cart'))
-											<div class="cart-product">
-												@foreach($product_cart as $product)
-													<div class="single-cart">
-														<div class="cart-img">
-															<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}"><img src="{{ asset('images/product/'.$product['item']['anh_minh_hoa_san_pham']) }}" alt="book" /></a>
+											<div id="change-item-cart">
+												<div class="cart-product">
+													@foreach($product_cart as $product)
+														<div class="single-cart">
+															<div class="cart-img">
+																<a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}"><img src="{{ asset('images/product/'.$product['item']['anh_minh_hoa_san_pham']) }}" alt="book" /></a>
+															</div>
+															<div class="cart-info">
+																<h5><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}">{{ $product['item']['ten_san_pham'] }}</a></h5>
+																<p>{{$product['qty']}} x {{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</p>
+															</div>
+															<div class="cart-icon">
+															    <i class="fa fa-remove" data-id="{{ $product['item']['id'] }}"></i>
+															</div>
 														</div>
-														<div class="cart-info">
-															<h5><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}">{{ $product['item']['ten_san_pham'] }}</a></h5>
-															<p>{{$product['qty']}} x {{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</p>
-														</div>
-														<div class="cart-icon">
-														    <a href="{{ route('website-ban-sach.xoa-gio-hang', $product['item']['id']) }}"><i class="fa fa-remove"></i></a>
-														</div>
-													</div>
-												@endforeach
-											</div>
-											<div class="cart-totals">
-												<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }} VNĐ</span></h5>
+													@endforeach
+												</div>
+												<div class="cart-totals">
+													<h5>Tổng <span>{{ number_format(Session('cart')->totalPrice, 0, '', ',') }} VNĐ</span></h5>
+												</div>
 											</div>
 											<div class="cart-bottom">
 												<a class="view-cart" href="{{ route('website-ban-sach.danh-sach-gio-hang') }}">Xem Chi Tiết</a>
@@ -357,5 +365,46 @@
         <script src="{{ asset('assets/Web/js/plugins.js') }}"></script>
 		<!-- main js -->
         <script src="{{ asset('assets/Web/js/main.js') }}"></script>
+
+
+        <!-- JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+		<!-- Default theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+		<!-- Semantic UI theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+		<!-- Bootstrap theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+		<script>
+			function AddCart(id){
+	        	$.ajax({
+	        		url: 'website-ban-sach/them-vao-gio/'+id,
+	        		type: 'GET',
+	        	}).done(function(response) {
+	        		RenderCart(response);
+	        		alertify.success('Đã Thêm Vào Giỏ');
+	        	});
+	        }
+
+	        $("#change-item-cart").on("click", ".cart-icon i", function(){
+	        	$.ajax({
+	        		url: 'website-ban-sach/xoa-gio-hang/'+$(this).data("id"),
+	        		type: 'GET',
+	        	}).done(function(response) {
+	        		RenderCart(response);
+	        		alertify.error('Đã Xóa Sản Phẩm');
+	        	});
+	        });
+
+	        function RenderCart(response){
+	        	$("#change-item-cart").empty();
+	        	$("#change-item-cart").html(response);
+	        	$("#total-quanty-show").text($("#total-quanty-cart").val());
+	        }
+		</script>
     </body>
 </html>

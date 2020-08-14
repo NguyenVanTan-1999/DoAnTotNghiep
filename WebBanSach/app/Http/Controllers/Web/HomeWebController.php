@@ -113,12 +113,15 @@ class HomeWebController extends Controller
     public function themvaoGio(Request $request, $id)
     {
         $product = SanPham::find($id);
-        $oldCart = Session('cart')?Session::get('cart'):null;
-        $cart    = new GioHang($oldCart);
-        $cart->add($product, $id);
-        $request->session()->put('cart', $cart);
+        if($product != null)
+        {
+            $oldCart = Session('cart')?Session::get('cart'):null;
+            $cart    = new GioHang($oldCart);
+            $cart->add($product, $id);
+            $request->session()->put('cart', $cart);
+        }
 
-        return redirect()->back();
+        return view('Web.empty.cart');
     }
 
     public function xoagioHang($id)
@@ -135,7 +138,7 @@ class HomeWebController extends Controller
             Session::forget('cart');
         }
 
-        return redirect()->back();
+        return view('Web.empty.cart');
     }
 
     public function danhsachgioHang()
