@@ -65,7 +65,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a onclick="AddCart({{ $sanphammoi->id }})" href="javascript:" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                    <a href="{{ route('website-ban-sach.them-vao-gio', $sanphammoi->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
