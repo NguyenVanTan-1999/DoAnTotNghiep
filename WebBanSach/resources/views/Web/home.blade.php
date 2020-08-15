@@ -111,7 +111,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a onclick="AddCart({{ $sanphambanchay->id }})" href="javascript:" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                    <a href="{{ route('website-ban-sach.them-vao-gio', $sanphambanchay->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -157,7 +157,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a onclick="AddCart({{ $sanphamgiamgia->id }})" href="javascript:" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                    <a href="{{ route('website-ban-sach.them-vao-gio', $sanphamgiamgia->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -231,7 +231,7 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a onclick="AddCart({{ $nhaxuatbantre->id }})" href="javascript:" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                <a href="{{ route('website-ban-sach.them-vao-gio', $nhaxuatbantre->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                             </div>
                             <div class="add-to-link">
                                 <ul>
@@ -288,7 +288,7 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a onclick="AddCart({{ $nhaxuatbankimdong->id }})" href="javascript:" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                <a href="{{ route('website-ban-sach.them-vao-gio', $nhaxuatbankimdong->id) }}" title="Thêm Vào Giỏ"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                             </div>
                             <div class="add-to-link">
                                 <ul>
@@ -408,34 +408,4 @@
 
 @include('Web.partials.social-group.social-group-area')
 
-@endsection
-
-@section('ajax')
-<script>
-    function AddCart(id){
-        $.ajax({
-            url: 'website-ban-sach/them-vao-gio/'+id,
-            type: 'GET',
-        }).done(function(response) {
-            RenderCart(response);
-            alertify.success('Đã Thêm Vào Giỏ');
-        });
-    }
-
-    $("#change-item-cart").on("click", ".cart-icon i", function(){
-        $.ajax({
-            url: 'website-ban-sach/xoa-gio-hang/'+$(this).data("id"),
-            type: 'GET',
-        }).done(function(response) {
-            RenderCart(response);
-            alertify.error('Đã Xóa Sản Phẩm');
-        });
-    });
-
-    function RenderCart(response){
-        $("#change-item-cart").empty();
-        $("#change-item-cart").html(response);
-        $("#total-quanty-show").text($("#total-quanty-cart").val());
-    }
-</script>
 @endsection

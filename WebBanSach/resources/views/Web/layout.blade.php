@@ -107,19 +107,8 @@
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 							<div class="my-cart">
 								<ul>
-<<<<<<< HEAD
-									<li><a style="cursor: pointer;"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
-
-										@if(Session::has('cart'))
-											<span id="total-quanty-show">{{ Session('cart')->totalQty }}</span>
-										@else
-											<span id="total-quanty-show">0</span>
-										@endif
-
-=======
 									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
 										<span>@if(Session::has('cart')){{ Session('cart')->totalQty }}@else 0 @endif</span>
->>>>>>> parent of f114d8c... lam chuc nang them, xoa gio hang bang ajax
 										<div class="mini-cart-sub">
 											@if(Session::has('cart'))
 											<div class="cart-product">
@@ -368,24 +357,5 @@
         <script src="{{ asset('assets/Web/js/plugins.js') }}"></script>
 		<!-- main js -->
         <script src="{{ asset('assets/Web/js/main.js') }}"></script>
-<<<<<<< HEAD
-
-
-        <!-- JavaScript -->
-		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-		<!-- CSS -->
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-		<!-- Default theme -->
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-		<!-- Semantic UI theme -->
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-		<!-- Bootstrap theme -->
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
-		@yield('ajax')
-
-=======
->>>>>>> parent of f114d8c... lam chuc nang them, xoa gio hang bang ajax
     </body>
 </html>
