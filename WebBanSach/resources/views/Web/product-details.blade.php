@@ -34,12 +34,6 @@
 									</li>
 								</ul>
 							</div>
-							<div class="product-add-form">
-								<form action="#">
-									<a href="#">Thêm Vào Giỏ</a>
-									<a href="#" style="margin-left: 10px;">Mua Ngay</a>
-								</form>
-							</div>
 						</div>
 						<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
 							<div class="product-info-main">
@@ -67,12 +61,7 @@
 									</div>
 								</div>
 								<div class="product-add-form">
-									<form action="#">
-										<div class="quality-button">
-											<span style="font-weight: bold; color: #333; font-size: 18px;">Số Lượng :</span>
-											<input class="qty" type="number" value="1" style="margin-left: 10px;">
-										</div>
-									</form>
+										<a href="{{ route('website-ban-sach.them-vao-gio', $sanPham->id) }}" style="width: 180px; height: 50px; background-color: #F07C29; color: #fff; border: 1px solid #F07C29; font-size: 14px; padding: 15px 43px; font-weight: 400; font-family: 'Rufina', serif; display: inline-block; text-transform: capitalize; float: left; cursor: pointer;">Thêm Vào Giỏ</a>
 								</div><br />
 								<div class="product-social-links">
 									<div class="product-addto-links">
