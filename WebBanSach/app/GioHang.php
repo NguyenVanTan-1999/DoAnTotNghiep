@@ -45,4 +45,15 @@ class GioHang
 		$this->totalPrice -= $this->items[$id]['price'];
 		unset($this->items[$id]);
 	}
+
+	public function UpdateItemCart($id, $quanty){
+		$this->totalQty -= $this->items[$id]['qty'];
+		$this->totalPrice -= $this->items[$id]['price'];
+
+		$this->items[$id]['qty'] = $quanty;
+		$this->items[$id]['price'] = $quanty * $this->items[$id]['item']->gia_tien_giam_gia;
+
+		$this->totalQty += $this->items[$id]['qty'];
+		$this->totalPrice += $this->items[$id]['price'];
+	}
 }

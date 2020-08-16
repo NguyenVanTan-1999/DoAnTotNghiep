@@ -107,7 +107,7 @@
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 							<div class="my-cart">
 								<ul>
-									<li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
+									<li><a href="{{ route('website-ban-sach.danh-sach-gio-hang') }}"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
 										<span>@if(Session::has('cart')){{ Session('cart')->totalQty }}@else 0 @endif</span>
 										<div class="mini-cart-sub">
 											@if(Session::has('cart'))
@@ -357,5 +357,30 @@
         <script src="{{ asset('assets/Web/js/plugins.js') }}"></script>
 		<!-- main js -->
         <script src="{{ asset('assets/Web/js/main.js') }}"></script>
+
+
+        <!-- JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+		<!-- Default theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+		<!-- Semantic UI theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+		<!-- Bootstrap theme -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+        <script>
+        	function SaveListItemCart(id){
+        		$.ajax({
+	        		url: 'luu-ds-gio-hang/'+id+'/'+$("#quanty-item-"+id).val(),
+	        		type: 'GET',
+	        	}).done(function(response) {
+	        		alertify.success('Đã Cập Nhật Số Lượng');
+	        		setInterval('window.location.reload()', 1000);
+	        	});
+	        }
+        </script>
     </body>
 </html>

@@ -146,6 +146,16 @@ class HomeWebController extends Controller
         return view('Web.list-cart', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan'));
     }
 
+    public function luadanhsachgioHang(Request $request, $id, $quanty)
+    {
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart    = new GioHang($oldCart);
+        $cart->UpdateItemCart($id, $quanty);
+        $request->session()->put('cart', $cart);
+
+        return redirect()->back();
+    }
+
     public function dangKy()
     {
         $dsLoaiSanPham     = LoaiSanPham::all();

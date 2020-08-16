@@ -24,7 +24,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="entry-header-title">
+					@if(Session::has('cart'))
 					<h2>Giỏ Hàng</h2>
+					@else
+					<h2>Giỏ Hàng (Trống)</h2>
+					@endif
 				</div>
 			</div>
 		</div>
@@ -61,11 +65,11 @@
 
     									<td class="product-price"><span class="amount">{{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</span></td>
 
-    									<td class="product-quantity"><input type="number" value="{{$product['qty']}}"></td>
+    									<td class="product-quantity"><input id="quanty-item-{{ $product['item']['id'] }}" type="number" value="{{$product['qty']}}"></td>
 
     									<td class="product-subtotal">{{ number_format($product['price'], 0, '', ',') }}</td>
 
-                                        <td class="product-remove"><a href="#"><i class="fa fa-save"></i></a></td>
+                                        <td class="product-remove"><i onclick="SaveListItemCart({{ $product['item']['id'] }})" class="fa fa-save"></i></td>
 
     									<td class="product-remove"><a href="{{ route('website-ban-sach.xoa-gio-hang', $product['item']['id']) }}"><i class="fa fa-times"></i></a></td>
     								</tr>
@@ -106,6 +110,30 @@
                     <div class="wc-proceed-to-checkout">
                         <a href="#">Proceed to Checkout</a>
                     </div>
+                </div>
+                @else
+                <div class="cart_totals">
+                    <h2>Tổng Cộng</h2><br />
+                    <table>
+                        <tbody>
+                            <tr class="order-total">
+                                <th>Số Lượng</th>
+                                <td>
+                                    <strong>
+                                        <span class="amount">0 Quyển</span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr class="order-total">
+                                <th>Tổng</th>
+                                <td>
+                                    <strong>
+                                        <span class="amount">0 VNĐ</span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 @endif
             </div>
