@@ -59,9 +59,9 @@
 								@if(Session::has('cart'))
                                 @foreach($product_cart as $product)
     								<tr>
-    									<td class="product-thumbnail"><a href="#"><img src="{{ asset('images/product/'.$product['item']['anh_minh_hoa_san_pham']) }}" alt="man" /></a></td>
+    									<td class="product-thumbnail"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}"><img src="{{ asset('images/product/'.$product['item']['anh_minh_hoa_san_pham']) }}" alt="man" /></a></td>
 
-    									<td class="product-name"><a href="#">{{ $product['item']['ten_san_pham'] }}</a></td>
+    									<td class="product-name"><a href="{{ route('website-ban-sach.chi-tiet-san-pham', $product['item']['id']) }}">{{ $product['item']['ten_san_pham'] }}</a></td>
 
     									<td class="product-price"><span class="amount">{{ number_format($product['item']['gia_tien_giam_gia'], 0, '', ',') }}</span></td>
 
@@ -69,7 +69,7 @@
 
     									<td class="product-subtotal">{{ number_format($product['price'], 0, '', ',') }}</td>
 
-                                        <td class="product-remove"><i onclick="SaveListItemCart({{ $product['item']['id'] }})" class="fa fa-save"></i></td>
+                                        <td class="product-remove"><i onclick="SaveListItemCart({{ $product['item']['id'] }})" class="fa fa-save" style="cursor: pointer;"></i></td>
 
     									<td class="product-remove"><a href="{{ route('website-ban-sach.xoa-gio-hang', $product['item']['id']) }}"><i class="fa fa-times"></i></a></td>
     								</tr>
