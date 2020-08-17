@@ -40,16 +40,16 @@ class HomeWebController extends Controller
         $Banner1               = Banner::where('id', '=', 1)->first();
         $Banner2               = Banner::where('id', '=', 2)->first();
 
-        $sanphamMoi            = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP001')->get();
-        $sanphambanChay        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP002')->get();
-        $sanphamgiamGia        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP004')->get();
+        $sanphamMoi            = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP001')->orderBy('id', 'desc')->get();
+        $sanphambanChay        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP002')->orderBy('id', 'desc')->get();
+        $sanphamgiamGia        = SanPham::where('hinh_thuc_san_pham_id', '=', 'HTSP004')->orderBy('id', 'desc')->get();
 
-        $nhaxuatbanTre         = SanPham::where('nha_xuat_ban_id', '=', 'NXB001')->get();
-        $nhaxuatbanKimDong     = SanPham::where('nha_xuat_ban_id', '=', 'NXB002')->get();
+        $nhaxuatbanTre         = SanPham::where('nha_xuat_ban_id', '=', 'NXB001')->orderBy('id', 'desc')->get();
+        $nhaxuatbanKimDong     = SanPham::where('nha_xuat_ban_id', '=', 'NXB002')->orderBy('id', 'desc')->get();
 
-        $vanHoc                = SanPham::where('loai_san_pham_id', '=', 'LSP001')->get();
-        $kienthucbachKhoa      = SanPham::where('loai_san_pham_id', '=', 'LSP011')->get();
-        $tieuThuyet            = SanPham::where('loai_san_pham_id', '=', 'LSP013')->get();
+        $vanHoc                = SanPham::where('loai_san_pham_id', '=', 'LSP001')->orderBy('id', 'desc')->get();
+        $kienthucbachKhoa      = SanPham::where('loai_san_pham_id', '=', 'LSP011')->orderBy('id', 'desc')->get();
+        $tieuThuyet            = SanPham::where('loai_san_pham_id', '=', 'LSP013')->orderBy('id', 'desc')->get();
         return view('Web.home', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'Slider', 'Banner1', 'Banner2', 'sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
@@ -66,22 +66,22 @@ class HomeWebController extends Controller
         if(strpos($type, 'LSP') !== false)
         {
             $tongSanPham       = SanPham::where('loai_san_pham_id', $type)->get();
-            $dsSanPhamGrid     = SanPham::where('loai_san_pham_id', $type)->paginate(12);
-            $dsSanPhamList     = SanPham::where('loai_san_pham_id', $type)->paginate(4);
+            $dsSanPhamGrid     = SanPham::where('loai_san_pham_id', $type)->orderBy('id', 'desc')->paginate(12);
+            $dsSanPhamList     = SanPham::where('loai_san_pham_id', $type)->orderBy('id', 'desc')->paginate(4);
         }
 
         if(strpos($type, 'HTSP') !== false)
         {
             $tongSanPham       = SanPham::where('hinh_thuc_san_pham_id', $type)->get();
-            $dsSanPhamGrid     = SanPham::where('hinh_thuc_san_pham_id', $type)->paginate(12);
-            $dsSanPhamList     = SanPham::where('hinh_thuc_san_pham_id', $type)->paginate(4);
+            $dsSanPhamGrid     = SanPham::where('hinh_thuc_san_pham_id', $type)->orderBy('id', 'desc')->paginate(12);
+            $dsSanPhamList     = SanPham::where('hinh_thuc_san_pham_id', $type)->orderBy('id', 'desc')->paginate(4);
         }
 
         if(strpos($type, 'NXB') !== false)
         {
             $tongSanPham       = SanPham::where('nha_xuat_ban_id', $type)->get();
-            $dsSanPhamGrid     = SanPham::where('nha_xuat_ban_id', $type)->paginate(12);
-            $dsSanPhamList     = SanPham::where('nha_xuat_ban_id', $type)->paginate(4);
+            $dsSanPhamGrid     = SanPham::where('nha_xuat_ban_id', $type)->orderBy('id', 'desc')->paginate(12);
+            $dsSanPhamList     = SanPham::where('nha_xuat_ban_id', $type)->orderBy('id', 'desc')->paginate(4);
         }
         return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
     }
@@ -97,8 +97,8 @@ class HomeWebController extends Controller
         $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
 
         $tongsanphamtimKiem   = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->get();
-        $dssanphamtimkiemGrid = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->paginate(12);
-        $dssanphamtimkiemList = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->paginate(4);
+        $dssanphamtimkiemGrid = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(12);
+        $dssanphamtimkiemList = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(4);
         return view('Web.search', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongsanphamtimKiem', 'dssanphamtimkiemGrid', 'dssanphamtimkiemList'));
     }
 
@@ -109,7 +109,7 @@ class HomeWebController extends Controller
         $dsNhaXuatBan          = NhaXuatBan::all();
 
         $sanPham               = SanPham::where('id', $request->id)->first();
-        $sanphamtuongTu        = SanPham::where('loai_san_pham_id', $sanPham->loai_san_pham_id)->get();
+        $sanphamtuongTu        = SanPham::where('loai_san_pham_id', $sanPham->loai_san_pham_id)->orderBy('id', 'desc')->get();
         return view('Web.product-details', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'sanPham', 'sanphamtuongTu'));
     }
 
