@@ -108,7 +108,7 @@
                         </tbody>
                     </table>
                     <div class="wc-proceed-to-checkout">
-                        <a href="#">Proceed to Checkout</a>
+                        <a href="{{ route('website-ban-sach.dat-hang') }}">Thanh Toán</a>
                     </div>
                 </div>
                 @else

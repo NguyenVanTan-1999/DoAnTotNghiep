@@ -12,9 +12,12 @@ use App\HinhThucSanPham;
 use App\Slider;
 use App\Banner;
 use App\GioHang;
+use App\HoaDon;
+use App\ChiTietHoaDon;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Web\KhachHangDangKyRequest;
 use App\Http\Requests\Web\KhachHangDangNhapRequest;
+use App\Http\Requests\Web\KhachHangTaoHoaDonRequest;
 use Hash;
 use Session;
 use App\Http\Controllers\Controller;
@@ -154,6 +157,43 @@ class HomeWebController extends Controller
         $request->session()->put('cart', $cart);
 
         return redirect()->back();
+    }
+
+    public function datHang()
+    {
+        $dsLoaiSanPham     = LoaiSanPham::all();
+        $dsHinhThucSanPham = HinhThucSanPham::all();
+        $dsNhaXuatBan      = NhaXuatBan::all();
+        return view('Web.checkout', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan'));
+    }
+
+    public function xulydatHang(KhachHangTaoHoaDonRequest $request)
+    {
+        $cart                             = Session::get('cart');
+
+        $hoaDons                          = new HoaDon;
+        $hoaDons->tai_khoan_id            = Auth::guard('web')->user()->id;
+        $hoaDons->ten_nguoi_nhan          = $request->ten_nguoi_nhan;
+        $hoaDons->ngay_mua                = date('Y-m-d');
+        $hoaDons->dia_chi_giao_hang       = $request->dia_chi_giao_hang;
+        $hoaDons->so_dien_thoai_giao_hang = $request->so_dien_thoai_giao_hang;
+        $hoaDons->tong_tien               = $cart->totalPrice;
+        $hoaDons->trang_thai              = false;
+        $hoaDons->save();
+
+        foreach($cart->items as $key => $value)
+        {
+            $chitiethoaDons                   = new ChiTietHoaDon;
+            $chitiethoaDons->hoa_don_id       = $hoaDons->id;
+            $chitiethoaDons->san_pham_id      = $key;
+            $chitiethoaDons->so_luong         = $value['qty'];
+            $chitiethoaDons->don_gia          = $value['price'] / $value['qty'];
+            $chitiethoaDons->save();
+        }
+
+        Session::forget('cart');
+
+        return redirect()->back()->with('thongbaothanhcong', 'TẠO HÓA ĐƠN THÀNH CÔNG');
     }
 
     public function dangKy()

@@ -68,12 +68,16 @@
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<div class="account-area text-right">
 								<ul>
-									<li><a href="#">Thanh Toán</a></li>
 
 									@if(Auth::guard('web')->check())
+										<li><a href="{{ route('website-ban-sach.dat-hang') }}">Thanh Toán</a></li>
+
 										<li><a href="{{ route('website-ban-sach.dang-xuat') }}">Đăng Xuất</a></li>
+
 										<li><a style="cursor: pointer;">Chào: {{ Auth::guard('web')->user()->ho_ten }}</a></li>
 									@else
+										<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Thanh Toán</a></li>
+
 										<li><a href="{{ route('website-ban-sach.dang-nhap') }}">Đăng Nhập</a></li>
 
 										<li><a href="{{ route('website-ban-sach.dang-ky') }}">Đăng Ký</a></li>
@@ -132,7 +136,7 @@
 											</div>
 											<div class="cart-bottom">
 												<a class="view-cart" href="{{ route('website-ban-sach.danh-sach-gio-hang') }}">Xem Chi Tiết</a>
-												<a href="#">Thanh Toán</a>
+												<a href="{{ route('website-ban-sach.dat-hang') }}">Thanh Toán</a>
 											</div>
 											@endif
 										</div>
