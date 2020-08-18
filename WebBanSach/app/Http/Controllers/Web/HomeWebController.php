@@ -112,10 +112,10 @@ class HomeWebController extends Controller
         $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
         $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
 
-        $tongsanphamtimKiem   = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->get();
-        $dssanphamtimkiemGrid = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(12);
-        $dssanphamtimkiemList = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(4);
-        return view('Web.search', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongsanphamtimKiem', 'dssanphamtimkiemGrid', 'dssanphamtimkiemList'));
+        $tongSanPham   = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->get();
+        $dsSanPhamGrid = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList = SanPham::where('ten_san_pham', 'like', '%'.$request->tu_khoa.'%')->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
     }
 
     public function timkiemtangDan()
