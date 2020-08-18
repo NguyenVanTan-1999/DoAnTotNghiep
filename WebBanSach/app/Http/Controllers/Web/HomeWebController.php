@@ -53,6 +53,22 @@ class HomeWebController extends Controller
         return view('Web.home', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'Slider', 'Banner1', 'Banner2', 'sanphamMoi', 'sanphambanChay', 'sanphamgiamGia', 'nhaxuatbanTre', 'nhaxuatbanKimDong', 'vanHoc', 'kienthucbachKhoa', 'tieuThuyet'));
     }
 
+    public function dssanPham()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::all();
+        $dsSanPhamGrid     = SanPham::orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
     public function sanPham($type)
     {
         $dsLoaiSanPham         = LoaiSanPham::all();

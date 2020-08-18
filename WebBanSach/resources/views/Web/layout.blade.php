@@ -164,7 +164,7 @@
 
 										<li class="active"><a href="{{ route('website-ban-sach.trang-chu') }}">Trang Chủ</a></li>
 
-										<li><a style="cursor: pointer;">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
+										<li><a href="{{ route('website-ban-sach.ds-san-pham') }}">Danh Mục Sản Phẩm<i class="fa fa-angle-down"></i></a>
 											<div class="mega-menu">
 												<span>
 													<a style="cursor: pointer;" class="title">Loại Sản Phẩm</a>
