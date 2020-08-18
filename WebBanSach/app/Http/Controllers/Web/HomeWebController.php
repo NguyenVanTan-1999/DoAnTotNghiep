@@ -118,6 +118,38 @@ class HomeWebController extends Controller
         return view('Web.search', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongsanphamtimKiem', 'dssanphamtimkiemGrid', 'dssanphamtimkiemList'));
     }
 
+    public function timkiemtangDan()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::orderBy('gia_tien_giam_gia', 'asc')->get();
+        $dsSanPhamGrid     = SanPham::orderBy('gia_tien_giam_gia', 'asc')->paginate(12);
+        $dsSanPhamList     = SanPham::orderBy('gia_tien_giam_gia', 'asc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function timkiemgiamDan()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::orderBy('gia_tien_giam_gia', 'desc')->get();
+        $dsSanPhamGrid     = SanPham::orderBy('gia_tien_giam_gia', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::orderBy('gia_tien_giam_gia', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
     public function chitietsanPham(Request $request)
     {
         $dsLoaiSanPham         = LoaiSanPham::all();

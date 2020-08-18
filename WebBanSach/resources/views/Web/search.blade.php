@@ -117,27 +117,13 @@
 							<p>Tổng Cộng: <span style="font-weight: bold;">{{ count($tongsanphamtimKiem) }}</span> Sản Phẩm</p>
 						</div>
 					</div>
-					<div class="field-limiter">
-						<div class="control">
-							<span>Show</span>
-							<!-- chosen-start -->
-							<select data-placeholder="Default Sorting" style="width:50px;" class="chosen-select" tabindex="1">
-								 <option value="Sorting">1</option>
-								 <option value="popularity">2</option>
-								 <option value="rating">3</option>
-								 <option value="date">4</option>
-							</select>
-							<!-- chosen-end -->
-						</div>
-					</div>
 					<div class="toolbar-sorter">
-						<span>Sort By</span>
-						<select id="sorter" class="sorter-options" data-role="sorter">
-							<option selected="selected" value="position"> Position </option>
-							<option value="name"> Product Name </option>
-							<option value="price"> Price </option>
+						<span>Sắp Xếp Giá</span>
+						<select id="sorter" class="sorter-options" data-role="sorter" onchange="location = this.value;">
+							<option selected="selected"> Chọn... </option>
+							<option value="{{ route('website-ban-sach.tim-kiem-tang-dan') }}"> Tăng Dần </option>
+							<option value="{{ route('website-ban-sach.tim-kiem-giam-dan') }}"> Giảm Dần </option>
 						</select>
-						<a href="#"><i class="fa fa-arrow-up"></i></a>
 					</div>
 				</div>
 				<!-- tab-area-start -->
