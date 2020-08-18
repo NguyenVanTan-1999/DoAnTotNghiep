@@ -150,6 +150,86 @@ class HomeWebController extends Controller
         return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
     }
 
+    public function timkiemgiaPt1()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::whereBetween('gia_tien_giam_gia', [20000, 50000])->get();
+        $dsSanPhamGrid     = SanPham::whereBetween('gia_tien_giam_gia', [20000, 50000])->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::whereBetween('gia_tien_giam_gia', [20000, 50000])->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function timkiemgiaPt2()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::whereBetween('gia_tien_giam_gia', [50000, 100000])->get();
+        $dsSanPhamGrid     = SanPham::whereBetween('gia_tien_giam_gia', [50000, 100000])->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::whereBetween('gia_tien_giam_gia', [50000, 100000])->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function timkiemgiaPt3()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::whereBetween('gia_tien_giam_gia', [100000, 200000])->get();
+        $dsSanPhamGrid     = SanPham::whereBetween('gia_tien_giam_gia', [100000, 200000])->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::whereBetween('gia_tien_giam_gia', [100000, 200000])->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function timkiemgiaPt4()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::whereBetween('gia_tien_giam_gia', [200000, 500000])->get();
+        $dsSanPhamGrid     = SanPham::whereBetween('gia_tien_giam_gia', [200000, 500000])->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::whereBetween('gia_tien_giam_gia', [200000, 500000])->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
+    public function timkiemgiaPt5()
+    {
+        $dsLoaiSanPham         = LoaiSanPham::all();
+        $dsHinhThucSanPham     = HinhThucSanPham::all();
+        $dsNhaXuatBan          = NhaXuatBan::all();
+
+        $dsHinhThucSanPhamLink = HinhThucSanPham::paginate(4);
+        $dsLoaiSanPhamLink     = LoaiSanPham::paginate(4);
+        $dsNhaXuatBanLink      = NhaXuatBan::paginate(4);
+
+        $tongSanPham       = SanPham::whereBetween('gia_tien_giam_gia', [500000, 1000000])->get();
+        $dsSanPhamGrid     = SanPham::whereBetween('gia_tien_giam_gia', [500000, 1000000])->orderBy('id', 'desc')->paginate(12);
+        $dsSanPhamList     = SanPham::whereBetween('gia_tien_giam_gia', [500000, 1000000])->orderBy('id', 'desc')->paginate(4);
+        return view('Web.product', compact('dsLoaiSanPham', 'dsHinhThucSanPham', 'dsNhaXuatBan', 'dsHinhThucSanPhamLink', 'dsLoaiSanPhamLink', 'dsNhaXuatBanLink', 'tongSanPham', 'dsSanPhamGrid', 'dsSanPhamList'));
+    }
+
     public function chitietsanPham(Request $request)
     {
         $dsLoaiSanPham         = LoaiSanPham::all();

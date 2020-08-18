@@ -31,6 +31,11 @@ Route::prefix('website-ban-sach')->group(function () {
 		Route::get('/tim-kiem', 'HomeWebController@timKiem')->name('tim-kiem');
 		Route::get('/tim-kiem-gia-tang-dan', 'HomeWebController@timkiemtangDan')->name('tim-kiem-tang-dan');
 		Route::get('/tim-kiem-gia-giam-dan', 'HomeWebController@timkiemgiamDan')->name('tim-kiem-giam-dan');
+		Route::get('/tim-kiem-gia-pt1', 'HomeWebController@timkiemgiaPt1')->name('tim-kiem-pt1');
+		Route::get('/tim-kiem-gia-pt2', 'HomeWebController@timkiemgiaPt2')->name('tim-kiem-pt2');
+		Route::get('/tim-kiem-gia-pt3', 'HomeWebController@timkiemgiaPt3')->name('tim-kiem-pt3');
+		Route::get('/tim-kiem-gia-pt4', 'HomeWebController@timkiemgiaPt4')->name('tim-kiem-pt4');
+		Route::get('/tim-kiem-gia-pt5', 'HomeWebController@timkiemgiaPt5')->name('tim-kiem-pt5');
 
 
 		Route::get('/them-vao-gio/{id}', 'HomeWebController@themvaoGio')->name('them-vao-gio');
