@@ -120,7 +120,7 @@
 						</div>
 						<div class="payment-method">
 							<div class="order-button-payment">
-								<button type="submit" style="background: #ec4445 none repeat scroll 0 0; border: medium none; color: #fff; font-size: 17px; height: 50px; margin: 20px 0 0; padding: 0; text-transform: uppercase; transition: all 0.3s ease 0s; width: 100%; font-family: 'Rufina', serif; font-weight: 400;">Tạo Hóa Đơn</button>
+								<button type="submit" style="background: #ec4445 none repeat scroll 0 0; border: medium none; color: #fff; font-size: 17px; height: 50px; margin: 20px 0 0; padding: 0; text-transform: uppercase; transition: all 0.3s ease 0s; width: 100%; font-family: 'Rufina', serif; font-weight: 400;" onclick="return confirm('Bạn Có Muốn Tạo Hóa Đơn Này ?')">Tạo Hóa Đơn</button>
 							</div>
 						</div>
 					</div>
