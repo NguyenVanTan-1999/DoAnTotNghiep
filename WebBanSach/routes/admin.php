@@ -166,5 +166,19 @@ Route::prefix('quan-tri')->group(function () {
 				Route::get('/khoi-phuc/{id}', 'BannerController@restore')->name('khoi-phuc');
 			});
 		});
+
+		Route::prefix('hoa-don')->group(function () {
+			Route::name('hoa-don.')->group(function () {
+				Route::get('/', 'HoaDonController@index')->name('danh-sach');
+
+				Route::get('/cap-nhat/{id}', 'HoaDonController@update')->name('xu-ly-cap-nhat');
+
+				Route::get('/xoa/{id}', 'HoaDonController@destroy')->name('xoa');
+
+				Route::get('/thung-rac', 'HoaDonController@recycleBin')->name('thung-rac');
+
+				Route::get('/khoi-phuc/{id}', 'HoaDonController@restore')->name('khoi-phuc');
+			});
+		});
 	});
 });

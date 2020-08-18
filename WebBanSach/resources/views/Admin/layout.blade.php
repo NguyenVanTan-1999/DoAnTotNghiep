@@ -157,6 +157,9 @@
 
                   <li><a href="{{ route('nha-xuat-ban.danh-sach') }}"><i class="fa fa-home"></i>Nhà Xuất Bản</a>
                   </li>
+
+                  <li><a href="{{ route('hoa-don.danh-sach') }}"><i class="fa fa-file-text-o"></i>Hóa Đơn</a>
+                  </li>
                 </ul>
               </div>
 
