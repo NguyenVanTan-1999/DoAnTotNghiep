@@ -205,7 +205,7 @@ class TaiKhoanController extends Controller
         $taiKhoans = TaiKhoan::find($id);
         $taiKhoans->delete();
 
-        return redirect()->route('tai-khoan.danh-sach')->with('thongbaothanhcong', 'XÓA TÀI KHOẢN THÀNH CÔNG');
+        return redirect()->route('tai-khoan.danh-sach')->with('thongbaothanhcong', 'KHÓA TÀI KHOẢN THÀNH CÔNG');
     }
 
     public function recycleBin()
@@ -219,6 +219,6 @@ class TaiKhoanController extends Controller
     {
         TaiKhoan::withTrashed()->where('id', $id)->restore();
 
-        return redirect()->route('tai-khoan.thung-rac')->with('thongbaothanhcong', 'KHÔI PHỤC TÀI KHOẢN THÀNH CÔNG');
+        return redirect()->route('tai-khoan.thung-rac')->with('thongbaothanhcong', 'MỞ KHÓA TÀI KHOẢN THÀNH CÔNG');
     }
 }
