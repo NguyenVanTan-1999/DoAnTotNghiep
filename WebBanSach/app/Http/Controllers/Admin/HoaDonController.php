@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\HoaDon;
 use App\QuanTriVien;
+use App\ChiTietHoaDon;
 use App\Http\Controllers\Controller;
 
 class HoaDonController extends Controller
@@ -20,7 +21,15 @@ class HoaDonController extends Controller
         $dsHoaDon = HoaDon::where('trang_thai', '=', 0)->get();
         $dsQuanTriVien = QuanTriVien::all();
         return view('Admin.hoa-don.ds-hoa-don', compact('dsHoaDon', 'dsQuanTriVien'));
-    }   
+    }
+
+    public function xemchiTiet(Request $request, $id)
+    {
+        $dsChiTietHoaDon = ChiTietHoaDon::where('hoa_don_id', '=', $request->id)->get();
+        $xacNhans = ChiTietHoaDon::where('id', '=', $request->id)->first();
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hoa-don.xem-chi-tiet', compact('dsChiTietHoaDon', 'xacNhans', 'dsQuanTriVien'));
+    }
 
     /**
      * Display the specified resource.

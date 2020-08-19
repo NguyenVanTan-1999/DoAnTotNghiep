@@ -36,7 +36,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Danh Sách Hóa Đơn Chưa Duyệt</span></h2>
+        <h2><span style="font-size: 35px;">Chi Tiết Hóa Đơn</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -45,46 +45,32 @@
       </div>
       <div class="x_content">
 
-        <a href="{{ route('hoa-don.ds-da-duyet') }}"><button type="button" class="btn btn-round btn-primary">HĐ Đã Duyệt</button></a>
+        <a href="{{ route('hoa-don.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a>
 
-        <a href="{{ route('hoa-don.thung-rac') }}"><button type="button" class="btn btn-round btn-primary">HĐ Đã Hủy</button></a><br /><br />
-
-        @include('Admin.blocks.alert')
+        <a href="{{ route('hoa-don.xu-ly-cap-nhat', $xacNhans->id) }}" onclick="return confirm('Bạn Có Xác Nhận Hóa Đơn Này ?')"><button type="button" class="btn btn-round btn-primary">Xác Nhận</button></a><br /><br />
 
         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Tên Tài Khoản</th>
-              <th>Tên Người Nhận</th>
-              <th>Ngày Mua</th>
-              <th>Địa Chỉ Giao Hàng</th>
-              <th>SĐT Giao Hàng</th>
-              <th>Tổng Tiền</th>
-              <th>Thao Tác</th>
+              <th>Hóa Đơn</th>
+              <th>Tên Sản Phẩm</th>
+              <th>Ảnh Minh Họa</th>
+              <th>Số Lượng</th>
+              <th>Đơn Giá</th>
             </tr>
           </thead>
 
           <tbody>
 
-          	@foreach($dsHoaDon as $hoadon)
+          	@foreach($dsChiTietHoaDon as $chitiethoadon)
 	            <tr>
-	              <td>{{ $hoadon->id }}</td>
-	              <td>{{ $hoadon->taiKhoan->ten_tai_khoan }}</td>
-	              <td>{{ $hoadon->ten_nguoi_nhan }}</td>
-                <td>{{ $hoadon->ngay_mua }}</td>
-                <td>{{ $hoadon->dia_chi_giao_hang }}</td>
-                <td>{{ $hoadon->so_dien_thoai_giao_hang }}</td>
-                <td>{{ $hoadon->tong_tien }}</td>
-	              <td>
-
-                  <a href="{{ route('hoa-don.xem-chi-tiet', $hoadon->id) }}"><button type="button" class="btn btn-round btn-warning">Chi Tiết</button></a>
-
-                  <a href="{{ route('hoa-don.xu-ly-cap-nhat', $hoadon->id) }}" onclick="return confirm('Bạn Có Xác Nhận Hóa Đơn Này ?')"><button type="button" class="btn btn-round btn-success">Xác Nhận</button></a>
-
-                  <a href="{{ route('hoa-don.xoa', $hoadon->id) }}" onclick="return confirm('Bạn Có Muốn Hủy Hóa Đơn Này ?')"><button type="button" class="btn btn-round btn-danger">Hủy</button></a>
-
-                </td>
+	              <td>{{ $chitiethoadon->id }}</td>
+	              <td>{{ $chitiethoadon->hoa_don_id }}</td>
+	              <td>{{ $chitiethoadon->sanPham->ten_san_pham }}</td>
+                <td><img src="{{ asset('images/product/'.$chitiethoadon->sanPham->anh_minh_hoa_san_pham) }}" width="120px" height="120px"></td>
+                <td>{{ $chitiethoadon->so_luong }}</td>
+                <td>{{ $chitiethoadon->don_gia }}</td>
 	            </tr>
         	  @endforeach
 

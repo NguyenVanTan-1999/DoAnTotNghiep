@@ -15,7 +15,7 @@ class ChiTietHoaDon extends Model
 
 	public function hoaDon()
     {
-        return $this->hasMany('App\HoaDon', 'hoa_don_id', 'id');
+        return $this->belongsTo('App\HoaDon', 'hoa_don_id', 'id');
     }
 
     public function sanPham()

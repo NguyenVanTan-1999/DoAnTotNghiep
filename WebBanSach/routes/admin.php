@@ -171,6 +171,8 @@ Route::prefix('quan-tri')->group(function () {
 			Route::name('hoa-don.')->group(function () {
 				Route::get('/', 'HoaDonController@index')->name('danh-sach');
 
+				Route::get('/xem-chi-tiet/{id}', 'HoaDonController@xemchiTiet')->name('xem-chi-tiet');
+
 				Route::get('/cap-nhat/{id}', 'HoaDonController@update')->name('xu-ly-cap-nhat');
 
 				Route::get('/xoa/{id}', 'HoaDonController@destroy')->name('xoa');
