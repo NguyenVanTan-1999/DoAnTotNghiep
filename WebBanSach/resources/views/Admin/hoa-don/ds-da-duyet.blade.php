@@ -36,7 +36,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2><span style="font-size: 35px;">Danh Sách Hóa Đơn Chưa Duyệt</span></h2>
+        <h2><span style="font-size: 35px;">Danh Sách Hóa Đơn Đã Duyệt</span></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -45,11 +45,7 @@
       </div>
       <div class="x_content">
 
-        <a href="{{ route('hoa-don.ds-da-duyet') }}"><button type="button" class="btn btn-round btn-primary">HĐ Đã Duyệt</button></a>
-
-        <a href="{{ route('hoa-don.thung-rac') }}"><button type="button" class="btn btn-round btn-primary">HĐ Đã Hủy</button></a><br /><br />
-
-        @include('Admin.blocks.alert')
+        <a href="{{ route('hoa-don.danh-sach') }}"><button type="button" class="btn btn-round btn-primary">Quay Lại</button></a><br /><br />
 
         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
           <thead>
@@ -61,7 +57,6 @@
               <th>Địa Chỉ Giao Hàng</th>
               <th>SĐT Giao Hàng</th>
               <th>Tổng Tiền</th>
-              <th>Thao Tác</th>
             </tr>
           </thead>
 
@@ -76,13 +71,6 @@
                 <td>{{ $hoadon->dia_chi_giao_hang }}</td>
                 <td>{{ $hoadon->so_dien_thoai_giao_hang }}</td>
                 <td>{{ $hoadon->tong_tien }}</td>
-	              <td>
-
-                  <a href="{{ route('hoa-don.xu-ly-cap-nhat', $hoadon->id) }}" onclick="return confirm('Bạn Có Xác Nhận Hóa Đơn Này ?')"><button type="button" class="btn btn-round btn-success">Xác Nhận</button></a>
-
-                  <a href="{{ route('hoa-don.xoa', $hoadon->id) }}" onclick="return confirm('Bạn Có Muốn Hủy Hóa Đơn Này ?')"><button type="button" class="btn btn-round btn-danger">Hủy</button></a>
-
-                </td>
 	            </tr>
         	  @endforeach
 

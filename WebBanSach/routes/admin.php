@@ -175,6 +175,8 @@ Route::prefix('quan-tri')->group(function () {
 
 				Route::get('/xoa/{id}', 'HoaDonController@destroy')->name('xoa');
 
+				Route::get('/ds-da-duyet', 'HoaDonController@dsdaDuyet')->name('ds-da-duyet');
+
 				Route::get('/thung-rac', 'HoaDonController@recycleBin')->name('thung-rac');
 
 				Route::get('/khoi-phuc/{id}', 'HoaDonController@restore')->name('khoi-phuc');

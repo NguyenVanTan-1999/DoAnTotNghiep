@@ -15,6 +15,6 @@ class HoaDon extends Model
 
 	public function taiKhoan()
     {
-        return $this->hasMany('App\TaiKhoan', 'tai_khoan_id', 'id');
+        return $this->belongsTo('App\TaiKhoan', 'tai_khoan_id', 'id');
     }
 }

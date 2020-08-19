@@ -46,7 +46,14 @@ class HoaDonController extends Controller
         $hoaDons->trang_thai = true;
         $hoaDons->save();
 
-        return redirect()->route('hoa-don.danh-sach', $hoaDons->id)->with('thongbaothanhcong', 'XÁC NHẬN HÓA ĐƠN THÀNH CÔNG');
+        return redirect()->route('hoa-don.danh-sach')->with('thongbaothanhcong', 'XÁC NHẬN HÓA ĐƠN THÀNH CÔNG');
+    }
+
+    public function dsdaDuyet()
+    {
+        $dsHoaDon = HoaDon::where('trang_thai', '=', 1)->get();
+        $dsQuanTriVien = QuanTriVien::all();
+        return view('Admin.hoa-don.ds-da-duyet', compact('dsHoaDon', 'dsQuanTriVien'));
     }
 
     /**
