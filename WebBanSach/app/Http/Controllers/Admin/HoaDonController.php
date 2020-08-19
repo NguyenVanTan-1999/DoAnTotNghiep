@@ -26,9 +26,10 @@ class HoaDonController extends Controller
     public function xemchiTiet(Request $request, $id)
     {
         $dsChiTietHoaDon = ChiTietHoaDon::where('hoa_don_id', '=', $request->id)->get();
+        $hoaDons = ChiTietHoaDon::where('hoa_don_id', '=', $request->id)->first();
         $xacNhans = ChiTietHoaDon::where('id', '=', $request->id)->first();
         $dsQuanTriVien = QuanTriVien::all();
-        return view('Admin.hoa-don.xem-chi-tiet', compact('dsChiTietHoaDon', 'xacNhans', 'dsQuanTriVien'));
+        return view('Admin.hoa-don.xem-chi-tiet', compact('dsChiTietHoaDon', 'hoaDons', 'xacNhans', 'dsQuanTriVien'));
     }
 
     /**
