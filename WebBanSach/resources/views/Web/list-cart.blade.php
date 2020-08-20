@@ -108,7 +108,11 @@
                         </tbody>
                     </table>
                     <div class="wc-proceed-to-checkout">
-                        <a href="{{ route('website-ban-sach.dat-hang') }}">Thanh Toán</a>
+                        @if(Auth::guard('web')->check())
+                            <a href="{{ route('website-ban-sach.dat-hang') }}">Thanh Toán</a>
+                        @else
+                            <a href="{{ route('website-ban-sach.dang-nhap') }}">Thanh Toán</a>
+                        @endif
                     </div>
                 </div>
                 @else
